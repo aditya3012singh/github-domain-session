@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <radialGradient id="thorBgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0a1d40"/>
+      <stop offset="60%" stop-color="#040b1a"/>
+      <stop offset="100%" stop-color="#020308"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#thorBgGrad)"/>
+  <!-- Lightning Arcs in backdrop -->
+  <g stroke="#60A5FA" opacity="0.35" fill="none" stroke-width="2" stroke-linecap="round">
+    <path d="M 100,50 L 250,220 L 190,320 L 380,480 L 290,620 L 450,750"/>
+    <path d="M 1100,50 L 950,220 L 1010,320 L 820,480 L 910,620 L 750,750"/>
+  </g>
+</svg>

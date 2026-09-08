@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="shieldBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040810"/>
+      <stop offset="60%" stop-color="#0b1626"/>
+      <stop offset="100%" stop-color="#020408"/>
+    </linearGradient>
+    <linearGradient id="redRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3355"/>
+      <stop offset="50%" stop-color="#D61536"/>
+      <stop offset="100%" stop-color="#80061A"/>
+    </linearGradient>
+    <linearGradient id="silverRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+    <linearGradient id="blueCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="60%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <pattern id="hexGrid" width="28" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 0 0 L 14 8 L 14 24 L 0 32 L -14 24 L -14 8 Z M 28 0 L 42 8 L 42 24 L 28 32 L 14 24 L 14 8 Z" fill="none" stroke="#38BDF8" stroke-width="0.8" opacity="0.15"/>
+    </pattern>
+    <filter id="shieldGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="18" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Deep Navy Cyber Defense Matrix Background -->
+  <rect width="600" height="800" fill="url(#shieldBg)"/>
+  <rect width="600" height="800" fill="url(#hexGrid)"/>
+
+  <!-- Encrypted Cyber Network & Firewall Perimeter Lines -->
+  <g stroke="#38BDF8" opacity="0.3" stroke-width="1.2" fill="none">
+    <circle cx="300" cy="380" r="280" stroke-dasharray="8 6"/>
+    <circle cx="300" cy="380" r="260" stroke-width="0.8"/>
+    <!-- Radar Sweep lines -->
+    <line x1="20" y1="380" x2="580" y2="380"/>
+    <line x1="300" y1="100" x2="300" y2="660"/>
+    <!-- Binary / Hex Data Blocks -->
+    <rect x="50" y="220" width="80" height="40" stroke="#EF4444" stroke-width="1" stroke-dasharray="4 2"/>
+    <rect x="470" y="480" width="80" height="40" stroke="#10B981" stroke-width="1" stroke-dasharray="4 2"/>
+  </g>
+
+  <!-- CAPTAIN AMERICA VIBRANIUM SHIELD (The Shield Protocol) -->
+  <g transform="translate(300, 380)" filter="url(#shieldGlow)">
+    <!-- Outer Vibranium Ring (Red) -->
+    <circle cx="0" cy="0" r="220" fill="url(#redRing)" stroke="#FF6B81" stroke-width="3"/>
+
+    <!-- Outer Bevel Groove -->
+    <circle cx="0" cy="0" r="180" fill="url(#silverRing)" stroke="#94A3B8" stroke-width="2"/>
+
+    <!-- Inner Red Ring -->
+    <circle cx="0" cy="0" r="140" fill="url(#redRing)" stroke="#FF6B81" stroke-width="2"/>
+
+    <!-- Center Blue Core -->
+    <circle cx="0" cy="0" r="100" fill="url(#blueCore)" stroke="#60A5FA" stroke-width="2"/>
+
+    <!-- Five-Pointed Vibranium Star -->
+    <g filter="url(#shieldGlow)">
+      <polygon points="
+        0,-88 
+        25,-26 
+        88,-22 
+        38,20 
+        54,82 
+        0,46 
+        -54,82 
+        -38,20 
+        -88,-22 
+        -25,-26
+      " fill="url(#silverRing)" stroke="#FFFFFF" stroke-width="2"/>
+    </g>
+
+    <!-- Star Bevel Creases -->
+    <g stroke="#64748B" stroke-width="1.5">
+      <line x1="0" y1="0" x2="0" y2="-88"/>
+      <line x1="0" y1="0" x2="88" y2="-22"/>
+      <line x1="0" y1="0" x2="54" y2="82"/>
+      <line x1="0" y1="0" x2="-54" y2="82"/>
+      <line x1="0" y1="0" x2="-88" y2="-22"/>
+    </g>
+
+    <!-- Defensive Energy Hex Barrier Overlay -->
+    <circle cx="0" cy="0" r="222" fill="none" stroke="#60A5FA" stroke-width="3" stroke-dasharray="24 12 4 12"/>
+  </g>
+
+  <!-- Cyber Defense Telemetry Overlay -->
+  <text x="40" y="70" fill="#EF4444" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" letter-spacing="3">UNIVERSE 005 // SHIELD PROTOCOL</text>
+  <text x="40" y="750" fill="#FFFFFF" font-family="'Chakra Petch', sans-serif" font-size="28" font-weight="700" letter-spacing="2">CAPTAIN AMERICA // DEFENDER OF THE SYSTEM</text>
+  <text x="40" y="775" fill="#8D8DA0" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="1">ROLE: CYBER GUARDIAN // TECH: SECURITY·NETWORKING·PEN-TEST·CRYPTO</text>
+</svg>

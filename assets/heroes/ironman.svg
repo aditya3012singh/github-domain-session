@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="starkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0810"/>
+      <stop offset="60%" stop-color="#180c10"/>
+      <stop offset="100%" stop-color="#050508"/>
+    </linearGradient>
+    <linearGradient id="goldPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="50%" stop-color="#FFA000"/>
+      <stop offset="100%" stop-color="#C67100"/>
+    </linearGradient>
+    <linearGradient id="crimsonPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF334B"/>
+      <stop offset="60%" stop-color="#A50E23"/>
+      <stop offset="100%" stop-color="#4A050F"/>
+    </linearGradient>
+    <linearGradient id="arcReactor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#70E4FF"/>
+      <stop offset="100%" stop-color="#00A2E8"/>
+    </linearGradient>
+    <pattern id="starkGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#FFB84D" stroke-width="0.5" opacity="0.12"/>
+    </pattern>
+    <filter id="arcGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="18" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark Background -->
+  <rect width="600" height="800" fill="url(#starkBg)"/>
+  <rect width="600" height="800" fill="url(#starkGrid)"/>
+
+  <!-- Stark HUD Circular Reticle Rings & Diagnostics -->
+  <g stroke="#00C8FF" opacity="0.35" fill="none" filter="url(#arcGlow)">
+    <circle cx="300" cy="380" r="240" stroke-width="1.5" stroke-dasharray="8 6 20 6"/>
+    <circle cx="300" cy="380" r="210" stroke-width="1" stroke-dasharray="4 4"/>
+    <circle cx="300" cy="380" r="180" stroke-width="2" stroke-dasharray="60 30 120 40"/>
+    <circle cx="300" cy="380" r="120" stroke-width="1"/>
+    <!-- Pitch Ladders -->
+    <line x1="120" y1="380" x2="160" y2="380" stroke-width="2"/>
+    <line x1="440" y1="380" x2="480" y2="380" stroke-width="2"/>
+    <line x1="300" y1="180" x2="300" y2="210" stroke-width="2"/>
+    <line x1="300" y1="550" x2="300" y2="580" stroke-width="2"/>
+  </g>
+
+  <!-- IRON MAN HELMET (Cinematic Stylized Armor) -->
+  <!-- Outer Crimson Helmet Shell -->
+  <g>
+    <!-- Jaw and Skull Contour -->
+    <path d="M 300,120 C 200,120 160,190 160,310 C 160,420 200,510 240,540 L 300,560 L 360,540 C 400,510 440,420 440,310 C 440,190 400,120 300,120 Z" fill="url(#crimsonPlate)" stroke="#7A0012" stroke-width="4"/>
+    
+    <!-- Gold Faceplate -->
+    <path d="M 230,190 L 370,190 L 390,260 L 375,370 L 340,470 L 300,485 L 260,470 L 225,370 L 210,260 Z" fill="url(#goldPlate)" stroke="#B37400" stroke-width="3"/>
+    
+    <!-- Forehead Plate Inset -->
+    <path d="M 260,190 L 340,190 L 330,230 L 270,230 Z" fill="#996000" opacity="0.6"/>
+
+    <!-- Cheek Insets & Mechanical Seams -->
+    <path d="M 225,370 L 250,385 L 260,460" fill="none" stroke="#683B00" stroke-width="3"/>
+    <path d="M 375,370 L 350,385 L 340,460" fill="none" stroke="#683B00" stroke-width="3"/>
+    <line x1="280" y1="465" x2="320" y2="465" stroke="#683B00" stroke-width="3"/>
+
+    <!-- GLOWING OPTIC SLITS -->
+    <!-- Left Eye -->
+    <polygon points="230,310 280,315 275,328 238,324" fill="url(#arcReactor)" filter="url(#arcGlow)"/>
+    <polygon points="230,310 280,315 275,328 238,324" fill="#FFFFFF"/>
+    <!-- Right Eye -->
+    <polygon points="370,310 320,315 325,328 362,324" fill="url(#arcReactor)" filter="url(#arcGlow)"/>
+    <polygon points="370,310 320,315 325,328 362,324" fill="#FFFFFF"/>
+  </g>
+
+  <!-- GLOWING ARC REACTOR CORE (Centerpiece) -->
+  <g transform="translate(300, 640)" filter="url(#arcGlow)">
+    <!-- Outer Housing -->
+    <circle cx="0" cy="0" r="54" fill="#0C1420" stroke="#00C8FF" stroke-width="3"/>
+    <circle cx="0" cy="0" r="44" fill="#050A10" stroke="#FFA000" stroke-width="1.5"/>
+    <!-- Triangular Power Core -->
+    <polygon points="0,-36 32,20 -32,20" fill="none" stroke="url(#arcReactor)" stroke-width="6"/>
+    <polygon points="0,-24 20,12 -20,12" fill="url(#arcReactor)"/>
+    <!-- Radiating Arc Segment Pins -->
+    <circle cx="0" cy="0" r="12" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Stark Telemetry Text Overlay -->
+  <text x="40" y="70" fill="#FFB84D" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" letter-spacing="3">UNIVERSE 002 // STARK PROTOCOL</text>
+  <text x="40" y="750" fill="#FFFFFF" font-family="'Chakra Petch', sans-serif" font-size="28" font-weight="700" letter-spacing="2">IRON MAN // MARK LXXXV</text>
+  <text x="40" y="775" fill="#8D8DA0" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="1">ROLE: ARCHITECT OF INTELLIGENCE // TECH: AI·ML·ROBOTICS·VISION</text>
+</svg>

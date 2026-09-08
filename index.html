@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>DEVUP — GIT &amp; GITHUB SESSION | One Session. Multiple Universes. One Skill.</title>
+    <meta name="description"
+        content="Step into a bigger universe with DEVUP Upskill Collab. Master Git & GitHub across 7 superhero universes. 10 September 2026. Open for all first years!">
+    <meta name="theme-color" content="#FF5A00">
+
+    <!-- Open Graph & Social Cards -->
+    <meta property="og:title" content="DEVUP — GIT &amp; GITHUB SESSION">
+    <meta property="og:description"
+        content="One Session. Multiple Universes. One Skill. Join the DevUp Git & GitHub masterclass for all first years!">
+    <meta property="og:image" content="assets/poster.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon: Git Branch Stargate Core -->
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2307090E' stroke='%23FF5A00' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='20' fill='%23FF6A00'/%3E%3Ccircle cx='34' cy='65' r='10' fill='%23FFA800'/%3E%3Ccircle cx='66' cy='35' r='10' fill='%23FFA800'/%3E%3Cline x1='34' y1='65' x2='66' y2='35' stroke='%23FFFFFF' stroke-width='4'/%3E%3C/svg%3E">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Floating Ember Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- ============================================================
+       TOP NAVIGATION BAR
+       ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#hero" class="brand-container">
+                <div class="brand-logo-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                </div>
+                <div class="brand-text-block">
+                    <div class="brand-title">DEVUP <span>COLLAB</span></div>
+                    <div class="brand-subtitle">UPSKILL INITIATIVE · 2026</div>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#hero" class="nav-link active">Nexus Gate</a></li>
+                    <li><a href="#pathfinder" class="nav-link">Domain Quiz</a></li>
+                    <li><a href="#universes" class="nav-link">7 Universes</a></li>
+                    <li><a href="#terminal-sim" class="nav-link">Git Simulator</a></li>
+                    <li><a href="#curriculum" class="nav-link">Curriculum</a></li>
+                    <li><a href="#ticket-pass" class="nav-link">Multiverse Pass</a></li>
+                    <li><a href="#intel-faq" class="nav-link">Event FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Audio Toggle -->
+                <button id="audioToggleBtn" class="btn-audio-toggle" onclick="toggleGlobalAudio()" title="Sound Effects Active">
+                    🔊
+                </button>
+
+                <!-- Poster Modal Trigger -->
+                <button class="btn-poster-modal" onclick="openPosterModal()" title="Inspect the original event poster">
+                    <span>🖼️</span>
+                    <span>VIEW POSTER</span>
+                </button>
+
+                <!-- Pass Claim CTA -->
+                <a href="#ticket-pass" class="btn-nav-rsvp">
+                    <span>CLAIM PASS</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+       HERO SECTION: THE MULTIVERSE STARGATE NEXUS
+       ============================================================ -->
+    <section id="hero" class="section-hero">
+        <div class="hero-cosmic-bg"></div>
+
+        <!-- Top Slogans from Poster Header -->
+        <div class="hero-universe-mottos-top">
+            <div class="motto-banner-left">
+                <span>⚡</span>
+                <span>SAME COMMANDS · DIFFERENT POSSIBILITIES</span>
+            </div>
+            <div class="motto-banner-center">
+                DIFFERENT UNIVERSES · SAME CURIOSITY
+            </div>
+            <div class="motto-banner-right">
+                <span>GOOD DEVELOPERS BUILD BETTER WORLDS</span>
+                <span>🛡️</span>
+            </div>
+        </div>
+
+        <!-- Pill Badge: GitHub & Tech Domain Intro Session -->
+        <div class="hero-eyebrow-pill">
+            <span class="pulse-dot"></span>
+            <span>DEVUP UPSKILL COLLAB PRESENTS // GITHUB &amp; TECH DOMAIN INTRO SESSION</span>
+        </div>
+
+        <!-- Poster Main Title Block -->
+        <div class="hero-tagline-pre">STEP INTO A BIGGER UNIVERSE</div>
+        <h1 class="hero-title-main">GIT &amp; GITHUB</h1>
+        <div class="hero-title-sub">SESSION</div>
+        <div class="hero-title-one-session">ONE SESSION. MULTIPLE UNIVERSES. ONE SKILL. · TECH DOMAIN DISCOVERY</div>
+
+        <!-- THE INTERACTIVE MULTIVERSE STARGATE PORTAL -->
+        <div class="stargate-nexus-container" id="stargateNexus">
+            <div class="stargate-ambient-glow"></div>
+
+            <div class="stargate-portal-frame">
+                <!-- Outer Rotating Runes SVG Ring -->
+                <svg class="stargate-ring-svg" viewBox="0 0 500 500">
+                    <circle cx="250" cy="250" r="235" fill="none" stroke="rgba(255, 140, 0, 0.4)" stroke-width="2" stroke-dasharray="8 6" />
+                    <circle cx="250" cy="250" r="215" fill="none" stroke="rgba(255, 90, 0, 0.6)" stroke-width="4" stroke-dasharray="18 12" />
+                    <circle cx="250" cy="250" r="190" fill="none" stroke="rgba(255, 180, 0, 0.5)" stroke-width="1.5" stroke-dasharray="4 8" />
+                    <!-- Ancient Tech Notches -->
+                    <line x1="250" y1="15" x2="250" y2="40" stroke="#FFA800" stroke-width="3" />
+                    <line x1="250" y1="460" x2="250" y2="485" stroke="#FFA800" stroke-width="3" />
+                    <line x1="15" y1="250" x2="40" y2="250" stroke="#FFA800" stroke-width="3" />
+                    <line x1="460" y1="250" x2="485" y2="250" stroke="#FFA800" stroke-width="3" />
+                </svg>
+
+                <!-- Central Octocat Portal Vortex Image -->
+                <div class="stargate-core-viewport">
+                    <img src="assets/multiverse/stargate_portal.jpg" alt="Multiverse Stargate Portal Core" class="stargate-portal-img" />
+                </div>
+
+                <!-- Glowing Octocat Overlay Emblem -->
+                <div class="stargate-octocat-core">
+                    <svg class="octocat-svg-emblem" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                </div>
+
+                <!-- Interactive Git Orbit Nodes (From the Poster) -->
+                <!-- 1. Top Git Branch Node -->
+                <button class="portal-node node-branch-zenith" data-node="branch-zenith" title="Apex Git Origin">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="6" y1="3" x2="6" y2="15"></line>
+                        <circle cx="18" cy="6" r="3"></circle>
+                        <circle cx="6" cy="18" r="3"></circle>
+                        <path d="M18 9a9 9 0 0 1-9 9"></path>
+                    </svg>
+                    <span>branch</span>
+                </button>
+
+                <!-- 2. Main Node -->
+                <button class="portal-node node-main" data-node="main" title="Main Timeline">
+                    <span class="portal-node-dot"></span>
+                    <span>main</span>
+                </button>
+
+                <!-- 3. Feature Node -->
+                <button class="portal-node node-feature" data-node="feature" title="Feature Dimension">
+                    <span class="portal-node-dot"></span>
+                    <span>feature</span>
+                </button>
+
+                <!-- 4. Merge Node -->
+                <button class="portal-node node-merge" data-node="merge" title="Timeline Convergence">
+                    <span class="portal-node-dot"></span>
+                    <span>merge</span>
+                </button>
+
+                <!-- 5. Commit Node -->
+                <button class="portal-node node-commit" data-node="commit" title="Cryptographic Snapshot">
+                    <span class="portal-node-dot"></span>
+                    <span>commit</span>
+                </button>
+
+                <!-- 6. Push Node -->
+                <button class="portal-node node-push" data-node="push" title="Cloud Transmission">
+                    <span class="portal-node-dot"></span>
+                    <span>push</span>
+                </button>
+
+                <!-- Silhouette of Developer Standing on Cliff Peak -->
+                <div class="stargate-cliff-developer">
+                    <svg class="cliff-silhouette-svg" viewBox="0 0 240 180">
+                        <!-- Jagged Cliff Rock Peak -->
+                        <polygon points="0,180 40,140 80,120 120,95 160,125 200,145 240,180" fill="#040609" />
+                        <polygon points="20,180 70,130 120,95 170,135 220,180" fill="#080B10" />
+                        
+                        <!-- Silhouetted Developer Facing Away into Stargate -->
+                        <g transform="translate(108, 38)">
+                            <!-- Head / Hood -->
+                            <circle cx="12" cy="12" r="9" fill="#040609" />
+                            <!-- Torso with DevUp Hoodie -->
+                            <path d="M4 22 C4 18, 20 18, 20 22 L22 45 L2 45 Z" fill="#040609" />
+                            <!-- Glowing DevUp Chevron on Back of Hoodie -->
+                            <path d="M8 28 L12 24 L16 28 M8 32 L12 28 L16 32" stroke="#FF6A00" stroke-width="2" fill="none" filter="drop-shadow(0 0 4px #FF6A00)" />
+                            <!-- Legs on Rock -->
+                            <line x1="6" y1="45" x2="4" y2="60" stroke="#040609" stroke-width="4" />
+                            <line x1="18" y1="45" x2="20" y2="60" stroke="#040609" stroke-width="4" />
+                        </g>
+                    </svg>
+                    <div class="cliff-motto-tag">"Same Skill · A Brighter You"</div>
+                </div>
+
+                <!-- Active Node Floating Tooltip -->
+                <div class="node-info-popup" id="nodeInfoPopup">
+                    <span id="nodeInfoText">Click any Git node on the Stargate to activate its timeline!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- POSTER EVENT INFORMATION HUD GRID (4 Badges from Poster) -->
+        <div class="hero-event-hud-grid">
+            <!-- 1. Date -->
+            <div class="hud-event-card">
+                <div class="hud-icon-box">📅</div>
+                <div class="hud-meta-block">
+                    <div class="hud-meta-label">EVENT DATE</div>
+                    <div class="hud-meta-value">10 SEPTEMBER 2026</div>
+                    <div class="countdown-subtext" id="countdownTimerMini">
+                        <span id="countDays">00</span>d : <span id="countHours">00</span>h : <span id="countMins">00</span>m : <span id="countSecs">00</span>s
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Time -->
+            <div class="hud-event-card">
+                <div class="hud-icon-box">⏰</div>
+                <div class="hud-meta-block">
+                    <div class="hud-meta-label">TIMING</div>
+                    <div class="hud-meta-value">TIME: TO BE ANNOUNCED</div>
+                    <div class="countdown-subtext" style="color: #60A5FA; cursor: pointer;" onclick="addToGoogleCalendar()">
+                        + Add Calendar Alert
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Target Audience -->
+            <div class="hud-event-card">
+                <div class="hud-icon-box">👥</div>
+                <div class="hud-meta-block">
+                    <div class="hud-meta-label">ELIGIBILITY</div>
+                    <div class="hud-meta-value">OPEN FOR ALL FIRST YEARS</div>
+                    <div class="countdown-subtext" style="color: #34D399;">
+                        Every Branch Welcome
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Level -->
+            <div class="hud-event-card">
+                <div class="hud-icon-box">📊</div>
+                <div class="hud-meta-block">
+                    <div class="hud-meta-label">EXPERIENCE LEVEL</div>
+                    <div class="hud-meta-value">BEGINNER FRIENDLY</div>
+                    <div class="countdown-subtext" style="color: #FBBF24;">
+                        Zero Coding Exp. Needed
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOPICS RIBBON / TICKER (Exact from Poster) -->
+        <div class="hero-topics-ribbon">
+            <div class="topic-item">
+                <span class="topic-bullet"></span>
+                <span>GIT BASICS</span>
+            </div>
+            <div class="topic-item">
+                <span class="topic-bullet"></span>
+                <span>GITHUB</span>
+            </div>
+            <div class="topic-item">
+                <span class="topic-bullet"></span>
+                <span>BRANCHING &amp; MERGING</span>
+            </div>
+            <div class="topic-item">
+                <span class="topic-bullet"></span>
+                <span>HANDS-ON PRACTICE</span>
+            </div>
+            <div class="topic-item">
+                <span class="topic-bullet"></span>
+                <span>REAL-WORLD USE CASES</span>
+            </div>
+        </div>
+
+        <!-- Hero CTAs -->
+        <div class="hero-cta-bar">
+            <a href="#ticket-pass" class="btn-hero-primary">
+                <span>CLAIM YOUR MULTIVERSE PASS</span>
+                <span>🎟️</span>
+            </a>
+            <a href="#terminal-sim" class="btn-hero-secondary">
+                <span>LAUNCH GIT SIMULATOR</span>
+                <span>⚡</span>
+            </a>
+            <button class="btn-hero-secondary" onclick="openPosterModal()">
+                <span>INSPECT ORIGINAL POSTER</span>
+                <span>🔍</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION: INTERACTIVE DOMAIN PATHFINDER (For Freshers)
+       ============================================================ -->
+    <section id="pathfinder" class="section-pathfinder">
+        <div class="pathfinder-card">
+            <div id="quizQuestionsView">
+                <div class="quiz-steps-tracker">
+                    <span class="quiz-step-dot active"></span>
+                    <span class="quiz-step-dot active"></span>
+                    <span class="quiz-step-dot active"></span>
+                    <span style="font-family: var(--font-mono); font-size: 11px; color: #FFA800; margin-left: 8px;">FRESHER DOMAIN PATHFINDER</span>
+                </div>
+
+                <div class="domain-badge-tag">🎯 STEP 01 // DISCOVER YOUR COLLEGE TECH PATH</div>
+                <h2 class="quiz-question-title">WHICH TECH DOMAIN WERE YOU DESTINED TO MASTER?</h2>
+                <p class="quiz-question-sub">
+                    First year in engineering? Choose what sounds most exciting to you, and our Multiverse Core will calculate your optimal tech domain, recommended 1st-year roadmap, and how Git &amp; GitHub empowers you!
+                </p>
+
+                <div class="quiz-options-grid">
+                    <button class="quiz-option-btn" onclick="selectQuizAnswer('web')">
+                        <div class="quiz-option-icon">🕸️</div>
+                        <div>
+                            <div class="quiz-option-title">Web &amp; Full-Stack Development</div>
+                            <div class="quiz-option-desc">"I want to build real websites, interactive web applications, and creative digital interfaces."</div>
+                        </div>
+                    </button>
+
+                    <button class="quiz-option-btn" onclick="selectQuizAnswer('innov')">
+                        <div class="quiz-option-icon">🤖</div>
+                        <div>
+                            <div class="quiz-option-title">AI, Machine Learning &amp; Cloud</div>
+                            <div class="quiz-option-desc">"I want to train neural networks, work with LLMs, and automate intelligent pipelines."</div>
+                        </div>
+                    </button>
+
+                    <button class="quiz-option-btn" onclick="selectQuizAnswer('dark')">
+                        <div class="quiz-option-icon">🛡️</div>
+                        <div>
+                            <div class="quiz-option-title">Cybersecurity &amp; Low-Level Systems</div>
+                            <div class="quiz-option-desc">"I want to protect networks, find vulnerabilities, and master zero-trust system defense."</div>
+                        </div>
+                    </button>
+
+                    <button class="quiz-option-btn" onclick="selectQuizAnswer('strength')">
+                        <div class="quiz-option-icon">⚡</div>
+                        <div>
+                            <div class="quiz-option-title">Data Structures &amp; Competitive Coding</div>
+                            <div class="quiz-option-desc">"I love solving difficult logic puzzles, mathematical algorithms, and preparing for top tech interviews."</div>
+                        </div>
+                    </button>
+
+                    <button class="quiz-option-btn" onclick="selectQuizAnswer('speed')">
+                        <div class="quiz-option-icon">📱</div>
+                        <div>
+                            <div class="quiz-option-title">Mobile App Development</div>
+                            <div class="quiz-option-desc">"I want to create cross-platform iOS &amp; Android apps that users interact with on their phones daily."</div>
+                        </div>
+                    </button>
+
+                    <button class="quiz-option-btn" onclick="selectQuizAnswer('tech')">
+                        <div class="quiz-option-icon">💻</div>
+                        <div>
+                            <div class="quiz-option-title">DevOps, Linux &amp; Tooling Mastery</div>
+                            <div class="quiz-option-desc">"I love terminal workflows, Linux power-tools, automation scripts, and server infrastructure."</div>
+                        </div>
+                    </button>
+
+                    <button class="quiz-option-btn" onclick="selectQuizAnswer('cosmic')">
+                        <div class="quiz-option-icon">🌌</div>
+                        <div>
+                            <div class="quiz-option-title">Open Source &amp; Global Collaboration</div>
+                            <div class="quiz-option-desc">"I want to contribute code to global open source software, prep for GSoC, and build a public portfolio."</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Result View -->
+            <div id="quizResultView" class="quiz-result-view">
+                <div class="quiz-result-header">
+                    <div class="quiz-result-icon">✨</div>
+                    <div>
+                        <div class="quiz-result-match">100% MATCH FOUND // MULTIVERSE CALIBRATION COMPLETE</div>
+                        <div class="quiz-result-title" id="quizResultDomainTitle">WEB UNIVERSE (WEB DEV &amp; FULL-STACK)</div>
+                        <div style="font-family: var(--font-mono); font-size: 12.5px; color: #94A3B8;" id="quizResultSub">Avatar: The Cyber Weaver</div>
+                    </div>
+                </div>
+
+                <p style="font-size: 15px; color: #CBD5E1; line-height: 1.7; margin-bottom: 20px;" id="quizResultDesc">
+                    Your matched domain is focused on building digital experiences.
+                </p>
+
+                <div style="margin-bottom: 24px;">
+                    <div style="font-family: var(--font-mono); font-size: 11px; color: #FFA800; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 8px;">RECOMMENDED 1ST-YEAR TECH ROADMAP:</div>
+                    <div class="domain-skills-pills" id="quizResultPills"></div>
+                </div>
+
+                <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                    <a href="#universes" class="btn-hero-primary" style="padding: 12px 24px; font-size: 14px;">
+                        <span>EXPLORE YOUR UNIVERSE IN DEPTH</span>
+                        <span>↓</span>
+                    </a>
+                    <a href="#ticket-pass" class="btn-hero-secondary" style="padding: 12px 24px; font-size: 14px;">
+                        <span>CLAIM YOUR MATCHED EVENT PASS</span>
+                        <span>🎟️</span>
+                    </a>
+                    <button class="btn-copy-snip" style="padding: 12px 18px; font-size: 13px;" onclick="resetQuiz()">
+                        ↺ Retake Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 2: THE 7 UNIVERSES EXPLORER
+       ============================================================ -->
+    <section id="universes" class="section-universes">
+        <div class="section-header-block">
+            <span class="section-tagline">7 DIMENSIONS // 7 TECH DOMAINS // ONE UNIFIED GIT SKILL</span>
+            <h2 class="section-title">EXPLORE THE <span>UNIVERSES</span> OF TECH</h2>
+            <p class="section-description">
+                In the multiverse of engineering, every superhero domain requires one foundational superpower: version control with Git &amp; GitHub. Select a domain below to inspect its roadmap and Git superpowers.
+            </p>
+        </div>
+
+        <!-- Universe Tabs Bar -->
+        <div class="universe-tabs-bar">
+            <button class="univ-tab-btn" data-univ="dark" style="--univ-color: #64748B; --univ-glow: rgba(100, 116, 139, 0.5);" onclick="selectUniverse('dark')">
+                <span class="univ-tab-dot"></span>
+                <span>Dark (Cyber &amp; Systems)</span>
+            </button>
+            <button class="univ-tab-btn active" data-univ="web" style="--univ-color: #EF4444; --univ-glow: rgba(239, 68, 68, 0.5);" onclick="selectUniverse('web')">
+                <span class="univ-tab-dot"></span>
+                <span>Web (Full-Stack)</span>
+            </button>
+            <button class="univ-tab-btn" data-univ="innov" style="--univ-color: #F97316; --univ-glow: rgba(249, 115, 22, 0.5);" onclick="selectUniverse('innov')">
+                <span class="univ-tab-dot"></span>
+                <span>Innovation (AI &amp; Cloud)</span>
+            </button>
+            <button class="univ-tab-btn" data-univ="strength" style="--univ-color: #10B981; --univ-glow: rgba(16, 185, 129, 0.5);" onclick="selectUniverse('strength')">
+                <span class="univ-tab-dot"></span>
+                <span>Strength (DSA)</span>
+            </button>
+            <button class="univ-tab-btn" data-univ="cosmic" style="--univ-color: #A855F7; --univ-glow: rgba(168, 85, 247, 0.5);" onclick="selectUniverse('cosmic')">
+                <span class="univ-tab-dot"></span>
+                <span>Cosmic (Open Source)</span>
+            </button>
+            <button class="univ-tab-btn" data-univ="speed" style="--univ-color: #FACC15; --univ-glow: rgba(250, 204, 21, 0.5);" onclick="selectUniverse('speed')">
+                <span class="univ-tab-dot"></span>
+                <span>Speed (Mobile Apps)</span>
+            </button>
+            <button class="univ-tab-btn" data-univ="tech" style="--univ-color: #06B6D4; --univ-glow: rgba(6, 182, 212, 0.5);" onclick="selectUniverse('tech')">
+                <span class="univ-tab-dot"></span>
+                <span>Tech (DevOps &amp; CLI)</span>
+            </button>
+        </div>
+
+        <!-- Interactive Showcase Deck -->
+        <div class="universe-stage-deck" id="universeStageDeck">
+            <!-- Left: Hero Portrait -->
+            <div class="stage-character-viewport">
+                <img id="stageHeroImg" src="assets/multiverse/spidermecha.jpg" alt="Active Universe Hero" class="stage-character-img" />
+                <div class="stage-badge-overlay" id="stageBadge">EARTH-616 // WEB-VERSE</div>
+                <div class="stage-motto-overlay">
+                    <div class="stage-hero-name" id="stageHeroName">THE CYBER WEAVER</div>
+                    <div class="stage-hero-quote" id="stageHeroQuote">"CONNECTING IDEAS ACROSS WORLDS"</div>
+                </div>
+            </div>
+
+            <!-- Right: Character Lore & Git Mapping Details -->
+            <div class="stage-intel-pane">
+                <div class="intel-universe-tag" id="intelUniverseTag">SECTOR-002 // WEB UNIVERSE</div>
+                <h3 class="intel-main-title" id="intelMainTitle">Web Universe <span>&amp; Git</span></h3>
+
+                <!-- Poster Quote Callout Box -->
+                <div class="intel-poster-quote-box">
+                    <div class="poster-quote-text" id="intelQuoteText">CONNECTING IDEAS ACROSS WORLDS</div>
+                    <div class="poster-quote-sub" id="intelQuoteSub">CODE CREATE COLLAB REPEAT · SAME COMMANDS DIFFERENT POSSIBILITIES</div>
+                </div>
+
+                <p class="intel-description" id="intelDescription">
+                    No developer is an island. The Web Universe thrives on open-source webs, collaborative pull requests, and swinging between front-end and back-end without skipping a beat.
+                </p>
+
+                <!-- Git Superpower Specs -->
+                <div class="intel-git-specs" id="intelSpecsContainer">
+                    <div class="git-spec-box">
+                        <div class="spec-title">Git Superpower</div>
+                        <div class="spec-val">Forking &amp; Pull Requests</div>
+                    </div>
+                    <div class="git-spec-box">
+                        <div class="spec-title">Core Philosophy</div>
+                        <div class="spec-val">With Great Code Comes Great PRs</div>
+                    </div>
+                    <div class="git-spec-box">
+                        <div class="spec-title">Network Effect</div>
+                        <div class="spec-val">Global Open-Source Nodes</div>
+                    </div>
+                    <div class="git-spec-box">
+                        <div class="spec-title">Sync Velocity</div>
+                        <div class="spec-val">Real-time Upstream Rebase</div>
+                    </div>
+                </div>
+
+                <!-- 1st-Year Tech Roadmap Container -->
+                <div id="intelRoadmapContainer"></div>
+
+                <!-- Command Snippet -->
+                <div class="intel-code-snip" id="intelCodeSnip" style="margin-top: 20px;">
+                    <code>git request-pull v1.0 https://github.com/devup/web-verse.git</code>
+                    <button class="btn-copy-snip" onclick="copySnippet('git request-pull v1.0 https://github.com/devup/web-verse.git')">COPY</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 3: LIVE GIT MULTIVERSE CLI SIMULATOR
+       ============================================================ */
+    -->
+    <section id="terminal-sim" class="section-terminal-sim">
+        <div class="section-header-block">
+            <span class="section-tagline">HANDS-ON HOLODECK // ZERO SETUP</span>
+            <h2 class="section-title">THE <span>GIT CLI</span> SIMULATOR</h2>
+            <p class="section-description">
+                Test real Git commands in an interactive sandbox. Watch your parallel timelines branch, commit, and merge on the live dimensional graph in real time!
+            </p>
+        </div>
+
+        <div class="terminal-sim-layout">
+            <!-- Left: Interactive Cyber Terminal -->
+            <div class="terminal-window">
+                <div class="terminal-titlebar">
+                    <div class="terminal-dots">
+                        <div class="term-dot term-dot-red"></div>
+                        <div class="term-dot term-dot-yellow"></div>
+                        <div class="term-dot term-dot-green"></div>
+                    </div>
+                    <div class="terminal-title">devup-multiverse-gateway — bash</div>
+                    <div style="font-family: var(--font-mono); font-size: 11px; color: #10B981;">● ONLINE</div>
+                </div>
+
+                <!-- Quick Action Buttons -->
+                <div class="terminal-quick-buttons">
+                    <button class="term-quick-btn" onclick="runQuickCommand('git status')">git status</button>
+                    <button class="term-quick-btn" onclick="runQuickCommand('git add .')">git add .</button>
+                    <button class="term-quick-btn" onclick="runQuickCommand('git commit -m &quot;feat: summon stargate&quot;')">git commit</button>
+                    <button class="term-quick-btn" onclick="runQuickCommand('git checkout -b feature/portal')">checkout -b feature</button>
+                    <button class="term-quick-btn" onclick="runQuickCommand('git checkout main')">checkout main</button>
+                    <button class="term-quick-btn" onclick="runQuickCommand('git merge feature/portal')">git merge</button>
+                    <button class="term-quick-btn" onclick="runQuickCommand('git push origin main')">git push</button>
+                    <button class="term-quick-btn" onclick="runQuickCommand('git log')">git log</button>
+                </div>
+
+                <!-- Terminal Body Output -->
+                <div class="terminal-console-body" id="terminalConsoleBody">
+                    <div class="term-line term-prompt-cmd">devup@multiverse-nexus [main]$ git status</div>
+                    <div class="term-line term-out-highlight">On branch main</div>
+                    <div class="term-line term-out">Your branch is up to date with 'origin/main'.</div>
+                    <div class="term-line term-out-success">Welcome recruit! Type commands below or click the quick action chips above.</div>
+                </div>
+
+                <!-- Terminal Prompt Input -->
+                <div class="terminal-input-bar">
+                    <span style="color: #10B981; font-family: var(--font-mono); font-weight: 700;">$</span>
+                    <input type="text" id="terminalInputField" class="term-input-field" placeholder="Type a git command (e.g. git add ., git commit -m &quot;...&quot;, git merge)..." autocomplete="off" />
+                    <button class="btn-term-run" onclick="runQuickCommand(document.getElementById('terminalInputField').value); document.getElementById('terminalInputField').value='';">RUN</button>
+                </div>
+            </div>
+
+            <!-- Right: Real-time SVG Git Branch Visualizer -->
+            <div class="git-graph-viewport">
+                <div class="git-graph-header">
+                    <div class="graph-title">DIMENSIONAL BRANCH GRAPH</div>
+                    <div class="graph-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot-main"></span>
+                            <span>main timeline</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot-feature"></span>
+                            <span>feature timeline</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SVG Graph Drawing Canvas -->
+                <svg id="gitGraphSvg"></svg>
+
+                <div class="graph-status-bar">
+                    <span id="graphStatusText">Active Branch: main | Commits: 1</span>
+                    <span style="color: #64748B;">Live SVG Render Engine</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 4: CURRICULUM & MASTERCLASS ROADMAP
+       ============================================================ -->
+    <section id="curriculum" class="section-curriculum">
+        <div class="section-header-block">
+            <span class="section-tagline">SESSION SYLLABUS // ZERO TO HERO</span>
+            <h2 class="section-title">THE 5 CORE <span>PILLARS</span></h2>
+            <p class="section-description">
+                Directly from the poster curriculum ticker. Each module is engineered specifically for first-year freshers to transition from absolute novices to confident developers.
+            </p>
+        </div>
+
+        <div class="curriculum-grid">
+            <!-- Pillar 1 -->
+            <div class="curriculum-card">
+                <div class="curr-num-badge">01</div>
+                <h3 class="curr-card-title">GIT BASICS</h3>
+                <p class="curr-card-desc">
+                    What version control actually is, why tech companies never build without it, the three states (Working, Staging, Repository), and how commits freeze code snapshots in time.
+                </p>
+                <div class="curr-skill-tags">
+                    <span class="curr-tag">git init</span>
+                    <span class="curr-tag">git add</span>
+                    <span class="curr-tag">git commit</span>
+                    <span class="curr-tag">git status</span>
+                </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="curriculum-card">
+                <div class="curr-num-badge">02</div>
+                <h3 class="curr-card-title">GITHUB ECOSYSTEM</h3>
+                <p class="curr-card-desc">
+                    Connecting your local machine to the cloud. Setting up SSH keys, pushing your first repository to GitHub, writing clean README markdowns, and building an impressive fresher developer profile.
+                </p>
+                <div class="curr-skill-tags">
+                    <span class="curr-tag">git remote</span>
+                    <span class="curr-tag">git push</span>
+                    <span class="curr-tag">git clone</span>
+                    <span class="curr-tag">Markdown</span>
+                </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="curriculum-card">
+                <div class="curr-num-badge">03</div>
+                <h3 class="curr-card-title">BRANCHING &amp; MERGING</h3>
+                <p class="curr-card-desc">
+                    Creating alternate universe timelines. How to build features on separate branches without breaking main code, fast-forward merges, and fearlessly fixing merge conflicts.
+                </p>
+                <div class="curr-skill-tags">
+                    <span class="curr-tag">git branch</span>
+                    <span class="curr-tag">git checkout</span>
+                    <span class="curr-tag">git merge</span>
+                    <span class="curr-tag">Conflict Resolution</span>
+                </div>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="curriculum-card">
+                <div class="curr-num-badge">04</div>
+                <h3 class="curr-card-title">HANDS-ON PRACTICE</h3>
+                <p class="curr-card-desc">
+                    No boring slides. Follow-along terminal labs where you run real commands on your laptop, create real commits, test PRs, and see immediate visual results.
+                </p>
+                <div class="curr-skill-tags">
+                    <span class="curr-tag">Live Drills</span>
+                    <span class="curr-tag">Terminal Mastery</span>
+                    <span class="curr-tag">Interactive Repo</span>
+                </div>
+            </div>
+
+            <!-- Pillar 5 -->
+            <div class="curriculum-card">
+                <div class="curr-num-badge">05</div>
+                <h3 class="curr-card-title">REAL-WORLD USE CASES</h3>
+                <p class="curr-card-desc">
+                    How high-impact engineering teams ship code daily across Web, AI, and Cloud. Pull Request etiquette, open-source contributing (Hacktoberfest &amp; GSoC prep), and hackathon collaboration workflows.
+                </p>
+                <div class="curr-skill-tags">
+                    <span class="curr-tag">Pull Requests</span>
+                    <span class="curr-tag">Code Review</span>
+                    <span class="curr-tag">Open Source</span>
+                    <span class="curr-tag">Hackathons</span>
+                </div>
+            </div>
+
+            <!-- Pillar 6 -->
+            <div class="curriculum-card" style="border-color: rgba(255, 106, 0, 0.4); background: rgba(255, 106, 0, 0.04);">
+                <div class="curr-num-badge" style="color: #FFA800;">06</div>
+                <h3 class="curr-card-title">TECH DOMAIN ROADMAP</h3>
+                <p class="curr-card-desc">
+                    Complete guidance for 1st-year freshers on choosing your tech path (Web Dev, AI/ML, Cybersecurity, Cloud, or DSA). What to learn in Semester 1 &amp; 2, avoiding burnout, and building proof of work.
+                </p>
+                <div class="curr-skill-tags">
+                    <span class="curr-tag" style="background: rgba(255, 106, 0, 0.15); color: #FFA800;">Domain Selection</span>
+                    <span class="curr-tag">Year 1 Roadmap</span>
+                    <span class="curr-tag">Mentorship</span>
+                    <span class="curr-tag">DevUp Collab</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 5: HOLOGRAPHIC MULTIVERSE PASS GENERATOR (RSVP)
+       ============================================================ -->
+    <section id="ticket-pass" class="section-ticket-generator">
+        <div class="section-header-block">
+            <span class="section-tagline">OFFICIAL RECRUIT CLEARANCE // PASS DISPATCH</span>
+            <h2 class="section-title">GENERATE YOUR <span>EVENT PASS</span></h2>
+            <p class="section-description">
+                Register for the September 10 masterclass and mint your personalized holographic multiverse recruit badge with a verifiable QR code.
+            </p>
+        </div>
+
+        <div class="ticket-builder-layout">
+            <!-- Form Card -->
+            <div class="ticket-form-card">
+                <h3 class="ticket-form-title">RECRUIT IDENTIFICATION</h3>
+                <p class="ticket-form-desc">Fill in your freshman details to calibrate your multiverse credential.</p>
+
+                <form onsubmit="generateMultiversePass(event)">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" id="passNameInput" class="form-input" placeholder="e.g. Alex Mercer" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">College Department &amp; Section</label>
+                        <input type="text" id="passDeptInput" class="form-input" placeholder="e.g. Computer Science - Section B" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Select Your Universe Archetype</label>
+                        <select id="passUnivSelect" class="form-select">
+                            <option value="web">Web Universe (Collaborative &amp; Open Source)</option>
+                            <option value="dark">Dark Universe (Disciplined &amp; Vigilant)</option>
+                            <option value="innov">Innovation Universe (Automation &amp; CI/CD)</option>
+                            <option value="strength">Strength Universe (Resilient Architecture)</option>
+                            <option value="cosmic">Cosmic Universe (Limitless Exploration)</option>
+                            <option value="speed">Speed Universe (Fast Branching &amp; Velocity)</option>
+                            <option value="tech">Tech Universe (Terminal CLI Master)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-generate-ticket">
+                        <span>GENERATE HOLOGRAPHIC PASS</span>
+                        <span>⚡</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Preview Viewport -->
+            <div class="ticket-preview-viewport">
+                <!-- Holographic Pass Card -->
+                <div class="holographic-event-pass" id="holographicPassCard">
+                    <!-- Pass Header -->
+                    <div class="pass-header">
+                        <div class="pass-brand-title">DEVUP // <span>GIT &amp; GITHUB</span></div>
+                        <div class="pass-recruiter-id" id="previewRecruitId">DEVUP-2026-X491</div>
+                    </div>
+
+                    <!-- Pass Body -->
+                    <div class="pass-body">
+                        <div>
+                            <div class="pass-attendee-name" id="previewAttendeeName">RECRUIT DEVELOPER</div>
+                            <div class="pass-attendee-sub" id="previewAttendeeSub">FIRST YEAR FRESHER · BATCH OF 2026-30</div>
+                            <div class="pass-selected-universe-pill" id="previewUnivPill">
+                                <span>🕷️</span>
+                                <span>WEB UNIVERSE · CODE CREATE COLLAB REPEAT</span>
+                            </div>
+                        </div>
+
+                        <!-- High Tech QR Code -->
+                        <div class="pass-qr-box">
+                            <svg class="pass-qr-img" viewBox="0 0 100 100">
+                                <rect width="100" height="100" fill="#FFFFFF" />
+                                <rect x="10" y="10" width="30" height="30" fill="#000000" />
+                                <rect x="15" y="15" width="20" height="20" fill="#FFFFFF" />
+                                <rect x="20" y="20" width="10" height="10" fill="#FF5A00" />
+
+                                <rect x="60" y="10" width="30" height="30" fill="#000000" />
+                                <rect x="65" y="15" width="20" height="20" fill="#FFFFFF" />
+                                <rect x="70" y="20" width="10" height="10" fill="#FF5A00" />
+
+                                <rect x="10" y="60" width="30" height="30" fill="#000000" />
+                                <rect x="15" y="65" width="20" height="20" fill="#FFFFFF" />
+                                <rect x="20" y="70" width="10" height="10" fill="#FF5A00" />
+
+                                <!-- Pattern Blocks -->
+                                <rect x="45" y="15" width="8" height="15" fill="#000000" />
+                                <rect x="45" y="40" width="15" height="8" fill="#000000" />
+                                <rect x="65" y="55" width="20" height="8" fill="#000000" />
+                                <rect x="50" y="70" width="10" height="15" fill="#000000" />
+                                <rect x="75" y="75" width="12" height="12" fill="#FF5A00" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Pass Footer -->
+                    <div class="pass-footer">
+                        <div class="pass-event-date">
+                            <span>10 SEP 2026 // TIME: TBA</span>
+                        </div>
+                        <div class="pass-verified-seal">
+                            <span>✓</span>
+                            <span>VERIFIED FRESHER ACCESS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pass Download Button -->
+                <div class="pass-actions-bar">
+                    <button class="btn-download-pass" onclick="downloadPassAsImage()">
+                        <span>💾</span>
+                        <span>DOWNLOAD PASS (.PNG)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 6: EVENT INTEL & FRESHER FAQ
+       ============================================================ -->
+    <section id="intel-faq" class="section-intel-faq">
+        <div class="section-header-block">
+            <span class="section-tagline">FRESHER INTEL // QUESTIONS ANSWERED</span>
+            <h2 class="section-title">COMMONLY ASKED <span>QUESTIONS</span></h2>
+            <p class="section-description">
+                Everything first-year college recruits need to know before joining the DevUp Git &amp; GitHub session.
+            </p>
+        </div>
+
+        <div class="faq-accordion-list">
+            <!-- Q1 -->
+            <div class="faq-card open">
+                <button class="faq-header-btn">
+                    <span class="faq-question">Do I need prior coding or Git experience to attend?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-body-content">
+                    <strong>Zero prior experience is required!</strong> This session is specifically tailored for first-year freshers. We begin with fundamental concepts in plain English, explain why Git exists, and guide you click-by-click and command-by-command.
+                </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="faq-card">
+                <button class="faq-header-btn">
+                    <span class="faq-question">Do I need to bring my own laptop?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-body-content">
+                    Bringing a laptop is recommended so you can participate in the live hands-on practice session and create your first real GitHub repository on the spot. However, if you don't have one on that day, you can still attend, take notes, pair with a classmate, or use the online simulator!
+                </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="faq-card">
+                <button class="faq-header-btn">
+                    <span class="faq-question">Is registration free for all first years?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-body-content">
+                    Yes! The DevUp Upskill Collab Git &amp; GitHub session is 100% free and open for all first-year students across all engineering branches and departments.
+                </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="faq-card">
+                <button class="faq-header-btn">
+                    <span class="faq-question">When and where will the exact session timing be announced?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-body-content">
+                    The session date is fixed for <strong>10 September 2026</strong>. Exact time and auditorium venue coordinates will be broadcast via DevUp WhatsApp groups, student broadcast channels, and updated right here on this portal. Claim your pass above to stay registered!
+                </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="faq-card">
+                <button class="faq-header-btn">
+                    <span class="faq-question">Why is Git so important in college?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-body-content">
+                    Git is the universal language of software developers. Whether you build web applications, train AI models, participate in hackathons, or apply for tech internships, your GitHub profile serves as your living portfolio and proof of work.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       POSTER FOOTER & BRANDING
+       ============================================================ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <!-- Poster Slogans Row -->
+            <div class="footer-poster-slogans-row">
+                <div class="footer-quote-left">
+                    "More Than Just Code - A Community"
+                </div>
+
+                <div class="footer-organizer-center">
+                    <div class="organizer-label">ORGANIZED BY</div>
+                    <div class="organizer-brand-name">DEVUP <span>UPSKILL COLLAB</span></div>
+                </div>
+
+                <div class="footer-quote-right">
+                    "Different Learners · Same Future"
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="footer-bottom-row">
+                <div>
+                    © 2026 DevUp Upskill Collab. Designed for first-year recruits stepping into the bigger universe.
+                </div>
+                <div>
+                    <span>ONE SESSION · MULTIPLE UNIVERSES · ONE SKILL</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+       LIGHTBOX MODAL FOR ORIGINAL EVENT POSTER
+       ============================================================ -->
+    <div class="modal-poster-overlay" id="posterModal" onclick="closePosterModal()">
+        <div class="modal-poster-content" onclick="event.stopPropagation()">
+            <button class="btn-close-poster-modal" onclick="closePosterModal()" title="Close Lightbox">✕</button>
+            <img src="assets/poster.jpg" alt="Official DEVUP Git &amp; GitHub Session Poster" class="modal-poster-img" />
+        </div>
+    </div>
+
+    <!-- JavaScript Scripts -->
+    <script src="js/audio.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

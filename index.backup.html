@@ -1,0 +1,4521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>DEVUP — INTO THE MULTIVERSE | DevUp Club Event</title>
+    <meta name="description"
+        content="Enter the DevUp Multiverse. Explore technology domains, discover your superhero path, master Git & GitHub, and build your future.">
+    <meta name="theme-color" content="#E52521">
+
+    <!-- Open Graph & Social Cards -->
+    <meta property="og:title" content="DEVUP — INTO THE MULTIVERSE">
+    <meta property="og:description"
+        content="Enter the Verse. Find Your Path. Build Your Future. A cinematic 2-day developer event for recruits.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon: Spider Web Portal Icon -->
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23E52521'/%3E%3Ccircle cx='50' cy='50' r='36' fill='none' stroke='%23FFFFFF' stroke-width='4'/%3E%3Cpath d='M50 14 L50 86 M14 50 L86 50 M24 24 L76 76 M24 76 L76 24' stroke='%23FFFFFF' stroke-width='3'/%3E%3Ccircle cx='50' cy='50' r='16' fill='%230F172A' stroke='%23FFFFFF' stroke-width='3'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ============================================================
+           DEVUP MULTIVERSE — HIGH-ENERGY LIGHT THEME DESIGN TOKENS
+           ============================================================ */
+        :root {
+            /* Primary Spider-Man & Marvel Colors */
+            --spidey-red: #E52521;
+            --spidey-red-dark: #B91C1C;
+            --spidey-red-light: #FEE2E2;
+            --spidey-blue: #0284C7;
+            --spidey-blue-dark: #0369A1;
+            --spidey-navy: #0F172A;
+
+            /* Domain Accent Colors */
+            --color-web: #E52521;        /* Spider-Man Web Red */
+            --color-ai: #D97706;         /* Iron Man Stark Gold */
+            --color-dsa: #059669;        /* Doctor Strange Mystic Green */
+            --color-cloud: #0284C7;      /* Thor Electric Azure */
+            --color-cyber: #4338CA;      /* Cap Shield Indigo/Navy */
+
+            /* Section Background Palette (Different for every section) */
+            --bg-nav: rgba(255, 255, 255, 0.94);
+            --bg-hero: #FFFFFF;
+            --bg-map: #B91C1C;           /* Spider-Man & Iron Man Signature Crimson Red */
+            --bg-domains: #FFFFFF;       /* Pure White for Card Pop */
+            --bg-command: #FFF1F2;       /* Soft Energetic Rose/Red */
+            --bg-timeline: #F0F9FF;      /* Sky/Azure Tint */
+            --bg-terminal: #991B1B;      /* Reddish Stark Lab / Spider-Man Crimson */
+            --bg-register: #FEFCE8;      /* White & Yellowish Stark Gold / Champagne */
+            --bg-footer: #0F172A;        /* Deep Navy High Contrast */
+
+            /* Neutral Typography & Surface Tokens */
+            --surface-card: #FFFFFF;
+            --surface-border: #E2E8F0;
+            --surface-border-strong: #CBD5E1;
+            
+            --text-heading: #0F172A;
+            --text-body: #334155;
+            --text-muted: #64748B;
+            --text-light: #94A3B8;
+
+            /* Typography */
+            --font-display: 'Chakra Petch', sans-serif;
+            --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Shadows & Transitions */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.08), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+            --shadow-xl: 0 20px 32px -6px rgba(15, 23, 42, 0.12), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+            --shadow-red: 0 10px 25px -3px rgba(229, 37, 33, 0.35);
+
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --radius-full: 9999px;
+            --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-hero);
+            color: var(--text-body);
+            font-family: var(--font-body);
+        }
+
+        body {
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--spidey-red);
+        }
+
+        /* Web Pattern Background Utility */
+        .spider-web-bg {
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(229, 37, 33, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.04) 0%, transparent 40%),
+                linear-gradient(rgba(226, 232, 240, 0.45) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(226, 232, 240, 0.45) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+        }
+
+        /* ============================================================
+           STICKY HEADER & NAVIGATION
+           ============================================================ */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: var(--bg-nav);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 2px solid #F1F5F9;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.2s;
+        }
+        .header-inner {
+            max-width: 1240px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .brand-spider-badge {
+            width: 42px;
+            height: 42px;
+            background: var(--spidey-red);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(229, 37, 33, 0.35);
+        }
+        .brand-name {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-heading);
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+        .brand-name span {
+            color: var(--spidey-red);
+        }
+        .brand-sub {
+            font-family: var(--font-mono);
+            font-size: 10.5px;
+            color: var(--spidey-blue);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+        }
+        .nav-item-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: color 0.15s;
+            position: relative;
+            padding: 6px 0;
+        }
+        .nav-item-link:hover, .nav-item-link.active {
+            color: var(--spidey-red);
+        }
+        .nav-item-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--spidey-red);
+            transition: width 0.2s;
+        }
+        .nav-item-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .recruit-badge-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #F8FAFC;
+            border: 1px solid var(--surface-border);
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+        .recruit-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--spidey-red);
+            box-shadow: 0 0 8px rgba(229, 37, 33, 0.6);
+            animation: pulseBlink 2s infinite;
+        }
+        @keyframes pulseBlink {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(0.8); opacity: 0.4; }
+        }
+
+        .btn-register-nav {
+            background: var(--spidey-red);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-size: 13.5px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-red);
+            transition: all 0.2s;
+        }
+        .btn-register-nav:hover {
+            background: var(--spidey-red-dark);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 900px) {
+            .main-nav { display: none; }
+        }
+
+        /* ============================================================
+           COMMON SECTION STYLING & CONTAINERS
+           ============================================================ */
+        .section-wrapper {
+            position: relative;
+            padding: 100px 24px;
+        }
+        .section-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+        .section-header-block {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 56px;
+        }
+        .section-category-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--spidey-red-light);
+            color: var(--spidey-red);
+            border: 1px solid rgba(229, 37, 33, 0.2);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .section-main-title {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 4.5vw, 46px);
+            font-weight: 700;
+            color: var(--text-heading);
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+        .section-main-title span {
+            color: var(--spidey-red);
+        }
+        .section-lead-text {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+
+        /* ============================================================
+           SECTION 1: HERO SECTION (White & Spider-Man Red Comic Vibe)
+           ============================================================ */
+        .section-hero {
+            background-color: var(--bg-hero);
+            min-height: calc(100vh - 72px);
+            margin-top: 72px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            align-items: center;
+            width: 100%;
+        }
+        @media (max-width: 960px) {
+            .hero-layout { grid-template-columns: 1fr; text-align: center; }
+            .hero-cta-group { justify-content: center; }
+            .hero-feature-pills { justify-content: center; }
+        }
+
+        .hero-banner-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #FEF2F2;
+            border: 1px solid #FCA5A5;
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            color: var(--spidey-red);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .hero-title-main {
+            font-family: var(--font-display);
+            font-size: clamp(40px, 5.8vw, 68px);
+            font-weight: 800;
+            color: var(--text-heading);
+            line-height: 1.05;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .hero-title-main .red-accent {
+            color: var(--spidey-red);
+            position: relative;
+            display: inline-block;
+        }
+        .hero-title-main .red-accent::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(229, 37, 33, 0.15);
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero-tagline-quote {
+            font-size: clamp(17px, 2vw, 20px);
+            color: var(--text-body);
+            font-weight: 500;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+        .hero-tagline-quote strong {
+            color: var(--spidey-red);
+            font-weight: 700;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+        .btn-hero-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--spidey-red);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 16px 30px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-red);
+            transition: all 0.2s;
+        }
+        .btn-hero-primary:hover {
+            background: var(--spidey-red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -4px rgba(229, 37, 33, 0.45);
+        }
+        .btn-hero-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #FFFFFF;
+            color: var(--text-heading);
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 15px 26px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--surface-border-strong);
+            transition: all 0.2s;
+        }
+        .btn-hero-secondary:hover {
+            border-color: var(--spidey-blue);
+            color: var(--spidey-blue);
+            background: #F0F9FF;
+        }
+
+        .hero-feature-pills {
+            display: flex;
+            gap: 20px;
+            border-top: 1px solid #E2E8F0;
+            padding-top: 24px;
+            flex-wrap: wrap;
+        }
+        .hero-pill-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .pill-number {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--spidey-red);
+            line-height: 1.1;
+        }
+        .pill-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        /* Hero Superhero Showcase Card */
+        .hero-character-box {
+            position: relative;
+            background: #FFFFFF;
+            border: 2px solid #CBD5E1;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transition: transform 0.3s var(--ease-cinematic);
+        }
+        .hero-character-box:hover {
+            transform: translateY(-6px);
+            border-color: var(--spidey-red);
+        }
+        .hero-character-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--spidey-red), var(--spidey-blue));
+            z-index: 2;
+        }
+        .hero-img-element {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+            background: #0F172A;
+        }
+        .hero-card-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--spidey-red);
+            color: var(--spidey-red);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+        }
+        .hero-card-meta {
+            padding: 20px 24px;
+            background: #FFFFFF;
+            border-top: 1px solid var(--surface-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .hero-char-title {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+        .hero-char-domain {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--spidey-red);
+            font-weight: 600;
+        }
+
+        /* ============================================================
+           SECTION 2: MULTIVERSE COMMAND NEXUS (Spider-Man & Iron Man Crimson Red)
+           ============================================================ */
+        .section-map {
+            background-color: var(--bg-map);
+            background-image:
+                radial-gradient(circle at 15% 18%, rgba(254, 240, 138, 0.22) 0%, transparent 40%), /* Stark Arc Reactor Gold Glow */
+                radial-gradient(circle at 85% 82%, rgba(2, 132, 199, 0.25) 0%, transparent 45%), /* Spider-Man Electric Azure Web Glow */
+                radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.35) 0%, transparent 65%),
+                linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(135deg, #991B1B 0%, #DC2626 48%, #7F1D1D 100%);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px, 100% 100%;
+            position: relative;
+            border-top: 4px solid #E52521;
+            border-bottom: 4px solid #7F1D1D;
+            box-shadow: inset 0 14px 36px rgba(0, 0, 0, 0.25), inset 0 -14px 36px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+        .section-map::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.16), transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .section-map .section-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section 2 Header Text on Red Background */
+        .section-map .section-category-tag {
+            background: #FEF08A;
+            color: #7F1D1D;
+            border: 1px solid #FDE047;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        }
+        .section-map .section-main-title {
+            color: #FFFFFF;
+            text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+        }
+        .section-map .section-main-title span {
+            color: #FEF08A;
+            text-shadow: 0 0 24px rgba(254, 240, 138, 0.6);
+        }
+        .section-map .section-lead-text {
+            color: #FEE2E2;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+        }
+
+        /* Multiverse Station Tabs Navigation */
+        .multiverse-station-tabs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        .mv-station-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #FFFFFF;
+            border: 2px solid rgba(255, 255, 255, 0.95);
+            padding: 10px 20px;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s var(--ease-cinematic);
+            font-family: var(--font-display);
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+        .mv-station-btn:hover {
+            border-color: #FEF08A;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+        }
+        .mv-station-btn.active {
+            background: #FFFFFF;
+            border-color: #FBBF24;
+            color: #B91C1C;
+            box-shadow: 0 0 0 3px #FEF08A, 0 10px 26px rgba(0, 0, 0, 0.32);
+        }
+        .mv-station-btn .mv-tab-icon {
+            font-size: 18px;
+            line-height: 1;
+        }
+        .mv-station-btn .mv-tab-tag {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--text-muted);
+            font-weight: 700;
+            background: #F1F5F9;
+            padding: 2px 6px;
+            border-radius: var(--radius-sm);
+        }
+        .mv-station-btn.active .mv-tab-tag {
+            background: #FEE2E2;
+            color: #B91C1C;
+        }
+
+        /* Main Multiverse Control Deck */
+        .multiverse-control-deck {
+            background: #FFFFFF;
+            border: 2px solid var(--deck-border, #E2E8F0);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.38), 0 10px 20px rgba(0, 0, 0, 0.18);
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 36px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        @media (max-width: 960px) {
+            .multiverse-control-deck {
+                grid-template-columns: 1fr;
+                padding: 24px;
+            }
+        }
+        .multiverse-control-deck::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--deck-accent, var(--spidey-red)), var(--spidey-blue));
+            transition: background 0.3s;
+        }
+
+        /* Left: Live Dimensional Portal Box */
+        .portal-viewport-frame {
+            background: #0F172A;
+            border-radius: var(--radius-md);
+            border: 2px solid #334155;
+            position: relative;
+            overflow: hidden;
+            height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.7);
+        }
+        .portal-ring-animation {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            border: 3px dashed var(--deck-accent, var(--spidey-red));
+            opacity: 0.35;
+            animation: rotatePortal 14s linear infinite;
+        }
+        @keyframes rotatePortal {
+            to { transform: rotate(360deg); }
+        }
+        .portal-hero-artwork {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.4s var(--ease-cinematic);
+        }
+        .portal-viewport-frame:hover .portal-hero-artwork {
+            transform: scale(1.04);
+        }
+        .portal-hud-bracket-tl {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            width: 20px;
+            height: 20px;
+            border-top: 3px solid var(--deck-accent, var(--spidey-red));
+            border-left: 3px solid var(--deck-accent, var(--spidey-red));
+            z-index: 5;
+        }
+        .portal-hud-bracket-br {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            width: 20px;
+            height: 20px;
+            border-bottom: 3px solid var(--deck-accent, var(--spidey-red));
+            border-right: 3px solid var(--deck-accent, var(--spidey-red));
+            z-index: 5;
+        }
+        .portal-frequency-tag {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid var(--deck-accent, var(--spidey-red));
+            color: #FFFFFF;
+            font-family: var(--font-mono);
+            font-size: 10.5px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            z-index: 5;
+            letter-spacing: 1px;
+        }
+        .portal-overlay-action {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(0deg, #0F172A 0%, rgba(15, 23, 42, 0.85) 60%, transparent 100%);
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .portal-action-label {
+            color: #FFFFFF;
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .portal-action-sub {
+            color: #94A3B8;
+            font-family: var(--font-mono);
+            font-size: 11px;
+        }
+        .btn-portal-jump {
+            background: var(--deck-accent, var(--spidey-red));
+            color: #FFFFFF;
+            border: none;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 9px 16px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.2s;
+        }
+        .btn-portal-jump:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+        }
+
+        /* Right: Interdimensional Intel Matrix */
+        .intel-matrix-content {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .intel-universe-id {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #F1F5F9;
+            border: 1px solid #CBD5E1;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--deck-accent, var(--spidey-red));
+            width: fit-content;
+        }
+        .intel-hero-heading {
+            font-family: var(--font-display);
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 800;
+            color: var(--text-heading);
+            line-height: 1.15;
+        }
+        .intel-hero-heading span {
+            color: var(--deck-accent, var(--spidey-red));
+        }
+        .intel-quote-box {
+            font-size: 15px;
+            font-style: italic;
+            color: var(--text-body);
+            border-left: 4px solid var(--deck-accent, var(--spidey-red));
+            padding-left: 14px;
+            line-height: 1.5;
+            background: #F8FAFC;
+            padding: 10px 14px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+        .intel-breakdown-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        @media (max-width: 600px) {
+            .intel-breakdown-box { grid-template-columns: 1fr; }
+        }
+        .intel-fact-card {
+            background: #F8FAFC;
+            border: 1px solid var(--surface-border);
+            border-radius: var(--radius-md);
+            padding: 14px;
+        }
+        .ifc-label {
+            font-family: var(--font-mono);
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .ifc-val {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-heading);
+            line-height: 1.4;
+        }
+        .intel-skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .intel-skill-pill {
+            background: #F1F5F9;
+            border: 1px solid #CBD5E1;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--text-heading);
+        }
+        .intel-actions-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .btn-intel-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--deck-accent, var(--spidey-red));
+            color: #FFFFFF;
+            border: none;
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            padding: 12px 22px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: all 0.2s;
+        }
+        .btn-intel-primary:hover {
+            filter: brightness(0.92);
+            transform: translateY(-1px);
+        }
+        .btn-intel-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #FFFFFF;
+            color: var(--text-heading);
+            border: 2px solid var(--surface-border);
+            font-family: var(--font-display);
+            font-size: 13.5px;
+            font-weight: 700;
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-intel-secondary:hover {
+            border-color: var(--deck-accent, var(--spidey-red));
+            color: var(--deck-accent, var(--spidey-red));
+            background: #FEF2F2;
+        }
+
+        /* Bottom Constellation Track Cards */
+        .constellation-track-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 28px;
+        }
+        .constellation-node-card {
+            background: #FFFFFF;
+            border: 2px solid rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+            cursor: pointer;
+            transition: all 0.2s var(--ease-cinematic);
+        }
+        .constellation-node-card:hover {
+            border-color: #FEF08A;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+        }
+        .constellation-node-card.active {
+            border-color: #FBBF24;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px #FEF08A, 0 12px 28px rgba(0, 0, 0, 0.28);
+        }
+        .cnc-icon-box {
+            width: 44px;
+            height: 44px;
+            background: #F8FAFC;
+            border: 1px solid var(--surface-border);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        .cnc-name {
+            font-family: var(--font-display);
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-heading);
+            line-height: 1.2;
+        }
+        .cnc-status {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 600;
+            color: #059669;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 2px;
+        }
+
+        /* ============================================================
+           SECTION 3: THE MULTIVERSE TIMELINE & DOMAINS
+           ============================================================ */
+        .section-domains {
+            background-color: var(--bg-domains);
+            border-bottom: 1px solid #E2E8F0;
+            position: relative;
+        }
+
+        /* ------------------------------------------------------------
+           CINEMATIC MULTIVERSE ORBITAL VIDEO DECK (Domains revolving a line)
+           ------------------------------------------------------------ */
+        .multiverse-video-deck {
+            background: #0B0F19;
+            border: 2px solid #334155;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 24px 60px -12px rgba(15, 23, 42, 0.45), 0 0 40px rgba(229, 37, 33, 0.15);
+            margin-bottom: 54px;
+            position: relative;
+        }
+        .mv-video-topbar {
+            background: #0F172A;
+            border-bottom: 1px solid #334155;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            color: #94A3B8;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .mv-rec-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #EF4444;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+        .mv-rec-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #EF4444;
+            box-shadow: 0 0 12px #EF4444;
+            animation: recBlink 1s ease-in-out infinite alternate;
+        }
+        @keyframes recBlink {
+            from { opacity: 0.3; transform: scale(0.85); }
+            to { opacity: 1; transform: scale(1.2); }
+        }
+        .mv-video-viewport {
+            position: relative;
+            width: 100%;
+            height: 520px;
+            background: #030712;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .mv-video-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.38;
+            filter: brightness(0.85) contrast(1.15);
+            pointer-events: none;
+            transition: transform 12s ease-out;
+        }
+        .multiverse-video-deck:hover .mv-video-bg {
+            transform: scale(1.05);
+        }
+        #multiverseOrbitCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            cursor: pointer;
+        }
+        .mv-video-hud-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 24px;
+        }
+        .mv-hud-title-wrap {
+            text-align: center;
+            margin-top: 6px;
+        }
+        .mv-hud-watermark {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 4.5vw, 44px);
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #FFFFFF;
+            text-shadow: 0 0 25px rgba(229, 37, 33, 0.8), 0 0 50px rgba(254, 240, 138, 0.5);
+            text-transform: uppercase;
+            line-height: 1;
+        }
+        .mv-hud-submark {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #FCD34D;
+            margin-top: 6px;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(252, 211, 77, 0.6);
+        }
+        .mv-hud-axis-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(254, 240, 138, 0.6);
+            color: #FEF08A;
+            font-family: var(--font-mono);
+            font-size: 9.5px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            pointer-events: none;
+            box-shadow: 0 0 18px rgba(254, 240, 138, 0.35);
+            z-index: 4;
+        }
+        .mv-video-controls-bar {
+            background: #0F172A;
+            border-top: 1px solid #334155;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 4;
+        }
+        .mv-ctrl-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .btn-mv-ctrl {
+            background: #1E293B;
+            border: 1px solid #475569;
+            color: #F8FAFC;
+            font-family: var(--font-display);
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .btn-mv-ctrl:hover {
+            background: #334155;
+            border-color: #94A3B8;
+            transform: translateY(-1px);
+        }
+        .btn-mv-ctrl.active {
+            background: var(--spidey-red);
+            border-color: var(--spidey-red);
+            color: #FFFFFF;
+            box-shadow: 0 0 14px rgba(229, 37, 33, 0.6);
+        }
+        .btn-mv-pill {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid #475569;
+            color: #CBD5E1;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-mv-pill:hover, .btn-mv-pill.active {
+            background: #FFFFFF;
+            color: #0F172A;
+            border-color: #FEF08A;
+            font-weight: 700;
+            box-shadow: 0 0 12px rgba(254, 240, 138, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* ------------------------------------------------------------
+           REAL-HERO DOMAINS GRID & CARDS
+           ------------------------------------------------------------ */
+        .hero-domains-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+        .hero-domain-card {
+            background: #FFFFFF;
+            border: 2px solid var(--surface-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s var(--ease-cinematic);
+            cursor: pointer;
+            position: relative;
+        }
+        .hero-domain-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px -10px rgba(15, 23, 42, 0.2);
+            border-color: var(--domain-accent, var(--spidey-red));
+        }
+        .card-top-tagline {
+            height: 6px;
+            background: var(--domain-accent, var(--spidey-red));
+        }
+        .hdc-img-wrapper {
+            position: relative;
+            height: 250px;
+            background: #0F172A;
+            overflow: hidden;
+        }
+        .hdc-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-cinematic);
+            display: block;
+        }
+        .hero-domain-card:hover .hdc-img {
+            transform: scale(1.08);
+        }
+        .hdc-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--domain-accent, var(--spidey-red));
+            color: #FFFFFF;
+            font-family: var(--font-mono);
+            font-size: 10.5px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+        .hdc-live-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(15, 23, 42, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #FEF08A;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            z-index: 2;
+        }
+        .hdc-img-toggle-btn {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid #FCD34D;
+            color: #FCD34D;
+            font-family: var(--font-display);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            z-index: 3;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+        .hdc-img-toggle-btn:hover {
+            background: #FCD34D;
+            color: #0F172A;
+            transform: translateY(-1px);
+        }
+        .hdc-body {
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .hdc-title {
+            font-family: var(--font-display);
+            font-size: 23px;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+        .hdc-hero-role {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--domain-accent, var(--spidey-red));
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        .hdc-quote {
+            font-size: 14px;
+            font-style: italic;
+            color: var(--text-body);
+            border-left: 3px solid var(--domain-accent, var(--spidey-red));
+            padding-left: 12px;
+            margin-bottom: 18px;
+            line-height: 1.5;
+            background: #F8FAFC;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+        .hdc-specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .hdc-spec-item {
+            background: #F8FAFC;
+            border: 1px solid var(--surface-border);
+            padding: 8px 10px;
+            border-radius: var(--radius-sm);
+        }
+        .hdc-spec-label {
+            font-family: var(--font-mono);
+            font-size: 9.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .hdc-spec-val {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-top: 2px;
+        }
+        .hdc-skills-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: auto;
+            margin-bottom: 22px;
+        }
+        .skill-badge-item {
+            background: #F1F5F9;
+            color: var(--text-heading);
+            border: 1px solid #CBD5E1;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 9px;
+            border-radius: var(--radius-sm);
+        }
+        .btn-card-explore {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            background: #F8FAFC;
+            border: 1.5px solid var(--surface-border);
+            color: var(--text-heading);
+            font-family: var(--font-display);
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            padding: 12px 18px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .hero-domain-card:hover .btn-card-explore {
+            background: var(--domain-accent, var(--spidey-red));
+            color: #FFFFFF;
+            border-color: var(--domain-accent, var(--spidey-red));
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ============================================================
+           SECTION 4: DEVUP INDUSTRIES (Soft Energetic Rose BG #FFF1F2)
+           ============================================================ */
+        .section-command {
+            background-color: var(--bg-command);
+            border-bottom: 1px solid #FECDD3;
+        }
+        .command-dashboard-card {
+            background: #FFFFFF;
+            border: 2px solid #FECDD3;
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            box-shadow: var(--shadow-lg);
+        }
+        .dashboard-header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #FEE2E2;
+            padding-bottom: 20px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .dash-title {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+        .dash-system-meta {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--spidey-red);
+            font-weight: 700;
+        }
+        .status-pill-online {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #ECFDF5;
+            color: #059669;
+            border: 1px solid #A7F3D0;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+        }
+        .command-grid-cells {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .command-node-box {
+            background: #FAFAFA;
+            border: 1px solid var(--surface-border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s;
+        }
+        .command-node-box:hover {
+            border-color: var(--spidey-red);
+            background: #FFFFFF;
+            box-shadow: var(--shadow-md);
+        }
+        .cnb-name {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+        .cnb-meta {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+        .cnb-status-tag {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            color: #059669;
+            background: #ECFDF5;
+            padding: 3px 8px;
+            border-radius: var(--radius-sm);
+        }
+
+        /* ============================================================
+           SECTION 5: TIMELINE (Sky / Azure Tint BG #F0F9FF)
+           ============================================================ */
+        .section-timeline {
+            background-color: var(--bg-timeline);
+            border-bottom: 1px solid #BAE6FD;
+        }
+        .timeline-tab-bar {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .t-tab-button {
+            background: #FFFFFF;
+            border: 2px solid #BAE6FD;
+            color: var(--text-heading);
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 12px 28px;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+        }
+        .t-tab-button.active {
+            background: var(--spidey-red);
+            border-color: var(--spidey-red);
+            color: #FFFFFF;
+            box-shadow: var(--shadow-red);
+        }
+        .missions-card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .mission-row-card {
+            background: #FFFFFF;
+            border: 2px solid #E0F2FE;
+            border-radius: var(--radius-md);
+            padding: 24px 28px;
+            display: grid;
+            grid-template-columns: 70px 1fr auto;
+            align-items: center;
+            gap: 24px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+        }
+        .mission-row-card:hover {
+            border-color: var(--spidey-blue);
+            transform: translateX(6px);
+            box-shadow: var(--shadow-md);
+        }
+        @media (max-width: 700px) {
+            .mission-row-card { grid-template-columns: 1fr; gap: 12px; }
+        }
+        .mission-order-badge {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--spidey-blue);
+            background: #E0F2FE;
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .mission-title-h4 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 4px;
+        }
+        .mission-desc-p {
+            font-size: 14px;
+            color: var(--text-body);
+            line-height: 1.5;
+        }
+        .mission-time-tag {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--spidey-blue-dark);
+            background: #E0F2FE;
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            white-space: nowrap;
+        }
+
+        /* ============================================================
+           SECTION 6: BUILD PROTOCOL (Reddish Stark Lab & Git Terminal)
+           ============================================================ */
+        .section-terminal {
+            background-color: var(--bg-terminal);
+            background-image:
+                radial-gradient(circle at 18% 22%, rgba(254, 240, 138, 0.22) 0%, transparent 42%), /* Stark Gold Arc Glow */
+                radial-gradient(circle at 82% 78%, rgba(56, 189, 248, 0.20) 0%, transparent 45%),  /* Spider Azure Pulse */
+                radial-gradient(circle at 50% 50%, rgba(220, 38, 38, 0.40) 0%, transparent 70%),
+                linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(135deg, #7F1D1D 0%, #B91C1C 45%, #991B1B 80%, #6B1111 100%);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px, 100% 100%;
+            position: relative;
+            border-top: 4px solid #E52521;
+            border-bottom: 4px solid #7F1D1D;
+            box-shadow: inset 0 16px 36px rgba(0, 0, 0, 0.3), inset 0 -16px 36px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .section-terminal::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.15), transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .section-terminal .section-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section 6 Header Text on Reddish Background */
+        .section-terminal .section-category-tag {
+            background: #FEF08A;
+            color: #7F1D1D;
+            border: 1px solid #FDE047;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        }
+        .section-terminal .section-main-title {
+            color: #FFFFFF;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+        }
+        .section-terminal .section-main-title span {
+            color: #FEF08A;
+            text-shadow: 0 0 24px rgba(254, 240, 138, 0.6);
+        }
+        .section-terminal .section-lead-text {
+            color: #FEE2E2;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+            max-width: 720px;
+        }
+
+        .terminal-shell-card {
+            max-width: 860px;
+            margin: 0 auto;
+            background: #0B1120;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.65), 0 0 32px rgba(254, 240, 138, 0.18);
+            border: 2px solid rgba(254, 240, 138, 0.45);
+        }
+        .terminal-header-mac {
+            background: #111C33;
+            padding: 13px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .mac-lights-flex {
+            display: flex;
+            gap: 8px;
+        }
+        .mac-light {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .mac-red { background: #EF4444; }
+        .mac-yellow { background: #F59E0B; }
+        .mac-green { background: #10B981; }
+
+        .terminal-title-text {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: #94A3B8;
+            font-weight: 600;
+        }
+        .terminal-console-screen {
+            background: #090E1A;
+            padding: 26px;
+            min-height: 290px;
+            font-family: var(--font-mono);
+            font-size: 13.5px;
+            line-height: 1.85;
+            color: #E2E8F0;
+        }
+        .prompt-symbol { color: #38BDF8; font-weight: 700; }
+        .prompt-cmd { color: #FFFFFF; font-weight: 600; }
+        .prompt-res { color: #94A3B8; margin-bottom: 8px; }
+        .prompt-done { color: #4ADE80; font-weight: 700; }
+
+        .terminal-control-footer {
+            padding: 18px 24px;
+            background: #111C33;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .btn-term-action {
+            background: #1E293B;
+            color: #F1F5F9;
+            border: 1px solid #334155;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            padding: 9px 15px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-term-action:hover {
+            background: #DC2626;
+            border-color: #EF4444;
+            color: #FFFFFF;
+            box-shadow: 0 0 14px rgba(239, 68, 68, 0.5);
+        }
+        .btn-term-autorun {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            border: 1px solid #FDE047;
+            color: #0F172A;
+            font-weight: 800;
+            box-shadow: 0 4px 16px rgba(245, 158, 11, 0.45);
+        }
+        .btn-term-autorun:hover {
+            background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+        }
+
+        #achievementBadgeUnlock {
+            max-width: 860px;
+            margin: 24px auto 0;
+            background: #FFFFFF;
+            border: 2px solid #F59E0B;
+            border-radius: var(--radius-md);
+            padding: 18px 24px;
+            display: none;
+            align-items: center;
+            gap: 18px;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+            animation: badgeSlideUp 0.3s ease-out;
+        }
+        #achievementBadgeUnlock.show { display: flex; }
+        @keyframes badgeSlideUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================================
+           SECTION 7: REGISTRATION (White & Yellowish Stark Gold Onboarding)
+           ============================================================ */
+        .section-register {
+            background-color: var(--bg-register);
+            background-image:
+                radial-gradient(circle at 12% 18%, rgba(253, 224, 71, 0.35) 0%, transparent 45%), /* Glowing Yellowish Arc */
+                radial-gradient(circle at 88% 80%, rgba(245, 158, 11, 0.25) 0%, transparent 48%),  /* Warm Stark Amber Glow */
+                radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.70) 0%, transparent 65%),
+                linear-gradient(rgba(217, 119, 6, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(217, 119, 6, 0.06) 1px, transparent 1px),
+                linear-gradient(145deg, #FFFFFF 0%, #FFFDF2 25%, #FEFCE8 60%, #FEF9C3 100%);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px, 32px 32px, 100% 100%;
+            position: relative;
+            border-top: 4px solid #F59E0B;
+            border-bottom: 4px solid #D97706;
+            box-shadow: inset 0 12px 28px rgba(245, 158, 11, 0.1), inset 0 -12px 28px rgba(245, 158, 11, 0.1);
+            overflow: hidden;
+        }
+        .section-register::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(254, 240, 138, 0.22), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .section-register .section-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section 7 Header Text on White & Yellowish Background */
+        .section-register .section-category-tag {
+            background: #FEF08A;
+            color: #92400E;
+            border: 1px solid #F59E0B;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15);
+        }
+        .section-register .section-main-title {
+            color: #0F172A;
+        }
+        .section-register .section-main-title span {
+            color: #D97706;
+            background: linear-gradient(135deg, #D97706 0%, #B45309 60%, #E52521 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-register .section-lead-text {
+            color: #78350F;
+            opacity: 0.92;
+            max-width: 720px;
+        }
+
+        .register-split-card {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            background: #FFFFFF;
+            border: 2px solid #FDE047;
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: 0 20px 45px -10px rgba(217, 119, 6, 0.14), 0 10px 24px -5px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        .register-split-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #F59E0B, #E52521, #FBBF24);
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+        @media (max-width: 900px) {
+            .register-split-card { grid-template-columns: 1fr; padding: 24px; }
+        }
+        .form-row-group {
+            margin-bottom: 20px;
+        }
+        .form-label-txt {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 700;
+            color: #0F172A;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .form-input-field, .form-select-field {
+            width: 100%;
+            background: #FFFDF5;
+            border: 2px solid #FDE68A;
+            color: #0F172A;
+            font-family: var(--font-body);
+            font-size: 14.5px;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            outline: none;
+            transition: all 0.2s;
+        }
+        .form-input-field:focus, .form-select-field:focus {
+            border-color: #D97706;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.28);
+        }
+
+        .domain-chips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .domain-chip-input { display: none; }
+        .domain-chip-label-card {
+            background: #FFFDF5;
+            border: 2px solid #FEF08A;
+            padding: 10px 12px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 700;
+            color: #78350F;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.15s;
+            user-select: none;
+        }
+        .domain-chip-label-card:hover {
+            border-color: #F59E0B;
+            background: #FEFCE8;
+        }
+        .domain-chip-input:checked + .domain-chip-label-card {
+            background: #FEF08A;
+            border-color: #D97706;
+            color: #78350F;
+            font-weight: 800;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+        }
+
+        .btn-submit-recruit {
+            width: 100%;
+            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+            color: #FFFFFF;
+            border: 1px solid #EF4444;
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 16px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.35);
+            transition: all 0.2s;
+            margin-top: 12px;
+        }
+        .btn-submit-recruit:hover {
+            background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(220, 38, 38, 0.5);
+        }
+
+        /* Live Holographic Pass Preview (Collectible Card) */
+        .preview-pass-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .collectible-recruit-card {
+            width: 100%;
+            max-width: 360px;
+            background: linear-gradient(145deg, #FFFFFF 0%, #FFFDF5 60%, #FEF9C3 100%);
+            border: 3px solid #F59E0B;
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            position: relative;
+            box-shadow: 0 16px 36px rgba(217, 119, 6, 0.18);
+            overflow: hidden;
+        }
+        .collectible-recruit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #E52521, #F59E0B);
+        }
+        .card-agency-badge {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 800;
+            color: #B45309;
+            letter-spacing: 1.5px;
+        }
+        .card-status-badge {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 800;
+            background: #FEF08A;
+            color: #92400E;
+            border: 1px solid #FDE047;
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+        }
+        .card-recruit-name-val {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin: 14px 0 2px;
+            word-break: break-word;
+        }
+        .card-recruit-id-val {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .card-h-divider {
+            height: 2px;
+            background: #FDE68A;
+            margin: 18px 0;
+        }
+        .card-meta-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 700;
+            color: #92400E;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .card-pills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            min-height: 26px;
+            margin-bottom: 14px;
+        }
+        .pass-tag-badge {
+            background: #FEF08A;
+            color: #78350F;
+            border: 1px solid #FDE047;
+            font-family: var(--font-mono);
+            font-size: 10.5px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Success Recruitment Box */
+        #recruitSuccessBox {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: #FFFFFF;
+            border: 3px solid #F59E0B;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 50px rgba(217, 119, 6, 0.2);
+            animation: badgeSlideUp 0.3s ease-out;
+        }
+        #recruitSuccessBox.show { display: block; }
+        .pass-btn-download {
+            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+            color: #FFFFFF;
+            border: 1px solid #EF4444;
+            padding: 12px 22px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            margin: 6px;
+            box-shadow: 0 6px 18px rgba(220, 38, 38, 0.35);
+            transition: all 0.2s;
+        }
+        .pass-btn-download:hover {
+            background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+            transform: translateY(-1px);
+        }
+        .pass-btn-secondary {
+            background: #FFFBEB;
+            color: #78350F;
+            border: 2px solid #FDE68A;
+            padding: 11px 20px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            margin: 6px;
+            transition: all 0.2s;
+        }
+        .pass-btn-secondary:hover {
+            border-color: #D97706;
+            background: #FEF08A;
+            color: #92400E;
+        }
+
+        /* ============================================================
+           SECTION 8: FOOTER (High Contrast Deep Navy #0F172A)
+           ============================================================ */
+        .site-footer {
+            background-color: var(--bg-footer);
+            color: #FFFFFF;
+            padding: 80px 24px 40px;
+            border-top: 4px solid var(--spidey-red);
+        }
+        .footer-content-wrap {
+            max-width: 1240px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .footer-quote-big {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 4vw, 46px);
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+        .footer-quote-big span {
+            color: var(--spidey-red);
+        }
+        .footer-subquote-tag {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: #94A3B8;
+            letter-spacing: 2px;
+            margin-bottom: 36px;
+        }
+        .btn-footer-register {
+            display: inline-block;
+            background: var(--spidey-red);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 16px 36px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-red);
+            transition: all 0.2s;
+            margin-bottom: 60px;
+        }
+        .btn-footer-register:hover {
+            background: var(--spidey-red-dark);
+            transform: translateY(-2px);
+        }
+        .footer-social-links-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            border-top: 1px solid #1E293B;
+            padding-top: 28px;
+            margin-bottom: 24px;
+        }
+        .footer-nav-link {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #94A3B8;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+        .footer-nav-link:hover { color: var(--spidey-red); }
+        .footer-credits-text {
+            font-size: 12px;
+            color: #64748B;
+        }
+
+        /* ============================================================
+           UNIVERSE MODAL DEEP DIVE (Crisp Light Modal with Themed Colors)
+           ============================================================ */
+        #universeModalView {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 9500;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        #universeModalView.show { display: flex; }
+        .modal-dialog-box {
+            background: #FFFFFF;
+            border: 3px solid var(--modal-theme, var(--spidey-red));
+            box-shadow: var(--shadow-xl);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            animation: modalPop 0.3s ease-out;
+        }
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @media (max-width: 768px) {
+            .modal-dialog-box { grid-template-columns: 1fr; }
+        }
+        .modal-close-icon {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 36px;
+            height: 36px;
+            background: #FFFFFF;
+            border: 2px solid #E2E8F0;
+            color: var(--text-heading);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            z-index: 10;
+            transition: all 0.15s;
+        }
+        .modal-close-icon:hover {
+            background: var(--spidey-red);
+            color: #FFFFFF;
+            border-color: var(--spidey-red);
+        }
+        .modal-left-art {
+            background: #0F172A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-hero-graphic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 360px;
+        }
+        .modal-right-info {
+            padding: 36px;
+            display: flex;
+            flex-direction: column;
+        }
+        .modal-universe-tag {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--modal-theme, var(--spidey-red));
+            margin-bottom: 6px;
+        }
+        .modal-domain-heading {
+            font-family: var(--font-display);
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+        .modal-quote-box {
+            font-size: 14.5px;
+            font-style: italic;
+            color: var(--text-body);
+            border-left: 3px solid var(--modal-theme, var(--spidey-red));
+            padding-left: 12px;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+        .modal-desc-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .modal-arsenal-title {
+            font-family: var(--font-display);
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-heading);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .modal-tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+        .tech-pill-badge {
+            background: #F1F5F9;
+            border: 1px solid #E2E8F0;
+            color: var(--text-heading);
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+        }
+        .btn-modal-align {
+            background: var(--modal-theme, var(--spidey-red));
+            color: #FFFFFF;
+            border: none;
+            padding: 14px 24px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: all 0.2s;
+            margin-top: auto;
+        }
+        .btn-modal-align:hover {
+            filter: brightness(0.9);
+            transform: translateY(-1px);
+        }
+
+        /* ============================================================
+           STICKY GAMIFICATION HUD (Light Pill Card)
+           ============================================================ */
+        #gamificationPillHud {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #FFFFFF;
+            border: 2px solid var(--spidey-red);
+            border-radius: var(--radius-full);
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: transform 0.2s;
+        }
+        #gamificationPillHud:hover {
+            transform: translateY(-2px);
+        }
+        .hud-progress-meter {
+            width: 90px;
+            height: 6px;
+            background: #E2E8F0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .hud-meter-fill {
+            height: 100%;
+            width: 20%;
+            background: var(--spidey-red);
+            transition: width 0.3s;
+        }
+
+        /* Toast Notification */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: #0F172A;
+            color: #FFFFFF;
+            border: 2px solid var(--spidey-red);
+            padding: 12px 24px;
+            border-radius: var(--radius-full);
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            box-shadow: var(--shadow-xl);
+            z-index: 10000;
+            opacity: 0;
+            transition: all 0.25s var(--ease-cinematic);
+            pointer-events: none;
+        }
+        .toast-notification.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hidden Canvas for PNG Card Generation -->
+    <canvas id="cardCanvasWorker" width="800" height="460" style="display:none;"></canvas>
+
+    <!-- ============================================================
+       TOP NAVIGATION BAR
+       ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#hero" class="brand-link">
+                <div class="brand-spider-badge">🕸️</div>
+                <div>
+                    <div class="brand-name">DEVUP <span>MULTIVERSE</span></div>
+                    <div class="brand-sub">ANNUAL TECH EVENT 2026</div>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="#hero" class="nav-item-link active">Home</a></li>
+                    <li><a href="#multiverse-map" class="nav-item-link">Multiverse Map</a></li>
+                    <li><a href="#domains" class="nav-item-link">Universes</a></li>
+                    <li><a href="#command-center" class="nav-item-link">Command Center</a></li>
+                    <li><a href="#timeline" class="nav-item-link">2-Day Schedule</a></li>
+                    <li><a href="#build-protocol" class="nav-item-link">Build Protocol</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="recruit-badge-pill" title="Your Recruiter ID">
+                    <span class="recruit-badge-dot"></span>
+                    <span id="navRecruitIdDisplay">DV-2026-????</span>
+                </div>
+
+                <a href="#registration" class="btn-register-nav">REGISTER NOW</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+       SECTION 1: HERO SECTION (White BG with Spider-Man Red Accent)
+       ============================================================ -->
+    <section id="hero" class="section-hero spider-web-bg">
+        <div class="section-inner" style="width:100%; padding: 40px 24px;">
+            <div class="hero-layout">
+                <div>
+                    <div class="hero-banner-tag">
+                        <span>🕷️</span>
+                        <span>FIRST-YEAR FRESHER INITIATIVE · DEVUP CLUB</span>
+                    </div>
+
+                    <h1 class="hero-title-main">
+                        ENTER THE VERSE.<br>
+                        <span class="red-accent">FIND YOUR PATH.</span><br>
+                        BUILD YOUR FUTURE.
+                    </h1>
+
+                    <p class="hero-tagline-quote">
+                        <strong>DEVUP: INTO THE MULTIVERSE</strong> is a 2-day cinematic college developer festival. Explore Web, AI, Cybersecurity, Cloud, and Algorithms through the superpowers of iconic heroes.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#domains" class="btn-hero-primary">
+                            <span>EXPLORE THE UNIVERSES</span>
+                            <span>→</span>
+                        </a>
+                        <a href="#registration" class="btn-hero-secondary">
+                            <span>BECOME A RECRUIT</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-feature-pills">
+                        <div class="hero-pill-item">
+                            <span class="pill-number">5+</span>
+                            <span class="pill-label">Hero Domains</span>
+                        </div>
+                        <div class="hero-pill-item">
+                            <span class="pill-number">2 DAYS</span>
+                            <span class="pill-label">Discover & Build</span>
+                        </div>
+                        <div class="hero-pill-item">
+                            <span class="pill-number">100%</span>
+                            <span class="pill-label">Fresher Friendly</span>
+                        </div>
+                        <div class="hero-pill-item">
+                            <span class="pill-number">FREE</span>
+                            <span class="pill-label">Open Registration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="hero-character-box">
+                        <span class="hero-card-badge">UNIVERSE 001</span>
+                        <img src="assets/heroes/spiderman.webp" onerror="this.onerror=null; this.src='assets/heroes/spiderman.svg';" alt="Spider-Man Hero" class="hero-img-element" />
+                        <div class="hero-card-meta">
+                            <div>
+                                <div class="hero-char-title">SPIDER-MAN</div>
+                                <div class="hero-char-domain">THE WEB // WEB DEVELOPMENT</div>
+                            </div>
+                            <span style="font-size:24px;">🕸️</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 2: MULTIVERSE COMMAND NEXUS (Spider-Man / Iron Man Crimson Red)
+       ============================================================ -->
+    <section id="multiverse-map" class="section-wrapper section-map">
+        <div class="section-inner">
+            <div class="section-header-block">
+                <span class="section-category-tag">SCENE 02 // MULTIVERSE COMMAND NEXUS</span>
+                <h2 class="section-main-title">THE <span>MULTIVERSE</span> NAVIGATOR</h2>
+                <p class="section-lead-text">
+                    Five dimensions. Five legendary mentors. Zero prerequisites. Select a station below to lock onto its universe and discover your technical powers.
+                </p>
+            </div>
+
+            <!-- Top Universe Station Tabs -->
+            <div class="multiverse-station-tabs">
+                <button class="mv-station-btn active" style="--tab-color: #E52521;" onclick="selectNavigatorUniverse('web')">
+                    <span class="mv-tab-icon">🕷️</span>
+                    <span>THE WEB</span>
+                    <span class="mv-tab-tag">EARTH-616</span>
+                </button>
+                <button class="mv-station-btn" style="--tab-color: #D97706;" onclick="selectNavigatorUniverse('ai')">
+                    <span class="mv-tab-icon">🤖</span>
+                    <span>STARK AI</span>
+                    <span class="mv-tab-tag">EARTH-199999</span>
+                </button>
+                <button class="mv-station-btn" style="--tab-color: #059669;" onclick="selectNavigatorUniverse('dsa')">
+                    <span class="mv-tab-icon">🌀</span>
+                    <span>SORCERER'S CODE</span>
+                    <span class="mv-tab-tag">EARTH-838</span>
+                </button>
+                <button class="mv-station-btn" style="--tab-color: #0284C7;" onclick="selectNavigatorUniverse('cloud')">
+                    <span class="mv-tab-icon">⚡</span>
+                    <span>INFRASTRUCTURE</span>
+                    <span class="mv-tab-tag">REALM-965</span>
+                </button>
+                <button class="mv-station-btn" style="--tab-color: #4338CA;" onclick="selectNavigatorUniverse('cyber')">
+                    <span class="mv-tab-icon">🛡️</span>
+                    <span>SHIELD CYBER</span>
+                    <span class="mv-tab-tag">SECTOR-1941</span>
+                </button>
+            </div>
+
+            <!-- Central Multiverse Control Deck -->
+            <div class="multiverse-control-deck" id="mvControlDeck" style="--deck-accent: #E52521; --deck-border: #FCA5A5;">
+                <!-- Left: Live Dimensional Portal Viewport -->
+                <div class="portal-viewport-frame">
+                    <div class="portal-ring-animation"></div>
+                    <div class="portal-hud-bracket-tl"></div>
+                    <div class="portal-hud-bracket-br"></div>
+                    <span class="portal-frequency-tag" id="portalFreqBadge">DIMENSION: EARTH-616 // LOCKED</span>
+
+                    <img id="portalDeckImg" src="assets/heroes/spiderman.webp" onerror="this.onerror=null; this.src='assets/heroes/spiderman.svg';" alt="Hero Dimensional Portal" class="portal-hero-artwork" />
+
+                    <div class="portal-overlay-action">
+                        <div>
+                            <div class="portal-action-label" id="portalActionName">SPIDER-MAN</div>
+                            <div class="portal-action-sub" id="portalActionRole">THE WEB ARCHITECT</div>
+                        </div>
+                        <button class="btn-portal-jump" id="portalJumpBtn" onclick="openUniverseModal(currentNavigatorUniverse)">
+                            JUMP TO UNIVERSE →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right: Intel Matrix & Technical Telemetry -->
+                <div class="intel-matrix-content">
+                    <div class="intel-universe-id" id="deckUniverseId">
+                        <span>🌀</span>
+                        <span id="deckUniverseNum">UNIVERSE 001 // THE WEB ARCHITECT</span>
+                    </div>
+
+                    <h3 class="intel-hero-heading" id="deckHeroHeading">
+                        BUILD THE WEB.<br><span id="deckHeroSub">DON'T JUST BROWSE IT.</span>
+                    </h3>
+
+                    <div class="intel-quote-box" id="deckQuoteText">
+                        "The universe where a blank page turns into something real. If you like seeing your work come alive in a browser within minutes, you belong here."
+                    </div>
+
+                    <div class="intel-breakdown-box">
+                        <div class="intel-fact-card">
+                            <div class="ifc-label">PRIMARY SUPERPOWER</div>
+                            <div class="ifc-val" id="deckFactPower">Frontend Interfaces, Dynamic Apps & APIs</div>
+                        </div>
+                        <div class="intel-fact-card">
+                            <div class="ifc-label">FRESHER ADVANTAGE</div>
+                            <div class="ifc-val" id="deckFactFresher">Instant Visual Feedback · Zero Experience Needed</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="ifc-label" style="margin-bottom: 8px;">CORE TECHNICAL ARSENAL</div>
+                        <div class="intel-skills-list" id="deckSkillsList">
+                            <span class="intel-skill-pill">HTML5 & CSS3</span>
+                            <span class="intel-skill-pill">JavaScript (ES6+)</span>
+                            <span class="intel-skill-pill">React</span>
+                            <span class="intel-skill-pill">Tailwind CSS</span>
+                            <span class="intel-skill-pill">REST APIs</span>
+                            <span class="intel-skill-pill">Node.js</span>
+                        </div>
+                    </div>
+
+                    <div class="intel-actions-row">
+                        <button class="btn-intel-primary" onclick="openUniverseModal(currentNavigatorUniverse)">
+                            <span>⚡ EXPLORE COMPLETE CURRICULUM</span>
+                            <span>→</span>
+                        </button>
+                        <button class="btn-intel-secondary" onclick="alignWithNavigatorUniverse()">
+                            <span>🎯 ASSIGN TO MY RECRUIT PASS</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Constellation Track Grid -->
+            <div class="constellation-track-grid">
+                <div class="constellation-node-card active" style="--card-theme: #E52521;" onclick="selectNavigatorUniverse('web')">
+                    <div class="cnc-icon-box">🕷️</div>
+                    <div>
+                        <div class="cnc-name">The Web</div>
+                        <div class="cnc-status">● 12ms Latency · ONLINE</div>
+                    </div>
+                </div>
+
+                <div class="constellation-node-card" style="--card-theme: #D97706;" onclick="selectNavigatorUniverse('ai')">
+                    <div class="cnc-icon-box">🤖</div>
+                    <div>
+                        <div class="cnc-name">Stark AI</div>
+                        <div class="cnc-status">● 99.4% Acc · ONLINE</div>
+                    </div>
+                </div>
+
+                <div class="constellation-node-card" style="--card-theme: #059669;" onclick="selectNavigatorUniverse('dsa')">
+                    <div class="cnc-icon-box">🌀</div>
+                    <div>
+                        <div class="cnc-name">Sorcerer</div>
+                        <div class="cnc-status">● O(1) Logic · ONLINE</div>
+                    </div>
+                </div>
+
+                <div class="constellation-node-card" style="--card-theme: #0284C7;" onclick="selectNavigatorUniverse('cloud')">
+                    <div class="cnc-icon-box">⚡</div>
+                    <div>
+                        <div class="cnc-name">Asgard Cloud</div>
+                        <div class="cnc-status">● 99.99% Up · ONLINE</div>
+                    </div>
+                </div>
+
+                <div class="constellation-node-card" style="--card-theme: #4338CA;" onclick="selectNavigatorUniverse('cyber')">
+                    <div class="cnc-icon-box">🛡️</div>
+                    <div>
+                        <div class="cnc-name">Shield Cyber</div>
+                        <div class="cnc-status">● 0 Breaches · SECURE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 3: THE MULTIVERSE TIMELINE & DOMAIN ARSENAL
+       ============================================================ -->
+    <section id="domains" class="section-wrapper section-domains">
+        <div class="section-inner">
+            <div class="section-header-block">
+                <span class="section-category-tag">SCENE 03 // QUANTUM TIMELINE SIMULATION</span>
+                <h2 class="section-main-title">THE <span>MULTIVERSE</span> TIMELINE</h2>
+                <p class="section-lead-text">
+                    Watch the five core technical domains revolve in real-time around the Sacred Multiverse Axis. Click any revolving node or explore the hero domain dossiers below.
+                </p>
+            </div>
+
+            <!-- CINEMATIC MULTIVERSE ORBITAL VIDEO REEL -->
+            <div class="multiverse-video-deck">
+                <div class="mv-video-topbar">
+                    <div class="mv-rec-indicator">
+                        <span class="mv-rec-dot"></span>
+                        <span>● LIVE FEED // MULTIVERSE TIMELINE STREAM [60 FPS]</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:16px;">
+                        <span>FREQUENCY: 14,000,605 TIMELINES</span>
+                        <span style="color:#FEF08A;">● CORE: STABLE AXIS</span>
+                    </div>
+                </div>
+
+                <div class="mv-video-viewport">
+                    <!-- Cosmic Nebula Backdrop -->
+                    <img src="assets/real_images/multiverse_cosmos.jpg" alt="Multiverse Cosmos" class="mv-video-bg" />
+
+                    <!-- 3D Interactive Canvas Orbit Engine -->
+                    <canvas id="multiverseOrbitCanvas"></canvas>
+
+                    <!-- HUD Overlay Telemetry -->
+                    <div class="mv-video-hud-overlay">
+                        <div class="mv-hud-title-wrap">
+                            <div class="mv-hud-watermark">MULTIVERSE</div>
+                            <div class="mv-hud-submark">QUANTUM TIMELINE DOMAIN ORBITS</div>
+                        </div>
+
+                        <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                            <div style="font-family:var(--font-mono); font-size:11px; color:#94A3B8; background:rgba(15,23,42,0.85); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid #334155;">
+                                STATUS: <span id="mvOrbitStatusText" style="color:#38BDF8;">ORBITING SACRED TIMELINE</span>
+                            </div>
+                            <div style="font-family:var(--font-mono); font-size:11px; color:#FCD34D; background:rgba(15,23,42,0.85); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid #334155;" id="mvTimecodeDisplay">
+                                TC 00:02:14:09
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Controls & Universe Quick-Focus Navigation -->
+                <div class="mv-video-controls-bar">
+                    <div class="mv-ctrl-group">
+                        <button class="btn-mv-ctrl" id="btnMvPlayPause" onclick="toggleMvOrbitPlay()">
+                            <span id="mvPlayIcon">⏸</span>
+                            <span id="mvPlayText">PAUSE REEL</span>
+                        </button>
+                        <button class="btn-mv-ctrl" onclick="reverseMvOrbit()">
+                            <span>⟲</span>
+                            <span>REVERSE</span>
+                        </button>
+                        <button class="btn-mv-ctrl" id="btnMvSpeed" onclick="cycleMvOrbitSpeed()">
+                            <span>SPEED: 1.0X</span>
+                        </button>
+                    </div>
+
+                    <div class="mv-ctrl-group">
+                        <span style="font-family:var(--font-mono); font-size:10.5px; color:#94A3B8; font-weight:700;">LOCK TIMELINE:</span>
+                        <button class="btn-mv-pill" onclick="lockOrbitOnUniverse('web')">🕷️ WEB</button>
+                        <button class="btn-mv-pill" onclick="lockOrbitOnUniverse('ai')">🤖 STARK AI</button>
+                        <button class="btn-mv-pill" onclick="lockOrbitOnUniverse('dsa')">🌀 SORCERER</button>
+                        <button class="btn-mv-pill" onclick="lockOrbitOnUniverse('cloud')">⚡ CLOUD</button>
+                        <button class="btn-mv-pill" onclick="lockOrbitOnUniverse('cyber')">🛡️ CYBER</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REAL-HERO DOMAINS DOSSIER GRID -->
+            <div class="hero-domains-grid">
+                <!-- 1. SPIDER-MAN (THE WEB) -->
+                <div class="hero-domain-card" id="domainCard-web" style="--domain-accent: #E52521;" onclick="openUniverseModal('web')">
+                    <div class="card-top-tagline"></div>
+                    <div class="hdc-img-wrapper">
+                        <span class="hdc-badge">UNIVERSE 001 // EARTH-616</span>
+                        <span class="hdc-live-badge">🕷️ NYC SECTOR</span>
+                        <img src="assets/real_images/spiderman_2.jpg" onerror="this.onerror=null; this.src='https://wallpapercave.com/wp/wp4539239.jpg'; this.onerror=function(){this.src='assets/heroes/spiderman.svg';};" alt="Spider-Man Real Photo" class="hdc-img" />
+                    </div>
+                    <div class="hdc-body">
+                        <h3 class="hdc-title">THE WEB ARCHITECT</h3>
+                        <div class="hdc-hero-role">SPIDER-MAN // FULL-STACK WEB ENGINEERING</div>
+                        <p class="hdc-quote">"Build the web. Don't just browse it. With great code comes great scalability."</p>
+
+                        <div class="hdc-specs-grid">
+                            <div class="hdc-spec-item">
+                                <div class="hdc-spec-label">DIMENSIONAL FOCUS</div>
+                                <div class="hdc-spec-val">Next.js, React & APIs</div>
+                            </div>
+                            <div class="hdc-spec-item">
+                                <div class="hdc-spec-label">LEARNING CURVE</div>
+                                <div class="hdc-spec-val">Beginner Friendly (Zero XP)</div>
+                            </div>
+                        </div>
+
+                        <div class="hdc-skills-wrap">
+                            <span class="skill-badge-item">HTML5 & CSS3</span>
+                            <span class="skill-badge-item">JavaScript (ES6+)</span>
+                            <span class="skill-badge-item">React</span>
+                            <span class="skill-badge-item">REST APIs</span>
+                            <span class="skill-badge-item">Node.js</span>
+                            <span class="skill-badge-item">Tailwind CSS</span>
+                        </div>
+                        <button class="btn-card-explore">
+                            <span>EXPLORE SPIDER-VERSE DOSSIER</span>
+                            <span>→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. IRON MAN & STARK TOWER (STARK AI PROTOCOL) -->
+                <div class="hero-domain-card" id="domainCard-ai" style="--domain-accent: #D97706;" onclick="openUniverseModal('ai')">
+                    <div class="card-top-tagline"></div>
+                    <div class="hdc-img-wrapper">
+                        <span class="hdc-badge">UNIVERSE 002 // EARTH-199999</span>
+                        <span class="hdc-live-badge" id="starkBadgeText">🤖 IRON MAN ARMOR</span>
+                        <img id="ironmanCardImg" src="assets/real_images/ironman.jpg" onerror="this.onerror=null; this.src='https://wallpapercave.com/wp/wp3703420.jpg'; this.onerror=function(){this.src='assets/heroes/ironman.svg';};" alt="Iron Man Real Photo" class="hdc-img" />
+                        <button class="hdc-img-toggle-btn" id="btnStarkToggle" onclick="event.stopPropagation(); toggleStarkTowerView();" title="Toggle Stark Tower View">
+                            🗼 VIEW STARK TOWER
+                        </button>
+                    </div>
+                    <div class="hdc-body">
+                        <h3 class="hdc-title">STARK AI PROTOCOL</h3>
+                        <div class="hdc-hero-role">IRON MAN // ARTIFICIAL INTELLIGENCE & ML</div>
+                        <p class="hdc-quote">"The future isn't built. It's engineered. Build autonomous neural systems."</p>
+
+                        <div class="hdc-specs-grid">
+                            <div class="hdc-spec-item">
+                                <div class="hdc-spec-label">DIMENSIONAL FOCUS</div>
+                                <div class="hdc-spec-val">Computer Vision & LLMs</div>
+                            </div>
+                            <div class="hdc-spec-item">
+                                <div class="hdc-spec-label">INDUSTRY IMPACT</div>
+                                <div class="hdc-spec-val">Stark Level Valuation</div>
+                            </div>
+                        </div>
+
+                        <div class="hdc-skills-wrap">
+                            <span class="skill-badge-item">Python</span>
+                            <span class="skill-badge-item">Machine Learning</span>
+                            <span class="skill-badge-item">Computer Vision</span>
+                            <span class="skill-badge-item">Neural Networks</span>
+                            <span class="skill-badge-item">OpenCV</span>
+                            <span class="skill-badge-item">Automation</span>
+                        </div>
+                        <button class="btn-card-explore">
+                            <span>EXPLORE STARK PROTOCOL</span>
+                            <span>→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3. DOCTOR STRANGE (SORCERER'S CODE / DSA) -->
+                <div class="hero-domain-card" id="domainCard-dsa" style="--domain-accent: #059669;" onclick="openUniverseModal('dsa')">
+                    <div class="card-top-tagline"></div>
+                    <div class="hdc-img-wrapper">
+                        <span class="hdc-badge">UNIVERSE 003 // EARTH-838</span>
+                        <span class="hdc-live-badge">🌀 MULTIVERSE PORTAL</span>
+                        <img src="assets/real_images/multiverse_cosmos.jpg" onerror="this.onerror=null; this.src='assets/heroes/doctor-strange.svg';" alt="Multiverse Cosmos Portal" class="hdc-img" />
+                    </div>
+                    <div class="hdc-body">
+                        <h3 class="hdc-title">SORCERER'S CODE</h3>
+                        <div class="hdc-hero-role">DOCTOR STRANGE // DATA STRUCTURES & ALGORITHMS</div>
+                        <p class="hdc-quote">"Every problem has another dimension. Unravel algorithmic complexity in O(1)."</p>
+
+                        <div class="hdc-specs-grid">
+                            <div class="hdc-spec-item">
+                                <div class="hdc-spec-label">DIMENSIONAL FOCUS</div>
+                                <div class="hdc-spec-val">Competitive Programming</div>
+                            </div>
+                            <div class="hdc-spec-item">
+                                <div class="hdc-spec-label">PRIMARY SUPERPOWER</div>
+                                <div class="hdc-spec-val">Interview Logic Mastery</div>
+                            </div>
+                        </div>
+
+                        <div class="hdc-skills-wrap">
+                            <span class="skill-badge-item">Data Structures</span>
+                            <span class="skill-badge-item">Algorithms</span>
+                            <span class="skill-badge-item">C++ / Java</span>
+                            <span class="skill-badge-item">Dynamic Prog</span>
+                            <span class="skill-badge-item">Graph Theory</span>
+                            <span class="skill-badge-item">Recursion</span>
+                        </div>
+                        <button class="btn-card-explore">
+                            <span>EXPLORE SORCERER'S CODE</span>
+                            <span>→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 4. THOR (REALM OF INFRASTRUCTURE / CLOUD) -->
+                <div class="hero-domain-card" id="domainCard-cloud" style="--domain-accent: #0284C7;" onclick="openUniverseModal('cloud')">
+                    <div class="card-top-tagline"></div>
+                    <div class="hdc-img-wrapper">
+                        <span class="hdc-badge">UNIVERSE 004 // REALM-965</span>
+                        <span class="hdc-live-badge">⚡ ASGARD BIFROST</span>
+                        <img src="assets/heroes/thor.webp" onerror="this.onerror=null; this.src='assets/heroes/thor.svg';" alt="Thor Infrastructure" class="hdc-img" />
+                    </div>
+                    <div class="hdc-body">
+                        <h3 class="hdc-title">REALM OF INFRA</h3>
+                        <div class="hdc-hero-role">THOR // CLOUD DEVOPS & HYPERSCALE ARCHITECTURE</div>
+                        <p class="hdc-quote">"Command the cloud infrastructure and bend distributed servers to your will."</p>
+
+                        <div class="hdc-specs-grid">
+                            <div class="hdc-spec-item">
+                                <div class="hdc-spec-label">DIMENSIONAL FOCUS</div>
+                                <div class="hdc-spec-val">Kubernetes & AWS Cloud</div>
+                            </div>
+                            <div class="hdc-spec-item">
+                                <div class="hdc-spec-label">RELIABILITY</div>
+                                <div class="hdc-spec-val">99.999% Fault Tolerant</div>
+                            </div>
+                        </div>
+
+                        <div class="hdc-skills-wrap">
+                            <span class="skill-badge-item">AWS Cloud</span>
+                            <span class="skill-badge-item">Docker</span>
+                            <span class="skill-badge-item">Kubernetes</span>
+                            <span class="skill-badge-item">Linux Systems</span>
+                            <span class="skill-badge-item">CI/CD Pipelines</span>
+                            <span class="skill-badge-item">GitHub Actions</span>
+                        </div>
+                        <button class="btn-card-explore">
+                            <span>EXPLORE REALM OF INFRA</span>
+                            <span>→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 5. CAPTAIN AMERICA (SHIELD PROTOCOL / CYBER DEFENSE) -->
+                <div class="hero-domain-card" id="domainCard-cyber" style="--domain-accent: #4338CA;" onclick="openUniverseModal('cyber')">
+                    <div class="card-top-tagline"></div>
+                    <div class="hdc-img-wrapper">
+                        <span class="hdc-badge">UNIVERSE 005 // SECTOR-1941</span>
+                        <span class="hdc-live-badge">🛡️ VIBRANIUM SHIELD</span>
+                        <img src="assets/heroes/captain-america.webp" onerror="this.onerror=null; this.src='assets/heroes/captain-america.svg';" alt="Captain America Cyber Shield" class="hdc-img" />
+                    </div>
+                    <div class="hdc-body">
+                        <h3 class="hdc-title">SHIELD PROTOCOL</h3>
+                        <div class="hdc-hero-role">CAPTAIN AMERICA // CYBERSECURITY & DEFENSE</div>
+                        <p class="hdc-quote">"Protect the digital perimeter. When everything is compromised, hold the line."</p>
+
+                        <div class="hdc-specs-grid">
+                            <div class="hdc-spec-item">
+                                <div class="hdc-spec-label">DIMENSIONAL FOCUS</div>
+                                <div class="hdc-spec-val">Ethical Hacking & SecOps</div>
+                            </div>
+                            <div class="hdc-spec-item">
+                                <div class="hdc-spec-label">STATUS</div>
+                                <div class="hdc-spec-val">Zero Breaches Detected</div>
+                            </div>
+                        </div>
+
+                        <div class="hdc-skills-wrap">
+                            <span class="skill-badge-item">Network Security</span>
+                            <span class="skill-badge-item">Ethical Hacking</span>
+                            <span class="skill-badge-item">Cryptography</span>
+                            <span class="skill-badge-item">Linux</span>
+                            <span class="skill-badge-item">Pen-Testing</span>
+                            <span class="skill-badge-item">Wireshark</span>
+                        </div>
+                        <button class="btn-card-explore">
+                            <span>EXPLORE SHIELD PROTOCOL</span>
+                            <span>→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 4: DEVUP INDUSTRIES (Soft Energetic Rose BG #FFF1F2)
+       ============================================================ */
+    <section id="command-center" class="section-wrapper section-command">
+        <div class="section-inner">
+            <div class="section-header-block">
+                <span class="section-category-tag">SCENE 04 // CLUB COMMAND CENTER</span>
+                <h2 class="section-main-title">DEVUP <span>INDUSTRIES</span></h2>
+                <p class="section-lead-text">
+                    "Building the next generation of developers." Real-time active universe statuses and tech department monitoring.
+                </p>
+            </div>
+
+            <div class="command-dashboard-card">
+                <div class="dashboard-header-flex">
+                    <div>
+                        <div class="dash-system-meta">STARK-OS // DEVUP LABS v4.8</div>
+                        <h3 class="dash-title">MULTIVERSE ACTIVE CLUSTERS</h3>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:14px;">
+                        <span class="status-pill-online">● ALL SYSTEMS OPERATIONAL</span>
+                        <span style="font-family:var(--font-mono); font-size:12px; color:var(--text-muted);">UPTIME: 99.98%</span>
+                    </div>
+                </div>
+
+                <div class="command-grid-cells">
+                    <div class="command-node-box">
+                        <div>
+                            <div class="cnb-name">WEB DEVELOPMENT</div>
+                            <div class="cnb-meta">Spider-Verse Cluster · 12ms Latency</div>
+                        </div>
+                        <span class="cnb-status-tag">ONLINE</span>
+                    </div>
+
+                    <div class="command-node-box">
+                        <div>
+                            <div class="cnb-name">AI & ROBOTICS</div>
+                            <div class="cnb-meta">Jarvis Neural Core · 99.4% Acc</div>
+                        </div>
+                        <span class="cnb-status-tag">ONLINE</span>
+                    </div>
+
+                    <div class="command-node-box">
+                        <div>
+                            <div class="cnb-name">CYBERSECURITY</div>
+                            <div class="cnb-meta">Shield Defense Grid · Zero Breaches</div>
+                        </div>
+                        <span class="cnb-status-tag">ONLINE</span>
+                    </div>
+
+                    <div class="command-node-box">
+                        <div>
+                            <div class="cnb-name">CLOUD & DEVOPS</div>
+                            <div class="cnb-meta">Asgard Clusters · Auto-Scaling</div>
+                        </div>
+                        <span class="cnb-status-tag">ONLINE</span>
+                    </div>
+
+                    <div class="command-node-box">
+                        <div>
+                            <div class="cnb-name">DSA & ALGORITHMS</div>
+                            <div class="cnb-meta">Sanctum Sanctorum · O(1) Speed</div>
+                        </div>
+                        <span class="cnb-status-tag">ONLINE</span>
+                    </div>
+
+                    <div class="command-node-box">
+                        <div>
+                            <div class="cnb-name">OPEN SOURCE NETWORK</div>
+                            <div class="cnb-meta">Git Network · Sync Complete</div>
+                        </div>
+                        <span class="cnb-status-tag">ONLINE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 5: TIMELINE (Sky / Azure Tint BG #F0F9FF)
+       ============================================================ */
+    <section id="timeline" class="section-wrapper section-timeline">
+        <div class="section-inner">
+            <div class="section-header-block">
+                <span class="section-category-tag">SCENE 05 // 2-DAY EVENT SCHEDULE</span>
+                <h2 class="section-main-title">EVENT <span>TIMELINE</span></h2>
+                <p class="section-lead-text">
+                    Day 1 is for discovering your power. Day 2 is for building and shipping projects.
+                </p>
+            </div>
+
+            <div class="timeline-tab-bar">
+                <button class="t-tab-button active" id="tabDay1Btn" onclick="switchDayTab(1)">
+                    DAY 01 — DISCOVER YOUR UNIVERSE
+                </button>
+                <button class="t-tab-button" id="tabDay2Btn" onclick="switchDayTab(2)">
+                    DAY 02 — BUILD YOUR UNIVERSE
+                </button>
+            </div>
+
+            <!-- DAY 1 MISSIONS -->
+            <div class="missions-card-list" id="day1List">
+                <div class="mission-row-card">
+                    <div class="mission-order-badge">01</div>
+                    <div>
+                        <h4 class="mission-title-h4">WELCOME TO DEVUP & KEYNOTE</h4>
+                        <p class="mission-desc-p">Initiation sequence. Introduction to club mentors, roadmap opportunities, and the multiverse theme.</p>
+                    </div>
+                    <div class="mission-time-tag">09:00 AM · AUDITORIUM</div>
+                </div>
+
+                <div class="mission-row-card">
+                    <div class="mission-order-badge">02</div>
+                    <div>
+                        <h4 class="mission-title-h4">DOMAIN IMMERSION SHOWCASE</h4>
+                        <p class="mission-desc-p">Deep-dive live demos in Web, AI, Cybersecurity, Cloud, and Competitive Programming.</p>
+                    </div>
+                    <div class="mission-time-tag">11:00 AM · LABS 1-4</div>
+                </div>
+
+                <div class="mission-row-card">
+                    <div class="mission-order-badge">03</div>
+                    <div>
+                        <h4 class="mission-title-h4">MEET YOUR HEROES & TECH LEADS</h4>
+                        <p class="mission-desc-p">Domain leads and senior developers unveil their real-world projects and discuss roadmap paths.</p>
+                    </div>
+                    <div class="mission-time-tag">02:00 PM · MAIN STAGE</div>
+                </div>
+
+                <div class="mission-row-card">
+                    <div class="mission-order-badge">04</div>
+                    <div>
+                        <h4 class="mission-title-h4">CHOOSE YOUR PATHFINDER SQUAD</h4>
+                        <p class="mission-desc-p">Interactive guided session to align with your first universe and form your Day 2 hack squad.</p>
+                    </div>
+                    <div class="mission-time-tag">04:00 PM · SQUAD HUB</div>
+                </div>
+            </div>
+
+            <!-- DAY 2 MISSIONS -->
+            <div class="missions-card-list" id="day2List" style="display:none;">
+                <div class="mission-row-card">
+                    <div class="mission-order-badge">01</div>
+                    <div>
+                        <h4 class="mission-title-h4">THE BUILD PROTOCOL: GIT & GITHUB</h4>
+                        <p class="mission-desc-p">Master repositories, commits, branches, pull requests, and the global open-source workflow.</p>
+                    </div>
+                    <div class="mission-time-tag">09:30 AM · TERMINAL LAB</div>
+                </div>
+
+                <div class="mission-row-card">
+                    <div class="mission-order-badge">02</div>
+                    <div>
+                        <h4 class="mission-title-h4">YOUR FIRST COMMIT WORKSHOP</h4>
+                        <p class="mission-desc-p">Hands-on practical session. Every recruit initializes a repository, writes code, and pushes to GitHub.</p>
+                    </div>
+                    <div class="mission-time-tag">11:00 AM · HANDS-ON</div>
+                </div>
+
+                <div class="mission-row-card">
+                    <div class="mission-order-badge">03</div>
+                    <div>
+                        <h4 class="mission-title-h4">ASSEMBLE THE SQUAD & MINI-HACK</h4>
+                        <p class="mission-desc-p">Multi-disciplinary teams build an interactive web app or intelligent bot prototype in 3 hours.</p>
+                    </div>
+                    <div class="mission-time-tag">02:00 PM · HACK ARENA</div>
+                </div>
+
+                <div class="mission-row-card">
+                    <div class="mission-order-badge">04</div>
+                    <div>
+                        <h4 class="mission-title-h4">PUSH TO THE MULTIVERSE & AWARDS</h4>
+                        <p class="mission-desc-p">Live project showcases, code reviews by leads, official recruit certification, and prizes.</p>
+                    </div>
+                    <div class="mission-time-tag">05:00 PM · STAGE</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 6: BUILD PROTOCOL (Reddish Stark Lab & Interactive Git Terminal)
+       ============================================================ -->
+    <section id="build-protocol" class="section-wrapper section-terminal">
+        <div class="section-inner">
+            <div class="section-header-block">
+                <span class="section-category-tag">SCENE 06 // GITHUB WORKSHOP</span>
+                <h2 class="section-main-title">THE <span>BUILD PROTOCOL</span></h2>
+                <p class="section-lead-text">
+                    "Every developer starts with their first commit." Test drive your Git commands interactively below or click Auto-Run to complete the protocol.
+                </p>
+            </div>
+
+            <div class="terminal-shell-card">
+                <div class="terminal-header-mac">
+                    <div class="mac-lights-flex">
+                        <div class="mac-light mac-red"></div>
+                        <div class="mac-light mac-yellow"></div>
+                        <div class="mac-light mac-green"></div>
+                    </div>
+                    <div class="terminal-title-text">recruit@devup-terminal: ~/projects/first-commit</div>
+                    <div style="font-family:var(--font-mono); font-size:11px; color:#38BDF8;">GIT v2.44</div>
+                </div>
+
+                <div class="terminal-console-screen" id="terminalLog">
+                    <div class="prompt-res">// DEVUP BUILD PROTOCOL INITIATED</div>
+                    <div><span class="prompt-symbol">recruit@devup:~$ </span><span class="prompt-cmd">git status</span></div>
+                    <div class="prompt-res">On branch main. Ready to initialize your developer journey.</div>
+                </div>
+
+                <div class="terminal-control-footer">
+                    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                        <button class="btn-term-action" onclick="runGitStep(1)">git init</button>
+                        <button class="btn-term-action" onclick="runGitStep(2)">git add .</button>
+                        <button class="btn-term-action" onclick="runGitStep(3)">git commit -m "first commit"</button>
+                        <button class="btn-term-action" onclick="runGitStep(4)">git push -u origin main</button>
+                    </div>
+
+                    <button class="btn-term-action btn-term-autorun" onclick="autoRunGitProtocol()">
+                        ▶ AUTO-RUN BUILD PROTOCOL
+                    </button>
+                </div>
+            </div>
+
+            <div id="achievementBadgeUnlock">
+                <span style="font-size:36px;">🏆</span>
+                <div>
+                    <div style="font-family:var(--font-display); font-size:18px; font-weight:700; color:var(--text-heading);">
+                        ACHIEVEMENT UNLOCKED: YOUR FIRST COMMIT!
+                    </div>
+                    <div style="font-family:var(--font-mono); font-size:12.5px; color:#059669; font-weight:600;">
+                        SYSTEM STATUS: BUILD COMPLETE · WELCOME TO THE OPEN SOURCE MULTIVERSE
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 7: REGISTRATION (White & Yellowish Stark Gold Onboarding)
+       ============================================================ -->
+    <section id="registration" class="section-wrapper section-register">
+        <div class="section-inner">
+            <div class="section-header-block">
+                <span class="section-category-tag">SCENE 07 // OFFICIAL ONBOARDING</span>
+                <h2 class="section-main-title">JOIN THE <span>MULTIVERSE</span></h2>
+                <p class="section-lead-text">
+                    "Every universe needs a new hero." Register below to claim your official DevUp recruit credentials and download your pass.
+                </p>
+            </div>
+
+            <div class="register-split-card" id="regCardContainer">
+                <!-- Registration Form -->
+                <form id="recruitRegisterForm" onsubmit="handleRecruitSubmit(event)">
+                    <div class="form-row-group">
+                        <label class="form-label-txt" for="regName">Full Name *</label>
+                        <input type="text" id="regName" class="form-input-field" placeholder="e.g. Peter Parker" required oninput="updateLivePassPreview()" />
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+                        <div class="form-row-group">
+                            <label class="form-label-txt" for="regEmail">College Email *</label>
+                            <input type="email" id="regEmail" class="form-input-field" placeholder="recruit@college.edu" required />
+                        </div>
+                        <div class="form-row-group">
+                            <label class="form-label-txt" for="regPhone">Phone / WhatsApp *</label>
+                            <input type="tel" id="regPhone" class="form-input-field" placeholder="+91 9876543210" required />
+                        </div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: 1.2fr 0.8fr; gap:16px;">
+                        <div class="form-row-group">
+                            <label class="form-label-txt" for="regBranch">Department / Branch *</label>
+                            <input type="text" id="regBranch" class="form-input-field" placeholder="e.g. Computer Science / AI / IT" required />
+                        </div>
+                        <div class="form-row-group">
+                            <label class="form-label-txt" for="regYear">Academic Year *</label>
+                            <select id="regYear" class="form-select-field">
+                                <option value="1st Year">1st Year (Fresher - Recommended!)</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year">3rd Year</option>
+                                <option value="4th Year">4th Year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row-group">
+                        <label class="form-label-txt" for="regGithub">GitHub Profile Handle (Optional)</label>
+                        <input type="text" id="regGithub" class="form-input-field" placeholder="github.com/yourhandle" />
+                    </div>
+
+                    <div class="form-row-group">
+                        <label class="form-label-txt">Domains You Wish to Explore</label>
+                        <div class="domain-chips-grid">
+                            <label>
+                                <input type="checkbox" class="domain-chip-input" value="The Web" checked onchange="updateLivePassPreview()" />
+                                <div class="domain-chip-label-card">🕷️ The Web</div>
+                            </label>
+                            <label>
+                                <input type="checkbox" class="domain-chip-input" value="Stark AI" onchange="updateLivePassPreview()" />
+                                <div class="domain-chip-label-card">🤖 Stark AI</div>
+                            </label>
+                            <label>
+                                <input type="checkbox" class="domain-chip-input" value="DSA" onchange="updateLivePassPreview()" />
+                                <div class="domain-chip-label-card">🌀 DSA / Logic</div>
+                            </label>
+                            <label>
+                                <input type="checkbox" class="domain-chip-input" value="Cloud" onchange="updateLivePassPreview()" />
+                                <div class="domain-chip-label-card">⚡ Cloud DevOps</div>
+                            </label>
+                            <label>
+                                <input type="checkbox" class="domain-chip-input" value="Cybersecurity" onchange="updateLivePassPreview()" />
+                                <div class="domain-chip-label-card">🛡️ Cyber Defense</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit-recruit">
+                        CONFIRM REGISTRATION & GET PASS →
+                    </button>
+                </form>
+
+                <!-- Live Collectible Card Preview -->
+                <div class="preview-pass-column">
+                    <div style="font-family:var(--font-mono); font-size:11px; font-weight:700; color:var(--text-muted); margin-bottom:12px; letter-spacing:1px;">
+                        LIVE RECRUIT ID PASS PREVIEW
+                    </div>
+
+                    <div class="collectible-recruit-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span class="card-agency-badge">DEVUP RECRUIT PASS</span>
+                            <span class="card-status-badge">ROOKIE</span>
+                        </div>
+
+                        <div class="card-recruit-name-val" id="liveCardNameDisplay">PETER PARKER</div>
+                        <div class="card-recruit-id-val" id="liveCardIdDisplay">ID: DV-2026-0000</div>
+
+                        <div class="card-h-divider"></div>
+
+                        <div class="card-meta-label">ASSIGNED DOMAINS</div>
+                        <div class="card-pills-list" id="liveCardPillsDisplay">
+                            <span class="pass-tag-badge">THE WEB</span>
+                        </div>
+
+                        <div class="card-meta-label">EVENT DATES</div>
+                        <div style="font-family:var(--font-display); font-size:14px; font-weight:700; color:var(--text-heading);">
+                            SEPTEMBER 19–20, 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUCCESS RESULT CARD -->
+            <div id="recruitSuccessBox">
+                <div style="font-size:48px; margin-bottom:8px;">🎉</div>
+                <h3 style="font-family:var(--font-display); font-size:32px; font-weight:800; color:var(--text-heading);">
+                    REGISTRATION CONFIRMED!
+                </h3>
+                <p style="font-family:var(--font-mono); font-size:14px; color:var(--spidey-red); font-weight:700; margin-top:4px;">
+                    WELCOME TO DEVUP. YOUR MULTIVERSE SQUAD IS WAITING.
+                </p>
+                <div id="finalRecruitBadgeText" style="font-family:var(--font-mono); font-size:16px; font-weight:700; color:var(--text-heading); margin:18px 0;">
+                    RECRUIT ID: DV-2026-????
+                </div>
+
+                <div style="display:flex; justify-content:center; flex-wrap:wrap; margin-top:20px;">
+                    <button class="pass-btn-download" onclick="downloadRecruitPassPNG()">
+                        DOWNLOAD RECRUIT PASS (PNG)
+                    </button>
+                    <button class="pass-btn-secondary" onclick="downloadCalendarICS()">
+                        ADD TO CALENDAR (.ICS)
+                    </button>
+                    <button class="pass-btn-secondary" onclick="shareRecruitPass()">
+                        SHARE PASS LINK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 8: FOOTER (High Contrast Deep Navy #0F172A)
+       ============================================================ */
+    <footer class="site-footer">
+        <div class="footer-content-wrap">
+            <h2 class="footer-quote-big">THE MULTIVERSE IS <span>INFINITE</span>.</h2>
+            <div class="footer-subquote-tag">YOUR STORY STARTS HERE.</div>
+
+            <a href="#registration" class="btn-footer-register">JOIN DEVUP TODAY →</a>
+
+            <div class="footer-social-links-bar">
+                <a href="https://instagram.com/" target="_blank" rel="noopener" class="footer-nav-link">INSTAGRAM</a>
+                <a href="https://github.com/" target="_blank" rel="noopener" class="footer-nav-link">GITHUB</a>
+                <a href="https://linkedin.com/" target="_blank" rel="noopener" class="footer-nav-link">LINKEDIN</a>
+                <a href="https://discord.com/" target="_blank" rel="noopener" class="footer-nav-link">DISCORD</a>
+            </div>
+
+            <div class="footer-credits-text">
+                DEVUP CLUB · COLLEGE OF ENGINEERING · INTO THE MULTIVERSE © 2026<br>
+                Spider-Man and superhero storytelling elements used for inspiring creative developer education.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+       STICKY GAMIFICATION HUD (Light Floating Pill)
+       ============================================================ -->
+    <div id="gamificationPillHud">
+        <div>
+            <div style="font-family:var(--font-mono); font-size:10px; font-weight:700; color:var(--spidey-red);" id="hudRankDisplay">ROOKIE</div>
+            <div style="font-family:var(--font-display); font-size:14px; font-weight:700; color:var(--text-heading);" id="hudRecruitIdDisplay">DV-2026-????</div>
+        </div>
+
+        <div>
+            <div style="font-family:var(--font-mono); font-size:9.5px; font-weight:700; color:var(--text-muted);">
+                EXPLORED: <span id="hudDiscoveredNum" style="color:var(--spidey-red);">1</span> / 5
+            </div>
+            <div class="hud-progress-meter">
+                <div class="hud-meter-fill" id="hudMeterFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+       UNIVERSE MODAL DEEP DIVE VIEW
+       ============================================================ -->
+    <div id="universeModalView">
+        <div class="modal-dialog-box" id="modalDialogBox">
+            <button class="modal-close-icon" onclick="closeUniverseModal()">✕</button>
+
+            <div class="modal-left-art">
+                <img id="modalArtGraphic" src="" alt="Universe Hero Graphic" class="modal-hero-graphic" />
+            </div>
+
+            <div class="modal-right-info">
+                <div class="modal-universe-tag" id="modalUniverseTag">UNIVERSE 001</div>
+                <h3 class="modal-domain-heading" id="modalDomainHeading">THE WEB</h3>
+                <div class="modal-quote-box" id="modalQuoteBox">"Build the web. Don't just browse it."</div>
+                <p class="modal-desc-text" id="modalDescText">Description goes here.</p>
+
+                <div class="modal-arsenal-title">TECHNOLOGY ARSENAL</div>
+                <div class="modal-tech-pills" id="modalTechPills"></div>
+
+                <button class="btn-modal-align" id="btnModalAlign" onclick="alignWithThisUniverse()">
+                    ALIGN WITH THIS UNIVERSE →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="toastNotifier">Notification message</div>
+
+    <!-- ============================================================
+       SCRIPTS & INTERACTIVE LOGIC
+       ============================================================ -->
+    <script>
+        (function () {
+            "use strict";
+
+            // Event Configuration
+            const EVENT = {
+                name: "DevUp: Into the Multiverse",
+                club: "DevUp Club",
+                dateLabel: "Sept 19–20, 2026",
+                day1: { date: "2026-09-19", start: "09:00", end: "17:00", label: "Discover Your Universe" },
+                day2: { date: "2026-09-20", start: "09:00", end: "17:00", label: "Build Your Universe" },
+                venue: "College Main Auditorium & Computing Labs"
+            };
+
+            // Domain Universes Data
+            const UNIVERSES = {
+                web: {
+                    id: "web",
+                    num: "UNIVERSE 001",
+                    hero: "SPIDER-MAN",
+                    name: "THE WEB",
+                    theme: "#E52521",
+                    quote: "Build the web. Don't just browse it. Everything is connected.",
+                    desc: "The dimension where ideas turn into responsive frontends, dynamic single-page web applications, and connected backend APIs. From your first HTML tag to full-stack microservices, this is where ideas take flight.",
+                    stack: ["HTML5", "CSS3 / Modern UI", "JavaScript (ES6+)", "React", "Node.js", "REST APIs", "PostgreSQL"],
+                    img: "assets/real_images/spiderman_2.jpg",
+                    fallbackImg: "assets/heroes/spiderman.svg"
+                },
+                ai: {
+                    id: "ai",
+                    num: "UNIVERSE 002",
+                    hero: "IRON MAN",
+                    name: "STARK PROTOCOL",
+                    theme: "#D97706",
+                    quote: "The future isn't built. It's engineered.",
+                    desc: "Enter Tony Stark's engineering lab. Build artificial intelligence, train computer vision systems, and automate workflows with machine learning models that can think and predict.",
+                    stack: ["Python", "Machine Learning", "Neural Networks", "OpenCV", "Scikit-Learn", "Automation", "Robotics"],
+                    img: "assets/real_images/ironman.jpg",
+                    fallbackImg: "assets/heroes/ironman.svg"
+                },
+                dsa: {
+                    id: "dsa",
+                    num: "UNIVERSE 003",
+                    hero: "DOCTOR STRANGE",
+                    name: "SORCERER'S CODE",
+                    theme: "#059669",
+                    quote: "Every problem has another dimension. There are infinite solutions.",
+                    desc: "Unravel algorithmic complexity. Master trees, graphs, dynamic programming, and data structures. Like the Sorcerer Supreme manipulating space-time, optimal code operates in milliseconds.",
+                    stack: ["Data Structures", "Algorithms", "Competitive Programming", "C++ / Java", "Dynamic Programming", "Graph Theory"],
+                    img: "assets/real_images/multiverse_cosmos.jpg",
+                    fallbackImg: "assets/heroes/doctor-strange.svg"
+                },
+                cloud: {
+                    id: "cloud",
+                    num: "UNIVERSE 004",
+                    hero: "THOR",
+                    name: "REALM OF INFRASTRUCTURE",
+                    theme: "#0284C7",
+                    quote: "Command the infrastructure and bend cloud servers to your will.",
+                    desc: "Harness hyperscale cloud computing. Package applications into Docker containers, deploy Kubernetes clusters, and automate your delivery pipelines with GitHub Actions.",
+                    stack: ["AWS Cloud", "Docker", "Kubernetes", "Linux", "CI/CD Actions", "Terraform", "Serverless"],
+                    img: "assets/heroes/thor.webp",
+                    fallbackImg: "assets/heroes/thor.svg"
+                },
+                cyber: {
+                    id: "cyber",
+                    num: "UNIVERSE 005",
+                    hero: "CAPTAIN AMERICA",
+                    name: "SHIELD PROTOCOL",
+                    theme: "#4338CA",
+                    quote: "Protect the system. When everything else is compromised, hold the line.",
+                    desc: "Defend digital infrastructure from threats. Explore ethical hacking, network analysis, cryptographic defense, and penetration testing to keep systems secure.",
+                    stack: ["Network Security", "Ethical Hacking", "Cryptography", "Linux Hardening", "Penetration Testing", "Wireshark"],
+                    img: "assets/heroes/captain-america.webp",
+                    fallbackImg: "assets/heroes/captain-america.svg"
+                }
+            };
+
+            // Recruit State
+            let recruitState = {
+                id: localStorage.getItem("devup_recruit_id") || ("DV-2026-" + Math.floor(1000 + Math.random() * 9000)),
+                rank: "ROOKIE",
+                discovered: JSON.parse(localStorage.getItem("devup_discovered") || '["web"]'),
+                registered: false,
+                name: "RECRUIT"
+            };
+            localStorage.setItem("devup_recruit_id", recruitState.id);
+
+            // Update Header & HUD
+            function updateHUD() {
+                const count = recruitState.discovered.length;
+                let rank = "ROOKIE";
+                if (count >= 4) rank = "MULTIVERSE AGENT";
+                else if (count >= 2) rank = "SCOUT";
+                if (recruitState.registered) rank = "COMMISSIONED";
+                recruitState.rank = rank;
+
+                const navDisplay = document.getElementById("navRecruitIdDisplay");
+                if (navDisplay) navDisplay.textContent = recruitState.id;
+
+                const hudId = document.getElementById("hudRecruitIdDisplay");
+                if (hudId) hudId.textContent = recruitState.id;
+
+                const hudRank = document.getElementById("hudRankDisplay");
+                if (hudRank) hudRank.textContent = rank;
+
+                const hudDiscovered = document.getElementById("hudDiscoveredNum");
+                if (hudDiscovered) hudDiscovered.textContent = count;
+
+                const meter = document.getElementById("hudMeterFill");
+                if (meter) meter.style.width = (count / 5) * 100 + "%";
+
+                const liveCardId = document.getElementById("liveCardIdDisplay");
+                if (liveCardId) liveCardId.textContent = "ID: " + recruitState.id;
+            }
+            updateHUD();
+
+            /* ============================================================
+               MULTIVERSE COMMAND NEXUS INTERACTIVE CONTROLLER
+               ============================================================ */
+            let currentNavigatorUniverse = "web";
+
+            const NAVIGATOR_DATA = {
+                web: {
+                    id: "web",
+                    num: "UNIVERSE 001 // THE WEB ARCHITECT",
+                    hero: "SPIDER-MAN",
+                    role: "THE WEB ARCHITECT",
+                    dimension: "EARTH-616",
+                    headingMain: "BUILD THE WEB.",
+                    headingSub: "DON'T JUST BROWSE IT.",
+                    quote: "The universe where a blank page turns into something real. If you like seeing your work come alive in a browser within minutes, you belong here.",
+                    power: "Frontend Interfaces, Dynamic Apps & APIs",
+                    fresher: "Instant Visual Feedback · Zero Experience Needed",
+                    skills: ["HTML5 & CSS3", "JavaScript (ES6+)", "React", "Tailwind CSS", "REST APIs", "Node.js"],
+                    theme: "#E52521",
+                    border: "#FCA5A5",
+                    img: "assets/real_images/spiderman_2.jpg",
+                    fallbackImg: "assets/heroes/spiderman.svg"
+                },
+                ai: {
+                    id: "ai",
+                    num: "UNIVERSE 002 // STARK PROTOCOL",
+                    hero: "IRON MAN",
+                    role: "AI & INTELLIGENCE ARCHITECT",
+                    dimension: "EARTH-199999",
+                    headingMain: "STARK PROTOCOL.",
+                    headingSub: "THE FUTURE IS ENGINEERED.",
+                    quote: "Teach machines to analyze patterns, recognize speech, and generate new realities. Equal parts logic, mathematics, and pure engineering.",
+                    power: "Neural Networks, Machine Learning & Computer Vision",
+                    fresher: "Hands-on Python Scripts · High Industry Demand",
+                    skills: ["Python", "Machine Learning", "Neural Networks", "OpenCV", "Scikit-Learn", "Automation"],
+                    theme: "#D97706",
+                    border: "#FCD34D",
+                    img: "assets/real_images/ironman.jpg",
+                    fallbackImg: "assets/heroes/ironman.svg"
+                },
+                dsa: {
+                    id: "dsa",
+                    num: "UNIVERSE 003 // THE SORCERER'S CODE",
+                    hero: "DOCTOR STRANGE",
+                    role: "MASTER OF LOGIC & ALGORITHMS",
+                    dimension: "EARTH-838",
+                    headingMain: "SORCERER'S CODE.",
+                    headingSub: "EVERY PROBLEM HAS ANOTHER DIMENSION.",
+                    quote: "Unravel algorithmic complexity. Master competitive programming and data structures to make solutions run at lightning speed.",
+                    power: "Optimal Problem Solving & Algorithmic Design",
+                    fresher: "Cracks Technical Interviews · Sharpened Logic",
+                    skills: ["Data Structures", "Algorithms", "C++ / Java", "Time Complexity", "Dynamic Prog", "Graphs"],
+                    theme: "#059669",
+                    border: "#6EE7B7",
+                    img: "assets/real_images/multiverse_cosmos.jpg",
+                    fallbackImg: "assets/heroes/doctor-strange.svg"
+                },
+                cloud: {
+                    id: "cloud",
+                    num: "UNIVERSE 004 // REALM OF INFRASTRUCTURE",
+                    hero: "THOR",
+                    role: "GOD OF DEVOPS & INFRA",
+                    dimension: "REALM-965",
+                    headingMain: "REALM OF INFRA.",
+                    headingSub: "COMMAND THE CLOUD CLUSTERS.",
+                    quote: "Behind every modern app that doesn't crash under a million users is an infrastructure engineer who tamed the servers.",
+                    power: "Hyperscale Cloud, Containers & CI/CD Pipelines",
+                    fresher: "Industry DevOps Standards · High Career Value",
+                    skills: ["AWS Cloud", "Docker", "Kubernetes", "Linux", "GitHub Actions", "CI/CD"],
+                    theme: "#0284C7",
+                    border: "#7DD3FC",
+                    img: "assets/heroes/thor.webp",
+                    fallbackImg: "assets/heroes/thor.svg"
+                },
+                cyber: {
+                    id: "cyber",
+                    num: "UNIVERSE 005 // THE SHIELD PROTOCOL",
+                    hero: "CAPTAIN AMERICA",
+                    role: "CYBER GUARDIAN & DEFENDER",
+                    dimension: "SECTOR-1941",
+                    headingMain: "SHIELD PROTOCOL.",
+                    headingSub: "DEFEND THE DIGITAL PERIMETER.",
+                    quote: "Every other universe depends on this one holding the line. Learn how systems break so you can be the reason they don't.",
+                    power: "Ethical Hacking, Penetration Testing & Cryptography",
+                    fresher: "High Adrenaline CTF Challenges · Security Mindset",
+                    skills: ["Network Security", "Ethical Hacking", "Cryptography", "Linux", "Pen-Testing", "Wireshark"],
+                    theme: "#4338CA",
+                    border: "#A5B4FC",
+                    img: "assets/heroes/captain-america.webp",
+                    fallbackImg: "assets/heroes/captain-america.svg"
+                }
+            };
+
+            function selectNavigatorUniverse(key) {
+                const data = NAVIGATOR_DATA[key];
+                if (!data) return;
+                currentNavigatorUniverse = key;
+                window.currentNavigatorUniverse = key;
+
+                // Update Deck Styles
+                const deck = document.getElementById("mvControlDeck");
+                if (deck) {
+                    deck.style.setProperty("--deck-accent", data.theme);
+                    deck.style.setProperty("--deck-border", data.border);
+                }
+
+                // Update Portal Viewport
+                const deckImg = document.getElementById("portalDeckImg");
+                if (deckImg) {
+                    deckImg.src = data.img;
+                    deckImg.onerror = function () {
+                        this.onerror = null;
+                        this.src = data.fallbackImg;
+                    };
+                }
+
+                const freqBadge = document.getElementById("portalFreqBadge");
+                if (freqBadge) freqBadge.textContent = `DIMENSION: ${data.dimension} // LOCKED`;
+
+                const actionName = document.getElementById("portalActionName");
+                if (actionName) actionName.textContent = data.hero;
+
+                const actionRole = document.getElementById("portalActionRole");
+                if (actionRole) actionRole.textContent = data.role;
+
+                // Update Intel Matrix
+                const uNum = document.getElementById("deckUniverseNum");
+                if (uNum) uNum.textContent = data.num;
+
+                const hMain = document.getElementById("deckHeroHeading");
+                if (hMain) {
+                    hMain.innerHTML = `${data.headingMain}<br><span style="color:${data.theme};">${data.headingSub}</span>`;
+                }
+
+                const qText = document.getElementById("deckQuoteText");
+                if (qText) {
+                    qText.textContent = `"${data.quote}"`;
+                    qText.style.borderColor = data.theme;
+                }
+
+                const factPower = document.getElementById("deckFactPower");
+                if (factPower) factPower.textContent = data.power;
+
+                const factFresher = document.getElementById("deckFactFresher");
+                if (factFresher) factFresher.textContent = data.fresher;
+
+                const skillsList = document.getElementById("deckSkillsList");
+                if (skillsList) {
+                    skillsList.innerHTML = data.skills.map(s => `<span class="intel-skill-pill">${s}</span>`).join("");
+                }
+
+                // Update Top Tabs Active State
+                document.querySelectorAll(".mv-station-btn").forEach(btn => {
+                    if (btn.getAttribute("onclick").includes(`'${key}'`)) {
+                        btn.classList.add("active");
+                    } else {
+                        btn.classList.remove("active");
+                    }
+                });
+
+                // Update Bottom Constellation Cards Active State
+                document.querySelectorAll(".constellation-node-card").forEach(card => {
+                    if (card.getAttribute("onclick").includes(`'${key}'`)) {
+                        card.classList.add("active");
+                    } else {
+                        card.classList.remove("active");
+                    }
+                });
+
+                // Track discovery in HUD
+                if (!recruitState.discovered.includes(key)) {
+                    recruitState.discovered.push(key);
+                    localStorage.setItem("devup_discovered", JSON.stringify(recruitState.discovered));
+                    updateHUD();
+                }
+            }
+            window.selectNavigatorUniverse = selectNavigatorUniverse;
+            window.currentNavigatorUniverse = currentNavigatorUniverse;
+
+            function alignWithNavigatorUniverse() {
+                const data = NAVIGATOR_DATA[currentNavigatorUniverse];
+                showToast(`Aligned with ${data.hero} (${data.role})! Added to your recruit profile.`);
+                const regSection = document.getElementById("registration");
+                if (regSection) regSection.scrollIntoView({ behavior: "smooth" });
+            }
+            window.alignWithNavigatorUniverse = alignWithNavigatorUniverse;
+
+            /* ============================================================
+               MULTIVERSE 3D ORBITAL SIMULATION ENGINE (Domains Revolving Around a Line)
+               ============================================================ */
+            let orbitCanvas = null;
+            let orbitCtx = null;
+            let orbitPlaying = true;
+            let orbitSpeed = 1;
+            let orbitAngle = 0;
+            let orbitDirection = 1;
+            let orbitAnimationId = null;
+            let activeFocusDomain = null;
+            let timecodeSeconds = 134;
+
+            const ORBIT_DOMAINS = [
+                {
+                    id: "web",
+                    name: "THE WEB",
+                    hero: "Spider-Man",
+                    color: "#E52521",
+                    glow: "rgba(229, 37, 33, 0.7)",
+                    icon: "🕷️",
+                    imgSrc: "assets/real_images/spiderman_2.jpg",
+                    angleOffset: 0
+                },
+                {
+                    id: "ai",
+                    name: "STARK AI",
+                    hero: "Iron Man",
+                    color: "#D97706",
+                    glow: "rgba(217, 119, 6, 0.7)",
+                    icon: "🤖",
+                    imgSrc: "assets/real_images/ironman.jpg",
+                    angleOffset: (Math.PI * 2 / 5) * 1
+                },
+                {
+                    id: "dsa",
+                    name: "SORCERER'S CODE",
+                    hero: "Dr Strange",
+                    color: "#059669",
+                    glow: "rgba(5, 150, 105, 0.7)",
+                    icon: "🌀",
+                    imgSrc: "assets/real_images/multiverse_cosmos.jpg",
+                    angleOffset: (Math.PI * 2 / 5) * 2
+                },
+                {
+                    id: "cloud",
+                    name: "INFRASTRUCTURE",
+                    hero: "Thor",
+                    color: "#0284C7",
+                    glow: "rgba(2, 132, 199, 0.7)",
+                    icon: "⚡",
+                    imgSrc: "assets/heroes/thor.svg",
+                    angleOffset: (Math.PI * 2 / 5) * 3
+                },
+                {
+                    id: "cyber",
+                    name: "SHIELD CYBER",
+                    hero: "Cap America",
+                    color: "#4338CA",
+                    glow: "rgba(67, 56, 202, 0.7)",
+                    icon: "🛡️",
+                    imgSrc: "assets/heroes/captain-america.svg",
+                    angleOffset: (Math.PI * 2 / 5) * 4
+                }
+            ];
+
+            // Preload node images for canvas
+            ORBIT_DOMAINS.forEach(d => {
+                const img = new Image();
+                img.src = d.imgSrc;
+                d.loadedImg = img;
+            });
+
+            // Particles on the Multiverse Axis Line
+            const AXIS_PARTICLES = [];
+            for (let i = 0; i < 30; i++) {
+                AXIS_PARTICLES.push({
+                    y: Math.random() * 520,
+                    speed: 0.8 + Math.random() * 1.5,
+                    size: 1.5 + Math.random() * 2.5,
+                    opacity: 0.3 + Math.random() * 0.7,
+                    hue: Math.random() > 0.5 ? '#FEF08A' : '#38BDF8'
+                });
+            }
+
+            function setupOrbitCanvas() {
+                orbitCanvas = document.getElementById("multiverseOrbitCanvas");
+                if (!orbitCanvas) return;
+                orbitCtx = orbitCanvas.getContext("2d");
+
+                function resizeCanvas() {
+                    const rect = orbitCanvas.parentElement.getBoundingClientRect();
+                    orbitCanvas.width = rect.width;
+                    orbitCanvas.height = rect.height || 520;
+                }
+                resizeCanvas();
+                window.addEventListener("resize", resizeCanvas);
+
+                orbitCanvas.addEventListener("click", handleCanvasClick);
+                orbitCanvas.addEventListener("mousemove", handleCanvasMouseMove);
+
+                startOrbitLoop();
+            }
+
+            let hoveredOrbitDomain = null;
+
+            function handleCanvasMouseMove(e) {
+                if (!orbitCanvas) return;
+                const rect = orbitCanvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+
+                hoveredOrbitDomain = null;
+                for (let d of ORBIT_DOMAINS) {
+                    if (d.renderX && d.renderY) {
+                        const dist = Math.hypot(mouseX - d.renderX, mouseY - d.renderY);
+                        if (dist < d.renderRadius + 6) {
+                            hoveredOrbitDomain = d;
+                            orbitCanvas.style.cursor = "pointer";
+                            return;
+                        }
+                    }
+                }
+                orbitCanvas.style.cursor = "default";
+            }
+
+            function handleCanvasClick(e) {
+                if (!orbitCanvas) return;
+                const rect = orbitCanvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+
+                for (let d of ORBIT_DOMAINS) {
+                    if (d.renderX && d.renderY) {
+                        const dist = Math.hypot(mouseX - d.renderX, mouseY - d.renderY);
+                        if (dist < d.renderRadius + 8) {
+                            lockOrbitOnUniverse(d.id);
+                            return;
+                        }
+                    }
+                }
+            }
+
+            function renderOrbitFrame() {
+                if (!orbitCtx || !orbitCanvas) return;
+                const w = orbitCanvas.width;
+                const h = orbitCanvas.height;
+                const cx = w / 2;
+                const cy = h / 2;
+
+                orbitCtx.clearRect(0, 0, w, h);
+
+                // Update orbit rotation
+                if (orbitPlaying) {
+                    orbitAngle += 0.008 * orbitSpeed * orbitDirection;
+                    timecodeSeconds += 0.016;
+                    updateTimecodeHUD();
+                }
+
+                const rx = Math.min(w * 0.42, 440);
+                const ry = Math.min(h * 0.32, 140);
+                const tilt = 0.35;
+
+                // Calculate 3D positions
+                const nodes = ORBIT_DOMAINS.map(d => {
+                    const a = orbitAngle + d.angleOffset;
+                    const x = cx + rx * Math.cos(a);
+                    const y = cy + ry * Math.sin(a) * tilt;
+                    const z = Math.sin(a); // -1 = front, 1 = back
+                    const scale = 0.75 + 0.35 * (1 - z) / 2; // 0.75 (back) to 1.1 (front)
+                    const alpha = 0.45 + 0.55 * (1 - z) / 2;
+                    const isFront = z <= 0;
+                    return { ...d, x, y, z, scale, alpha, isFront };
+                });
+
+                // 1. Draw Background Orbit Ellipse (Behind the line)
+                orbitCtx.save();
+                orbitCtx.beginPath();
+                orbitCtx.ellipse(cx, cy, rx, ry * tilt, 0, Math.PI, Math.PI * 2);
+                orbitCtx.strokeStyle = "rgba(255, 255, 255, 0.14)";
+                orbitCtx.lineWidth = 2;
+                orbitCtx.setLineDash([6, 6]);
+                orbitCtx.stroke();
+                orbitCtx.restore();
+
+                // 2. Draw Back Nodes (behind the central axis line)
+                nodes.filter(n => !n.isFront).forEach(n => drawOrbitNode(n, cx, cy));
+
+                // 3. DRAW THE CENTRAL MULTIVERSE QUANTUM TIMELINE AXIS (THE LINE)
+                drawMultiverseAxisLine(cx, h);
+
+                // 4. Draw Foreground Orbit Ellipse (In front of line)
+                orbitCtx.save();
+                orbitCtx.beginPath();
+                orbitCtx.ellipse(cx, cy, rx, ry * tilt, 0, 0, Math.PI);
+                orbitCtx.strokeStyle = "rgba(254, 240, 138, 0.45)";
+                orbitCtx.lineWidth = 2.5;
+                orbitCtx.shadowColor = "rgba(254, 240, 138, 0.6)";
+                orbitCtx.shadowBlur = 10;
+                orbitCtx.stroke();
+                orbitCtx.restore();
+
+                // 5. Draw Foreground Nodes (in front of the central axis line)
+                nodes.filter(n => n.isFront).forEach(n => drawOrbitNode(n, cx, cy));
+
+                // 6. Draw Center Quantum Node / Arc Core on the Line
+                drawCenterMultiverseCore(cx, cy);
+
+                if (orbitPlaying) {
+                    orbitAnimationId = requestAnimationFrame(renderOrbitFrame);
+                }
+            }
+
+            function drawMultiverseAxisLine(cx, h) {
+                // Wide outer glow
+                const gradOuter = orbitCtx.createLinearGradient(cx - 30, 0, cx + 30, 0);
+                gradOuter.addColorStop(0, "rgba(229, 37, 33, 0)");
+                gradOuter.addColorStop(0.5, "rgba(229, 37, 33, 0.3)");
+                gradOuter.addColorStop(1, "rgba(229, 37, 33, 0)");
+                orbitCtx.fillStyle = gradOuter;
+                orbitCtx.fillRect(cx - 30, 0, 60, h);
+
+                // Inner electric beam
+                const gradInner = orbitCtx.createLinearGradient(cx - 8, 0, cx + 8, 0);
+                gradInner.addColorStop(0, "rgba(56, 189, 248, 0)");
+                gradInner.addColorStop(0.3, "rgba(56, 189, 248, 0.8)");
+                gradInner.addColorStop(0.5, "#FFFFFF");
+                gradInner.addColorStop(0.7, "rgba(254, 240, 138, 0.9)");
+                gradInner.addColorStop(1, "rgba(254, 240, 138, 0)");
+                orbitCtx.fillStyle = gradInner;
+                orbitCtx.fillRect(cx - 6, 0, 12, h);
+
+                // Core laser line
+                orbitCtx.save();
+                orbitCtx.beginPath();
+                orbitCtx.moveTo(cx, 0);
+                orbitCtx.lineTo(cx, h);
+                orbitCtx.strokeStyle = "#FFFFFF";
+                orbitCtx.lineWidth = 2.5;
+                orbitCtx.shadowColor = "#38BDF8";
+                orbitCtx.shadowBlur = 14;
+                orbitCtx.stroke();
+                orbitCtx.restore();
+
+                // Pulsing energy particles along the line
+                AXIS_PARTICLES.forEach(p => {
+                    p.y -= p.speed;
+                    if (p.y < 0) p.y = h;
+                    orbitCtx.save();
+                    orbitCtx.beginPath();
+                    orbitCtx.arc(cx, p.y, p.size, 0, Math.PI * 2);
+                    orbitCtx.fillStyle = p.hue;
+                    orbitCtx.shadowColor = p.hue;
+                    orbitCtx.shadowBlur = 8;
+                    orbitCtx.globalAlpha = p.opacity;
+                    orbitCtx.fill();
+                    orbitCtx.restore();
+                });
+            }
+
+            function drawCenterMultiverseCore(cx, cy) {
+                // Central Arc Reactor / Quantum Portal
+                orbitCtx.save();
+                orbitCtx.beginPath();
+                orbitCtx.arc(cx, cy, 26, 0, Math.PI * 2);
+                orbitCtx.fillStyle = "rgba(15, 23, 42, 0.95)";
+                orbitCtx.strokeStyle = "#FEF08A";
+                orbitCtx.lineWidth = 3;
+                orbitCtx.shadowColor = "rgba(254, 240, 138, 0.8)";
+                orbitCtx.shadowBlur = 20;
+                orbitCtx.fill();
+                orbitCtx.stroke();
+
+                // Rotating quantum rings
+                orbitCtx.beginPath();
+                orbitCtx.arc(cx, cy, 18, 0, Math.PI * 2);
+                orbitCtx.strokeStyle = "#E52521";
+                orbitCtx.lineWidth = 2;
+                orbitCtx.setLineDash([4, 4]);
+                orbitCtx.stroke();
+
+                // Center glowing dot
+                orbitCtx.beginPath();
+                orbitCtx.arc(cx, cy, 8, 0, Math.PI * 2);
+                orbitCtx.fillStyle = "#FFFFFF";
+                orbitCtx.shadowColor = "#38BDF8";
+                orbitCtx.shadowBlur = 12;
+                orbitCtx.fill();
+                orbitCtx.restore();
+            }
+
+            function drawOrbitNode(n, cx, cy) {
+                const radius = 28 * n.scale;
+                const isHovered = (hoveredOrbitDomain && hoveredOrbitDomain.id === n.id);
+                const isFocused = (activeFocusDomain === n.id);
+
+                // Save render coordinates for click detection
+                const origDomain = ORBIT_DOMAINS.find(d => d.id === n.id);
+                if (origDomain) {
+                    origDomain.renderX = n.x;
+                    origDomain.renderY = n.y;
+                    origDomain.renderRadius = radius;
+                }
+
+                orbitCtx.save();
+                orbitCtx.globalAlpha = n.alpha;
+
+                // Laser connector string to the central axis
+                orbitCtx.beginPath();
+                orbitCtx.moveTo(n.x, n.y);
+                orbitCtx.lineTo(cx, n.y);
+                orbitCtx.strokeStyle = isFocused || isHovered ? n.color : "rgba(255, 255, 255, 0.18)";
+                orbitCtx.lineWidth = isFocused || isHovered ? 2 : 1;
+                orbitCtx.stroke();
+
+                // Outer glowing halo
+                orbitCtx.beginPath();
+                orbitCtx.arc(n.x, n.y, radius + (isHovered ? 6 : 3), 0, Math.PI * 2);
+                orbitCtx.fillStyle = n.glow;
+                orbitCtx.fill();
+
+                // Node container circle
+                orbitCtx.beginPath();
+                orbitCtx.arc(n.x, n.y, radius, 0, Math.PI * 2);
+                orbitCtx.fillStyle = "#0F172A";
+                orbitCtx.strokeStyle = isFocused ? "#FEF08A" : n.color;
+                orbitCtx.lineWidth = isFocused ? 3.5 : 2.5;
+                orbitCtx.shadowColor = n.color;
+                orbitCtx.shadowBlur = isFocused || isHovered ? 18 : 10;
+                orbitCtx.fill();
+                orbitCtx.stroke();
+
+                // Draw loaded hero photo / icon inside circle
+                orbitCtx.save();
+                orbitCtx.beginPath();
+                orbitCtx.arc(n.x, n.y, radius - 2, 0, Math.PI * 2);
+                orbitCtx.clip();
+
+                if (n.loadedImg && n.loadedImg.complete && n.loadedImg.naturalWidth > 0) {
+                    orbitCtx.drawImage(n.loadedImg, n.x - radius, n.y - radius, radius * 2, radius * 2);
+                } else {
+                    orbitCtx.fillStyle = n.color;
+                    orbitCtx.fillRect(n.x - radius, n.y - radius, radius * 2, radius * 2);
+                }
+                orbitCtx.restore();
+
+                // Label pill underneath node
+                const labelText = `${n.icon} ${n.name}`;
+                orbitCtx.font = `bold ${Math.max(10, 11.5 * n.scale)}px 'Chakra Petch', sans-serif`;
+                const textWidth = orbitCtx.measureText(labelText).width;
+                const pillPadding = 8;
+                const pillY = n.y + radius + 8;
+
+                orbitCtx.fillStyle = isFocused ? "rgba(254, 240, 138, 0.95)" : "rgba(15, 23, 42, 0.9)";
+                orbitCtx.strokeStyle = isFocused ? "#F59E0B" : n.color;
+                orbitCtx.lineWidth = 1.5;
+
+                // Round rect
+                const rx = n.x - textWidth / 2 - pillPadding;
+                const ry = pillY;
+                const rw = textWidth + pillPadding * 2;
+                const rh = 20 * n.scale;
+                orbitCtx.beginPath();
+                if (orbitCtx.roundRect) {
+                    orbitCtx.roundRect(rx, ry, rw, rh, 4);
+                } else {
+                    orbitCtx.rect(rx, ry, rw, rh);
+                }
+                orbitCtx.fill();
+                orbitCtx.stroke();
+
+                // Pill text
+                orbitCtx.fillStyle = isFocused ? "#0F172A" : "#FFFFFF";
+                orbitCtx.textAlign = "center";
+                orbitCtx.textBaseline = "middle";
+                orbitCtx.fillText(labelText, n.x, pillY + rh / 2);
+
+                orbitCtx.restore();
+            }
+
+            function startOrbitLoop() {
+                if (!orbitAnimationId) {
+                    orbitAnimationId = requestAnimationFrame(renderOrbitFrame);
+                }
+            }
+
+            function toggleMvOrbitPlay() {
+                orbitPlaying = !orbitPlaying;
+                const icon = document.getElementById("mvPlayIcon");
+                const text = document.getElementById("mvPlayText");
+                const btn = document.getElementById("btnMvPlayPause");
+
+                if (orbitPlaying) {
+                    if (icon) icon.textContent = "⏸";
+                    if (text) text.textContent = "PAUSE REEL";
+                    if (btn) btn.classList.remove("active");
+                    startOrbitLoop();
+                } else {
+                    if (icon) icon.textContent = "▶";
+                    if (text) text.textContent = "PLAY REEL";
+                    if (btn) btn.classList.add("active");
+                    if (orbitAnimationId) {
+                        cancelAnimationFrame(orbitAnimationId);
+                        orbitAnimationId = null;
+                    }
+                }
+            }
+            window.toggleMvOrbitPlay = toggleMvOrbitPlay;
+
+            function reverseMvOrbit() {
+                orbitDirection *= -1;
+                showToast(`Orbit direction reversed (Current: ${orbitDirection > 0 ? "Normal" : "Inverted"})`);
+                if (!orbitPlaying) toggleMvOrbitPlay();
+            }
+            window.reverseMvOrbit = reverseMvOrbit;
+
+            function cycleMvOrbitSpeed() {
+                if (orbitSpeed === 1) orbitSpeed = 2;
+                else if (orbitSpeed === 2) orbitSpeed = 0.5;
+                else orbitSpeed = 1;
+
+                const btn = document.getElementById("btnMvSpeed");
+                if (btn) btn.textContent = `SPEED: ${orbitSpeed.toFixed(1)}X`;
+                showToast(`Simulation Orbit Speed: ${orbitSpeed}X`);
+                if (!orbitPlaying) toggleMvOrbitPlay();
+            }
+            window.cycleMvOrbitSpeed = cycleMvOrbitSpeed;
+
+            function lockOrbitOnUniverse(key) {
+                activeFocusDomain = key;
+                const d = ORBIT_DOMAINS.find(item => item.id === key);
+                const statusEl = document.getElementById("mvOrbitStatusText");
+                if (statusEl && d) {
+                    statusEl.textContent = `LOCKED ON: ${d.name} (${d.hero})`;
+                    statusEl.style.color = d.color;
+                }
+
+                // Highlight active button
+                document.querySelectorAll(".btn-mv-pill").forEach(btn => {
+                    if (btn.getAttribute("onclick").includes(`'${key}'`)) {
+                        btn.classList.add("active");
+                    } else {
+                        btn.classList.remove("active");
+                    }
+                });
+
+                showToast(`Multiverse Timeline locked on ${d ? d.name : key}!`);
+
+                // Highlight and scroll smoothly to card
+                const targetCard = document.getElementById(`domainCard-${key}`);
+                if (targetCard) {
+                    targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
+                    targetCard.style.transition = "transform 0.4s, box-shadow 0.4s";
+                    targetCard.style.transform = "translateY(-12px) scale(1.02)";
+                    targetCard.style.boxShadow = "0 0 35px " + (d ? d.color : "#E52521");
+                    setTimeout(() => {
+                        targetCard.style.transform = "";
+                        targetCard.style.boxShadow = "";
+                    }, 2200);
+                }
+
+                renderOrbitFrame();
+            }
+            window.lockOrbitOnUniverse = lockOrbitOnUniverse;
+
+            function updateTimecodeHUD() {
+                const tcEl = document.getElementById("mvTimecodeDisplay");
+                if (!tcEl) return;
+                const sec = Math.floor(timecodeSeconds);
+                const frames = Math.floor((timecodeSeconds % 1) * 60);
+                const mins = Math.floor(sec / 60);
+                const hrs = Math.floor(mins / 60);
+                const pad = (n) => String(n).padStart(2, '0');
+                tcEl.textContent = `TC ${pad(hrs)}:${pad(mins % 60)}:${pad(sec % 60)}:${pad(frames)}`;
+            }
+
+            // Stark Tower Image Toggle
+            let isStarkTowerView = false;
+            function toggleStarkTowerView() {
+                const img = document.getElementById("ironmanCardImg");
+                const btn = document.getElementById("btnStarkToggle");
+                const badge = document.getElementById("starkBadgeText");
+                if (!img) return;
+
+                isStarkTowerView = !isStarkTowerView;
+                if (isStarkTowerView) {
+                    img.src = "assets/real_images/stark_tower.jpg";
+                    if (btn) btn.textContent = "🦾 VIEW IRON MAN";
+                    if (badge) badge.textContent = "🗼 STARK TOWER NYC";
+                    showToast("Switched to Stark Tower HQ view at sunset!");
+                } else {
+                    img.src = "assets/real_images/ironman.jpg";
+                    if (btn) btn.textContent = "🗼 VIEW STARK TOWER";
+                    if (badge) badge.textContent = "🤖 IRON MAN ARMOR";
+                    showToast("Switched to Iron Man armor view!");
+                }
+            }
+            window.toggleStarkTowerView = toggleStarkTowerView;
+
+            /* ============================================================
+               UNIVERSE MODAL CONTROLS
+               ============================================================ */
+            let currentSelectedUniverse = "web";
+            const uModal = document.getElementById("universeModalView");
+            const modalBox = document.getElementById("modalDialogBox");
+            const modalImg = document.getElementById("modalArtGraphic");
+            const modalTag = document.getElementById("modalUniverseTag");
+            const modalHeading = document.getElementById("modalDomainHeading");
+            const modalQuote = document.getElementById("modalQuoteBox");
+            const modalDesc = document.getElementById("modalDescText");
+            const modalPills = document.getElementById("modalTechPills");
+
+            function openUniverseModal(key) {
+                const u = UNIVERSES[key];
+                if (!u) return;
+                currentSelectedUniverse = key;
+
+                modalTag.textContent = `${u.num} // ${u.hero}`;
+                modalTag.style.color = u.theme;
+                modalHeading.textContent = u.name;
+                modalQuote.textContent = `"${u.quote}"`;
+                modalQuote.style.borderColor = u.theme;
+                modalDesc.textContent = u.desc;
+
+                modalBox.style.setProperty("--modal-theme", u.theme);
+
+                modalImg.src = u.img;
+                modalImg.onerror = function () {
+                    this.onerror = null;
+                    this.src = u.fallbackImg;
+                };
+
+                modalPills.innerHTML = u.stack.map(s => `<span class="tech-pill-badge">${s}</span>`).join("");
+
+                // Track discovery
+                if (!recruitState.discovered.includes(key)) {
+                    recruitState.discovered.push(key);
+                    localStorage.setItem("devup_discovered", JSON.stringify(recruitState.discovered));
+                    updateHUD();
+                    showToast(`Discovered new universe: ${u.name}!`);
+                }
+
+                uModal.classList.add("show");
+            }
+            window.openUniverseModal = openUniverseModal;
+
+            function closeUniverseModal() {
+                uModal.classList.remove("show");
+            }
+            window.closeUniverseModal = closeUniverseModal;
+
+            uModal.addEventListener("click", (e) => {
+                if (e.target === uModal) closeUniverseModal();
+            });
+
+            function alignWithThisUniverse() {
+                closeUniverseModal();
+                const u = UNIVERSES[currentSelectedUniverse];
+                showToast(`Aligned with ${u.name}! Assigned to your recruit profile.`);
+                const regSection = document.getElementById("registration");
+                if (regSection) regSection.scrollIntoView({ behavior: "smooth" });
+            }
+            window.alignWithThisUniverse = alignWithThisUniverse;
+
+            /* ============================================================
+               TIMELINE TAB TOGGLE
+               ============================================================ */
+            function switchDayTab(day) {
+                const d1 = document.getElementById("day1List");
+                const d2 = document.getElementById("day2List");
+                const b1 = document.getElementById("tabDay1Btn");
+                const b2 = document.getElementById("tabDay2Btn");
+
+                if (day === 1) {
+                    d1.style.display = "flex";
+                    d2.style.display = "none";
+                    b1.classList.add("active");
+                    b2.classList.remove("active");
+                } else {
+                    d1.style.display = "none";
+                    d2.style.display = "flex";
+                    b2.classList.add("active");
+                    b1.classList.remove("active");
+                }
+            }
+            window.switchDayTab = switchDayTab;
+
+            /* ============================================================
+               BUILD PROTOCOL (INTERACTIVE GIT TERMINAL)
+               ============================================================ */
+            const terminalLog = document.getElementById("terminalLog");
+            const badgeUnlock = document.getElementById("achievementBadgeUnlock");
+
+            const GIT_STEPS = {
+                1: { cmd: "git init", res: "Initialized empty Git repository in /home/recruit/projects/first-commit/.git/" },
+                2: { cmd: "git add .", res: "Indexed: recruit_profile.json, multiverse_manifesto.md, first_commit.js" },
+                3: { cmd: 'git commit -m "feat: first commit into the multiverse"', res: "[main (root-commit) e52521a] feat: first commit into the multiverse\n 3 files changed, 184 insertions(+)" },
+                4: { cmd: "git push -u origin main", res: "Enumerating objects: 5, done.\nWriting objects: 100% (5/5), done.\nTo https://github.com/devup-club/multiverse.git\n * [new branch] main -> main\nBranch 'main' set up to track remote branch 'main' from 'origin'." }
+            };
+
+            function runGitStep(step) {
+                const d = GIT_STEPS[step];
+                if (!d) return;
+
+                const l1 = document.createElement("div");
+                l1.innerHTML = `<span class="prompt-symbol">recruit@devup:~$ </span><span class="prompt-cmd">${d.cmd}</span>`;
+                terminalLog.appendChild(l1);
+
+                const l2 = document.createElement("div");
+                l2.className = "prompt-res";
+                l2.textContent = d.res;
+                terminalLog.appendChild(l2);
+
+                if (step === 4) {
+                    const l3 = document.createElement("div");
+                    l3.className = "prompt-done";
+                    l3.textContent = "✔ BUILD COMPLETE — CODE COMMITTED & PUSHED TO THE MULTIVERSE!";
+                    terminalLog.appendChild(l3);
+                    badgeUnlock.classList.add("show");
+                    showToast("Achievement Unlocked: FIRST COMMIT!");
+                }
+                terminalLog.scrollTop = terminalLog.scrollHeight;
+            }
+            window.runGitStep = runGitStep;
+
+            function autoRunGitProtocol() {
+                terminalLog.innerHTML = `<div class="prompt-res">// DEVUP AUTO-RUN BUILD PROTOCOL INITIATED</div>`;
+                badgeUnlock.classList.remove("show");
+                let s = 1;
+                const timer = setInterval(() => {
+                    runGitStep(s);
+                    s++;
+                    if (s > 4) clearInterval(timer);
+                }, 750);
+            }
+            window.autoRunGitProtocol = autoRunGitProtocol;
+
+            /* ============================================================
+               REGISTRATION & LIVE CARD PREVIEW
+               ============================================================ */
+            function updateLivePassPreview() {
+                const name = document.getElementById("regName").value.trim() || "PETER PARKER";
+                document.getElementById("liveCardNameDisplay").textContent = name.toUpperCase();
+
+                const pills = [];
+                document.querySelectorAll(".domain-chip-input:checked").forEach(cb => {
+                    pills.push(cb.value.toUpperCase());
+                });
+
+                const container = document.getElementById("liveCardPillsDisplay");
+                container.innerHTML = (pills.length ? pills : ["EXPLORER"]).map(p =>
+                    `<span class="pass-tag-badge">${p}</span>`
+                ).join("");
+            }
+            window.updateLivePassPreview = updateLivePassPreview;
+
+            function handleRecruitSubmit(e) {
+                e.preventDefault();
+                const name = document.getElementById("regName").value.trim();
+                const email = document.getElementById("regEmail").value.trim();
+                const phone = document.getElementById("regPhone").value.trim();
+                const branch = document.getElementById("regBranch").value.trim();
+                const year = document.getElementById("regYear").value;
+                const github = document.getElementById("regGithub").value.trim();
+
+                const domains = [];
+                document.querySelectorAll(".domain-chip-input:checked").forEach(cb => domains.push(cb.value));
+
+                const payload = {
+                    id: recruitState.id,
+                    name, email, phone, branch, year, github, domains,
+                    registeredAt: new Date().toISOString()
+                };
+
+                recruitState.registered = true;
+                recruitState.name = name;
+                localStorage.setItem("devup_recruit_profile", JSON.stringify(payload));
+                updateHUD();
+
+                // Show Success Screen
+                document.getElementById("regCardContainer").style.display = "none";
+                const successBox = document.getElementById("recruitSuccessBox");
+                successBox.classList.add("show");
+                document.getElementById("finalRecruitBadgeText").textContent = `OFFICIAL RECRUIT ID: ${recruitState.id}`;
+
+                showToast("Registration Confirmed! Welcome, Recruit.");
+                successBox.scrollIntoView({ behavior: "smooth" });
+            }
+            window.handleRecruitSubmit = handleRecruitSubmit;
+
+            /* ============================================================
+               PNG RECRUIT CARD GENERATION
+               ============================================================ */
+            function downloadRecruitPassPNG() {
+                const cvs = document.getElementById("cardCanvasWorker");
+                const ctx = cvs.getContext("2d");
+                const W = cvs.width, H = cvs.height;
+
+                // Crisp White/Light Card Background
+                ctx.fillStyle = "#FFFFFF";
+                ctx.fillRect(0, 0, W, H);
+
+                // Spider-Man Red Top Border
+                ctx.fillStyle = "#E52521";
+                ctx.fillRect(0, 0, W, 10);
+
+                // Card Border
+                ctx.strokeStyle = "#E2E8F0";
+                ctx.lineWidth = 4;
+                ctx.strokeRect(2, 2, W - 4, H - 4);
+
+                // Agency Title
+                ctx.fillStyle = "#E52521";
+                ctx.font = "700 15px monospace";
+                ctx.fillText("DEVUP RECRUIT COMMISSION PASS", 40, 50);
+
+                ctx.fillStyle = "#0F172A";
+                ctx.font = "700 15px monospace";
+                ctx.fillText(recruitState.rank, W - 180, 50);
+
+                // Recruit Name
+                ctx.fillStyle = "#0F172A";
+                ctx.font = "800 36px sans-serif";
+                ctx.fillText((recruitState.name || "PETER PARKER").toUpperCase(), 40, 120);
+
+                // Recruit ID
+                ctx.fillStyle = "#64748B";
+                ctx.font = "600 18px monospace";
+                ctx.fillText("ID: " + recruitState.id, 40, 160);
+
+                // Divider Line
+                ctx.strokeStyle = "#E2E8F0";
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(40, 190); ctx.lineTo(W - 40, 190);
+                ctx.stroke();
+
+                // Domains Label
+                ctx.fillStyle = "#64748B";
+                ctx.font = "700 13px monospace";
+                ctx.fillText("ASSIGNED MULTIVERSE DOMAINS:", 40, 225);
+
+                const domains = recruitState.discovered.length ? recruitState.discovered : ["web"];
+                let tagX = 40, tagY = 255;
+                domains.forEach(dKey => {
+                    const u = UNIVERSES[dKey];
+                    const label = u ? u.name : dKey.toUpperCase();
+                    ctx.font = "12px monospace";
+                    const tW = ctx.measureText(label).width + 24;
+
+                    ctx.fillStyle = "#FEE2E2";
+                    ctx.fillRect(tagX, tagY - 18, tW, 26);
+                    ctx.strokeStyle = "#FCA5A5";
+                    ctx.strokeRect(tagX, tagY - 18, tW, 26);
+
+                    ctx.fillStyle = "#B91C1C";
+                    ctx.fillText(label, tagX + 12, tagY);
+                    tagX += tW + 12;
+                });
+
+                // Mission & Date
+                ctx.fillStyle = "#64748B";
+                ctx.font = "700 13px monospace";
+                ctx.fillText("EVENT DATES & VENUE:", 40, 330);
+                ctx.fillStyle = "#0F172A";
+                ctx.font = "700 16px sans-serif";
+                ctx.fillText("SEPTEMBER 19–20, 2026 · COLLEGE MAIN AUDITORIUM & COMPUTING LABS", 40, 360);
+
+                ctx.fillStyle = "#E52521";
+                ctx.font = "700 13px monospace";
+                ctx.fillText("DEVUP CLUB · INTO THE MULTIVERSE", 40, 410);
+
+                // Trigger Download
+                const a = document.createElement("a");
+                a.download = `devup-pass-${recruitState.id}.png`;
+                a.href = cvs.toDataURL("image/png");
+                a.click();
+                showToast("Recruit Pass downloaded as PNG!");
+            }
+            window.downloadRecruitPassPNG = downloadRecruitPassPNG;
+
+            /* ============================================================
+               CALENDAR (.ICS) GENERATOR
+               ============================================================ */
+            function downloadCalendarICS() {
+                function toICS(d, t) {
+                    return d.replace(/-/g, "") + "T" + t.replace(":", "") + "00";
+                }
+                const ics = [
+                    "BEGIN:VCALENDAR",
+                    "VERSION:2.0",
+                    "PRODID:-//DevUp//Multiverse//EN",
+                    "BEGIN:VEVENT",
+                    `UID:d1-${recruitState.id}@devup`,
+                    `DTSTART:${toICS(EVENT.day1.date, EVENT.day1.start)}`,
+                    `DTEND:${toICS(EVENT.day1.date, EVENT.day1.end)}`,
+                    `SUMMARY:${EVENT.name} — Day 1: ${EVENT.day1.label}`,
+                    `LOCATION:${EVENT.venue}`,
+                    "DESCRIPTION:Discover your power in technology domains.",
+                    "END:VEVENT",
+                    "BEGIN:VEVENT",
+                    `UID:d2-${recruitState.id}@devup`,
+                    `DTSTART:${toICS(EVENT.day2.date, EVENT.day2.start)}`,
+                    `DTEND:${toICS(EVENT.day2.date, EVENT.day2.end)}`,
+                    `SUMMARY:${EVENT.name} — Day 2: ${EVENT.day2.label}`,
+                    `LOCATION:${EVENT.venue}`,
+                    "DESCRIPTION:Build and ship code in the DevUp hackathon sprint.",
+                    "END:VEVENT",
+                    "END:VCALENDAR"
+                ].join("\r\n");
+
+                const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.download = "devup-into-the-multiverse.ics";
+                a.click();
+                showToast("Calendar events (.ics) downloaded!");
+            }
+            window.downloadCalendarICS = downloadCalendarICS;
+
+            /* ============================================================
+               SHARE PASS / CLIPBOARD
+               ============================================================ */
+            function shareRecruitPass() {
+                const text = `I just registered as a DevUp Recruit (${recruitState.id})! Into the Multiverse 🕸️ #DevUpClub`;
+                if (navigator.share) {
+                    navigator.share({ title: "DevUp Multiverse Pass", text }).catch(() => { });
+                } else if (navigator.clipboard) {
+                    navigator.clipboard.writeText(text).then(() => showToast("Recruit pass copied to clipboard!"));
+                } else {
+                    showToast(text);
+                }
+            }
+            window.shareRecruitPass = shareRecruitPass;
+
+            /* ============================================================
+               TOAST NOTIFIER
+               ============================================================ */
+            let toastTimer;
+            function showToast(msg) {
+                const t = document.getElementById("toastNotifier");
+                if (!t) return;
+                t.textContent = msg;
+                t.classList.add("show");
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => t.classList.remove("show"), 3200);
+            }
+            window.showToast = showToast;
+
+            // Initialize Multiverse Orbit Canvas Engine
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", setupOrbitCanvas);
+            } else {
+                setupOrbitCanvas();
+            }
+
+        })();
+    </script>
+</body>
+
+</html>
