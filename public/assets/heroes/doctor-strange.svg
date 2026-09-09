@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="strangeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050610"/>
+      <stop offset="60%" stop-color="#0f0c24"/>
+      <stop offset="100%" stop-color="#04020a"/>
+    </linearGradient>
+    <linearGradient id="eldritchGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF4B8"/>
+      <stop offset="50%" stop-color="#FF9D00"/>
+      <stop offset="100%" stop-color="#FF5D00"/>
+    </linearGradient>
+    <linearGradient id="cloakRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C71536"/>
+      <stop offset="60%" stop-color="#73091B"/>
+      <stop offset="100%" stop-color="#30030A"/>
+    </linearGradient>
+    <linearGradient id="timeStone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B8FFDA"/>
+      <stop offset="50%" stop-color="#00FF88"/>
+      <stop offset="100%" stop-color="#008F45"/>
+    </linearGradient>
+    <filter id="eldritchGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur1"/>
+      <feGaussianBlur stdDeviation="15" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark Cosmic Dimension Background -->
+  <rect width="600" height="800" fill="url(#strangeBg)"/>
+
+  <!-- ELDRITCH MAGIC MANDALA PORTALS (Background Spinning Arrays) -->
+  <g transform="translate(300, 360)" filter="url(#eldritchGlow)" stroke="url(#eldritchGold)" fill="none">
+    <!-- Outer Runic Ring -->
+    <circle cx="0" cy="0" r="230" stroke-width="2.5" stroke-dasharray="14 8 30 8"/>
+    <circle cx="0" cy="0" r="215" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="185" stroke-width="2" stroke-dasharray="4 6"/>
+
+    <!-- Intersecting Sacred Geometric Squares -->
+    <rect x="-130" y="-130" width="260" height="260" stroke-width="1.8"/>
+    <rect x="-130" y="-130" width="260" height="260" stroke-width="1.8" transform="rotate(45)"/>
+    <rect x="-130" y="-130" width="260" height="260" stroke-width="1.2" transform="rotate(22.5)"/>
+    <rect x="-130" y="-130" width="260" height="260" stroke-width="1.2" transform="rotate(67.5)"/>
+
+    <!-- Inner Concentric Mandala -->
+    <circle cx="0" cy="0" r="110" stroke-width="2" stroke-dasharray="10 5"/>
+    <polygon points="0,-90 78,45 -78,45" stroke-width="2"/>
+    <polygon points="0,90 78,-45 -78,-45" stroke-width="2"/>
+    <circle cx="0" cy="0" r="60" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="30" stroke-width="1" stroke-dasharray="2 3"/>
+  </g>
+
+  <!-- DOCTOR STRANGE SILHOUETTE & CLOAK OF LEVITATION -->
+  <g>
+    <!-- High Upturned Collar of the Cloak -->
+    <!-- Left Collar -->
+    <path d="M 230,220 C 170,160 140,80 180,60 C 210,130 240,210 250,280 Z" fill="url(#cloakRed)" stroke="#FF3355" stroke-width="2"/>
+    <!-- Right Collar -->
+    <path d="M 370,220 C 430,160 460,80 420,60 C 390,130 360,210 350,280 Z" fill="url(#cloakRed)" stroke="#FF3355" stroke-width="2"/>
+
+    <!-- Broad Shoulders of Cloak -->
+    <path d="M 170,260 C 110,320 80,480 80,650 L 520,650 C 520,480 490,320 430,260 C 390,290 350,310 300,310 C 250,310 210,290 170,260 Z" fill="url(#cloakRed)" opacity="0.95"/>
+
+    <!-- Robe / Tunic (Blue Sorcerer Vestments) -->
+    <path d="M 240,280 L 360,280 L 390,580 L 210,580 Z" fill="#152140" stroke="#253A70" stroke-width="2"/>
+    <!-- Crossed Sash Belts -->
+    <line x1="240" y1="360" x2="360" y2="460" stroke="#7A5826" stroke-width="8"/>
+    <line x1="360" y1="360" x2="240" y2="460" stroke="#5A401A" stroke-width="8"/>
+
+    <!-- Head & Distinctive Grey Streak Hair Silhouette -->
+    <path d="M 300,140 C 260,140 245,175 245,215 C 245,265 270,295 300,305 C 330,295 355,265 355,215 C 355,175 340,140 300,140 Z" fill="#1C1824"/>
+    <!-- Hair & Temple Streaks -->
+    <path d="M 245,185 C 240,150 265,125 300,125 C 335,125 360,150 355,185 C 345,160 325,145 300,145 C 275,145 255,160 245,185 Z" fill="#0A0810"/>
+    <path d="M 246,180 C 250,165 260,155 268,155" stroke="#E2E2F0" stroke-width="3.5" fill="none"/>
+    <path d="M 354,180 C 350,165 340,155 332,155" stroke="#E2E2F0" stroke-width="3.5" fill="none"/>
+
+    <!-- EYE OF AGAMOTTO (Talisman at Collar) -->
+    <g transform="translate(300, 310)" filter="url(#eldritchGlow)">
+      <!-- Bronze Casing -->
+      <ellipse cx="0" cy="0" rx="34" ry="22" fill="#594318" stroke="#FFB84D" stroke-width="3"/>
+      <!-- Mystic Eye Aperture -->
+      <path d="M -24,0 Q 0,-16 24,0 Q 0,16 -24,0 Z" fill="#150E04" stroke="#FFE082" stroke-width="1.5"/>
+      <!-- Time Stone Glow -->
+      <circle cx="0" cy="0" r="9" fill="url(#timeStone)"/>
+    </g>
+
+    <!-- Casting Hands in Foreground with Mini Mandalas -->
+    <g transform="translate(180, 520)" filter="url(#eldritchGlow)">
+      <circle cx="0" cy="0" r="50" fill="none" stroke="url(#eldritchGold)" stroke-width="2" stroke-dasharray="6 4"/>
+      <polygon points="0,-40 35,20 -35,20" fill="none" stroke="url(#eldritchGold)" stroke-width="1.5"/>
+      <polygon points="0,40 35,-20 -35,-20" fill="none" stroke="url(#eldritchGold)" stroke-width="1.5"/>
+    </g>
+    <g transform="translate(420, 520)" filter="url(#eldritchGlow)">
+      <circle cx="0" cy="0" r="50" fill="none" stroke="url(#eldritchGold)" stroke-width="2" stroke-dasharray="6 4"/>
+      <polygon points="0,-40 35,20 -35,20" fill="none" stroke="url(#eldritchGold)" stroke-width="1.5"/>
+      <polygon points="0,40 35,-20 -35,-20" fill="none" stroke="url(#eldritchGold)" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- Doctor Strange Tech & DSA Overlay -->
+  <text x="40" y="70" fill="#00FF88" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" letter-spacing="3">UNIVERSE 003 // THE SORCERER'S CODE</text>
+  <text x="40" y="750" fill="#FFFFFF" font-family="'Chakra Petch', sans-serif" font-size="28" font-weight="700" letter-spacing="2">DOCTOR STRANGE // MASTER OF LOGIC</text>
+  <text x="40" y="775" fill="#8D8DA0" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="1">ROLE: DIMENSIONAL ALGORITHMIST // TECH: DSA·COMPLEXITY·DYNAMIC PROG</text>
+</svg>

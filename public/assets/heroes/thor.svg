@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="thorBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040814"/>
+      <stop offset="60%" stop-color="#0a1936"/>
+      <stop offset="100%" stop-color="#02040a"/>
+    </linearGradient>
+    <linearGradient id="lightning" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#99E5FF"/>
+      <stop offset="100%" stop-color="#248EFF"/>
+    </linearGradient>
+    <linearGradient id="silverPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EDF2F7"/>
+      <stop offset="50%" stop-color="#A0AEC0"/>
+      <stop offset="100%" stop-color="#4A5568"/>
+    </linearGradient>
+    <linearGradient id="capeRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DC2626"/>
+      <stop offset="60%" stop-color="#991B1B"/>
+      <stop offset="100%" stop-color="#450A0A"/>
+    </linearGradient>
+    <filter id="lightningGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur1"/>
+      <feGaussianBlur stdDeviation="16" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Deep Cosmic Thunder Background -->
+  <rect width="600" height="800" fill="url(#thorBg)"/>
+
+  <!-- High-Voltage Cloud Infrastructure & Circuit Sparks -->
+  <g stroke="url(#lightning)" fill="none" opacity="0.4" stroke-width="1.2">
+    <!-- Server Grid Tracks -->
+    <path d="M 0,200 L 180,200 L 220,280 L 380,280 L 420,200 L 600,200"/>
+    <path d="M 0,340 L 140,340 L 200,420 L 400,420 L 460,340 L 600,340"/>
+    <path d="M 0,500 L 160,500 L 220,580 L 380,580 L 440,500 L 600,500"/>
+    <!-- Server Node Clusters -->
+    <circle cx="180" cy="200" r="4" fill="#60A5FA"/>
+    <circle cx="420" cy="200" r="4" fill="#60A5FA"/>
+    <circle cx="200" cy="420" r="4" fill="#60A5FA"/>
+    <circle cx="400" cy="420" r="4" fill="#60A5FA"/>
+  </g>
+
+  <!-- Crackling Lightning Bolts across dimensions -->
+  <g filter="url(#lightningGlow)" stroke="url(#lightning)" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Main Left Lightning -->
+    <path d="M 120,40 L 150,160 L 110,220 L 190,340 L 140,400 L 220,520 L 180,620 L 260,740" stroke-width="3"/>
+    <path d="M 110,220 L 60,260 L 80,330" stroke-width="1.8"/>
+    <!-- Main Right Lightning -->
+    <path d="M 480,30 L 440,150 L 500,230 L 420,360 L 470,440 L 390,560 L 430,660 L 350,760" stroke-width="3"/>
+    <path d="M 420,360 L 540,410 L 510,480" stroke-width="1.8"/>
+  </g>
+
+  <!-- THOR HERO SILHOUETTE & ASGARDIAN ARMOR -->
+  <g>
+    <!-- Asgardian Crimson Cape flowing behind -->
+    <path d="M 160,240 C 90,320 60,500 50,700 L 550,700 C 540,500 510,320 440,240 Z" fill="url(#capeRed)" opacity="0.9"/>
+
+    <!-- Broad Armored Shoulders and Torso -->
+    <path d="M 170,260 L 430,260 L 400,650 L 200,650 Z" fill="#1E293B" stroke="#334155" stroke-width="3"/>
+
+    <!-- Six Circular Asgardian Breastplate Discs -->
+    <!-- Disc 1 & 2 -->
+    <circle cx="250" cy="330" r="32" fill="url(#silverPlate)" stroke="#64748B" stroke-width="3" filter="url(#lightningGlow)"/>
+    <circle cx="350" cy="330" r="32" fill="url(#silverPlate)" stroke="#64748B" stroke-width="3" filter="url(#lightningGlow)"/>
+    <!-- Disc 3 & 4 -->
+    <circle cx="240" cy="420" r="34" fill="url(#silverPlate)" stroke="#64748B" stroke-width="3" filter="url(#lightningGlow)"/>
+    <circle cx="360" cy="420" r="34" fill="url(#silverPlate)" stroke="#64748B" stroke-width="3" filter="url(#lightningGlow)"/>
+    <!-- Disc 5 & 6 -->
+    <circle cx="255" cy="510" r="28" fill="url(#silverPlate)" stroke="#64748B" stroke-width="3" filter="url(#lightningGlow)"/>
+    <circle cx="345" cy="510" r="28" fill="url(#silverPlate)" stroke="#64748B" stroke-width="3" filter="url(#lightningGlow)"/>
+
+    <!-- Thor Helmet Silhouette & Face -->
+    <path d="M 300,120 C 240,120 220,165 220,230 C 220,285 250,310 300,310 C 350,310 380,285 380,230 C 380,165 360,120 300,120 Z" fill="#0F172A"/>
+
+    <!-- Silver Helmet Wing Decals -->
+    <!-- Left Wing -->
+    <path d="M 230,170 C 150,110 130,30 200,60 C 210,100 225,140 235,175 Z" fill="url(#silverPlate)" stroke="#94A3B8" stroke-width="2"/>
+    <!-- Right Wing -->
+    <path d="M 370,170 C 450,110 470,30 400,60 C 390,100 375,140 365,175 Z" fill="url(#silverPlate)" stroke="#94A3B8" stroke-width="2"/>
+
+    <!-- Glowing Electric Eyes (All-Father Lightning Sight) -->
+    <ellipse cx="270" cy="220" rx="8" ry="4" fill="#FFFFFF" filter="url(#lightningGlow)"/>
+    <ellipse cx="330" cy="220" rx="8" ry="4" fill="#FFFFFF" filter="url(#lightningGlow)"/>
+
+    <!-- Mjolnir / Stormbreaker Energy Core at Chest Base -->
+    <g transform="translate(300, 590)" filter="url(#lightningGlow)">
+      <polygon points="0,-25 35,0 0,25 -35,0" fill="url(#lightning)"/>
+      <circle cx="0" cy="0" r="8" fill="#FFFFFF"/>
+    </g>
+  </g>
+
+  <!-- Thor Cloud & Infrastructure Overlay -->
+  <text x="40" y="70" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" letter-spacing="3">UNIVERSE 004 // REALM OF INFRASTRUCTURE</text>
+  <text x="40" y="750" fill="#FFFFFF" font-family="'Chakra Petch', sans-serif" font-size="28" font-weight="700" letter-spacing="2">THOR // GOD OF DEVOPS</text>
+  <text x="40" y="775" fill="#8D8DA0" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="1">ROLE: INFRASTRUCTURE OVERLORD // TECH: CLOUD·AWS·DOCKER·K8S·CI/CD</text>
+</svg>
