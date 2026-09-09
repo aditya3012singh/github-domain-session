@@ -1,14 +1,16 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
+import Logo from "@/components/ui/Logo";
 
 interface ComicOpeningProps {
-  onEnter: () => void;
+  onEnter: (options?: { fromBottom?: boolean }) => void;
   isEntered: boolean;
 }
 
 export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) {
   const [isFadingOut, setIsFadingOut] = useState(false);
+  const [isAscending, setIsAscending] = useState(false);
   const [beat, setBeat] = useState<number>(1);
   const [isBeat1Exiting, setIsBeat1Exiting] = useState(false);
   const [showBeat2Details, setShowBeat2Details] = useState(false);
@@ -42,13 +44,31 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
     };
   }, []);
 
-  const handleEnter = useCallback(() => {
-    if (isFadingOut || isEntered) return;
-    setIsFadingOut(true);
-    setTimeout(() => {
-      onEnter();
-    }, 500);
-  }, [isFadingOut, isEntered, onEnter]);
+  const handleEnter = useCallback(
+    (fromBottom = true) => {
+      if (isFadingOut || isEntered) return;
+      setIsFadingOut(true);
+      if (fromBottom) {
+        setIsAscending(true);
+        try {
+          const bottomY =
+            Math.max(
+              document.body.scrollHeight,
+              document.documentElement.scrollHeight
+            ) - window.innerHeight;
+          window.scrollTo(0, bottomY);
+          const lenis = (window as any).__lenis;
+          if (lenis && typeof lenis.scrollTo === "function") {
+            lenis.scrollTo(bottomY, { immediate: true });
+          }
+        } catch {}
+      }
+      setTimeout(() => {
+        onEnter({ fromBottom });
+      }, 500);
+    },
+    [isFadingOut, isEntered, onEnter]
+  );
 
   // Support mouse wheel, keyboard, and touch swipe to immediately enter
   useEffect(() => {
@@ -94,14 +114,14 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex flex-col justify-between p-6 sm:p-12 md:p-16 bg-black text-white transition-opacity duration-700 select-none overflow-hidden ${
-        isFadingOut ? "opacity-0 pointer-events-none" : "opacity-100"
+      className={`fixed inset-0 z-50 flex flex-col justify-between px-5 py-6 sm:p-12 md:p-16 bg-black text-white transition-all duration-700 ease-in-out select-none overflow-hidden ${
+        isFadingOut ? "-translate-y-8 opacity-0 pointer-events-none" : "translate-y-0 opacity-100"
       }`}
     >
       {/* Animated Glowing Red Web Strand Cutting Horizontally */}
-      <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <div
-          className="absolute top-[50%] left-0 h-[1.5px] bg-gradient-to-r from-transparent via-red-600 to-transparent transition-all duration-1000 ease-out"
+          className="absolute top-[54%] left-0 h-[1.5px] bg-gradient-to-r from-transparent via-red-600 to-transparent transition-all duration-1000 ease-out"
           style={{
             width: isReady ? "100%" : "0%",
             opacity: isReady ? 0.75 : 0,
@@ -134,31 +154,31 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
         <img
           src="/assets/real_images/spiderman_2.jpg"
           alt="Spider-Man"
-          className={`w-full h-full object-cover object-right md:object-center filter contrast-150 grayscale transition-all duration-1000 ease-out ${
+          className={`w-full h-full object-cover object-right md:object-center filter contrast-115 brightness-100 transition-all duration-1000 ease-out ${
             beat === 2
-              ? "scale-100 opacity-45 blur-0"
+              ? "scale-100 opacity-75 blur-0"
               : isReady
-              ? "scale-105 opacity-30 blur-0"
+              ? "scale-105 opacity-60 blur-0"
               : "scale-110 opacity-0 blur-sm"
           }`}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
       </div>
 
-      {/* Top Header Label */}
-      <div className="relative z-10 flex items-center justify-between">
+      {/* Top Header: DevUp Logo & Skip Button */}
+      <div className="relative z-10 flex items-center justify-between gap-3">
         <div
-          className={`font-mono text-xs sm:text-sm tracking-[0.35em] text-red-500 font-extrabold uppercase transition-all duration-700 ease-out ${
+          className={`transition-all duration-700 ease-out ${
             isReady ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
           }`}
         >
-          DEVUP CLUB PRESENTS
+          <Logo />
         </div>
 
         <button
           type="button"
-          onClick={handleEnter}
+          onClick={() => handleEnter(false)}
           className={`font-mono text-xs tracking-widest text-slate-300 hover:text-white uppercase transition-all duration-700 px-3 py-1.5 border border-white/20 hover:border-white/50 bg-black/40 backdrop-blur-sm cursor-pointer ${
             isReady ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
           }`}
@@ -169,12 +189,12 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
 
       {/* Center Stage: 2-Beat Trailer Cut Transition */}
       <div className="relative z-10 flex-1 flex items-center justify-center my-auto py-8">
-        {/* BEAT 1: "EVERY HERO HAS A FIRST DAY." (Fades out cleanly after 1.8s) */}
+        {/* BEAT 1: "EVERY HERO HAS A FIRST DAY." (Lifted Cleanly Above the Red Line) */}
         <div
           className={`absolute inset-x-0 transition-all duration-700 ease-out flex flex-col items-center justify-center text-center px-4 ${
             beat === 1 && !isBeat1Exiting
-              ? "opacity-100 scale-100 translate-y-0"
-              : "opacity-0 scale-95 -translate-y-6 pointer-events-none"
+              ? "opacity-100 scale-100 -translate-y-16 sm:-translate-y-20 md:-translate-y-24"
+              : "opacity-0 scale-95 -translate-y-28 pointer-events-none"
           }`}
         >
           <div className="font-mono text-xs tracking-[0.35em] text-red-500 font-bold uppercase mb-4 animate-pulse">
@@ -189,11 +209,11 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
           </h1>
         </div>
 
-        {/* BEAT 2: "WHAT'S YOURS?" Slams In on Clean Screen */}
+        {/* BEAT 2: "WHAT'S YOURS?" Slams In on Clean Screen (Shifted Upwards from the Red Line) */}
         <div
           className={`absolute inset-x-0 transition-all duration-700 ease-out flex flex-col items-center justify-center text-center px-4 ${
             beat === 2
-              ? "opacity-100 scale-100 translate-y-0"
+              ? "opacity-100 scale-100 -translate-y-12 sm:-translate-y-16 md:-translate-y-18"
               : "opacity-0 scale-110 translate-y-10 pointer-events-none"
           }`}
         >
@@ -208,9 +228,9 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
             </span>
           </h1>
 
-          {/* Subtitle & Date Badge for Beat 2 */}
+          {/* Subtitle & Date Badge for Beat 2 (Cleanly Beneath the Red Line) */}
           <div
-            className={`mt-6 sm:mt-8 space-y-2 transition-all duration-700 delay-150 ${
+            className={`mt-8 sm:mt-12 md:mt-14 space-y-2 transition-all duration-700 delay-150 ${
               showBeat2Details ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
@@ -237,7 +257,7 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
 
           <button
             type="button"
-            onClick={handleEnter}
+            onClick={() => handleEnter(true)}
             className="inline-flex items-center gap-2 font-mono text-xs text-red-500 hover:text-red-400 tracking-widest uppercase transition-colors text-left cursor-pointer"
           >
             <span className="animate-bounce">↓</span>
@@ -247,12 +267,13 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
 
         <button
           type="button"
-          onClick={handleEnter}
-          className="group inline-flex items-center justify-between gap-6 px-8 py-5 rounded-none bg-red-600 hover:bg-white text-white hover:text-black font-display font-extrabold text-base sm:text-lg tracking-widest uppercase transition-all duration-300 shadow-2xl cursor-pointer"
+          onClick={() => handleEnter(true)}
+          disabled={isFadingOut}
+          className="group inline-flex items-center justify-between gap-6 px-8 py-5 rounded-none bg-red-600 hover:bg-white text-white hover:text-black font-display font-extrabold text-base sm:text-lg tracking-widest uppercase transition-all duration-300 shadow-2xl cursor-pointer disabled:opacity-85"
         >
-          <span>ENTER THE WEB</span>
+          <span>{isAscending ? "ASCENDING THE WEB..." : "ENTER THE WEB"}</span>
           <span className="text-2xl group-hover:translate-x-2 transition-transform duration-200">
-            →
+            {isAscending ? "↑" : "→"}
           </span>
         </button>
       </div>

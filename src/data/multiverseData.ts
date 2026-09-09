@@ -162,7 +162,7 @@ NAVIGATOR_DATA.cyber = NAVIGATOR_DATA.uiux;
 export const SCHEDULE_DAYS: DaySchedule[] = [
   {
     label: "DAY 1: DISCOVER YOUR UNIVERSE",
-    date: "Saturday, September 19, 2026",
+    date: "Tuesday, September 15, 2026 (5:00 PM – 7:00 PM)",
     theme: "Inspiration, Domain Deep-Dives, & The Git Foundations",
     events: [
       {

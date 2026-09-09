@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface DomainNode {
   id: string;
+  num: string;
   name: string;
   shortTag: string;
   headline: string;
@@ -15,6 +17,7 @@ interface DomainNode {
 const DOMAIN_NODES: DomainNode[] = [
   {
     id: "web",
+    num: "01",
     name: "WEB DEVELOPMENT",
     shortTag: "WEB DEV",
     headline: "Build what people interact with.",
@@ -24,6 +27,7 @@ const DOMAIN_NODES: DomainNode[] = [
   },
   {
     id: "app",
+    num: "02",
     name: "APP DEVELOPMENT",
     shortTag: "APP DEV",
     headline: "Build experiences people carry everywhere.",
@@ -33,6 +37,7 @@ const DOMAIN_NODES: DomainNode[] = [
   },
   {
     id: "ai",
+    num: "03",
     name: "AI & MACHINE LEARNING",
     shortTag: "AI / ML",
     headline: "Teach machines to think & predict.",
@@ -42,6 +47,7 @@ const DOMAIN_NODES: DomainNode[] = [
   },
   {
     id: "dsa",
+    num: "04",
     name: "DSA / CP",
     shortTag: "DSA / CP",
     headline: "Solve problems. Think differently.",
@@ -50,25 +56,8 @@ const DOMAIN_NODES: DomainNode[] = [
     themeColor: "#0284C7",
   },
   {
-    id: "cyber",
-    name: "CYBERSECURITY",
-    shortTag: "CYBERSECURITY",
-    headline: "Protect the web. Defend the perimeter.",
-    desc: "Understand vulnerabilities, network attacks, ethical penetration testing, and cryptography to keep digital systems safe.",
-    stack: ["Networks", "Linux", "Ethical Hacking", "Wireshark", "Cryptography"],
-    themeColor: "#8B5CF6",
-  },
-  {
-    id: "cloud",
-    name: "CLOUD & DEVOPS",
-    shortTag: "CLOUD / DEVOPS",
-    headline: "Keep the world running without crashing.",
-    desc: "Deploy applications across hyperscale servers, configure Docker containers, and build automated continuous delivery pipelines.",
-    stack: ["Docker", "Kubernetes", "AWS Cloud", "Linux CLI", "CI/CD"],
-    themeColor: "#06B6D4",
-  },
-  {
     id: "uiux",
+    num: "05",
     name: "UI/UX DESIGN",
     shortTag: "UI/UX DESIGN",
     headline: "Make technology beautiful and usable.",
@@ -92,137 +81,150 @@ export default function ComicDomainsWeb() {
   return (
     <section
       id="domains-web"
-      className="relative py-28 px-6 sm:px-12 md:px-20 bg-black text-white overflow-hidden transition-colors duration-500"
+      className="relative min-h-screen py-24 sm:py-28 px-6 sm:px-12 md:px-20 bg-black text-white overflow-hidden flex flex-col justify-center"
     >
-      {/* Spider-Man Real Background Artwork (Same Style as Hero Section 1) */}
-      <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[68%] pointer-events-none z-0 opacity-30">
+      {/* Spider-Man Dual Suit Background Artwork (Rock-Solid Pinned, Zero Flicker / Zero Jitter) */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/real_images/spiderman_2.jpg"
-          alt="Spider-Man Web Multiverse"
-          className="w-full h-full object-cover object-center filter contrast-125 brightness-95"
+          src="/spiderman.jpg"
+          alt="Spider-Man Dual Suit"
+          className="w-full h-full object-cover object-center opacity-65"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 lg:via-black/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/45 to-black/90" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto space-y-16">
-        {/* Title */}
-        <div className="space-y-3">
-          <span className="font-mono text-xs tracking-[0.3em] text-red-500 font-extrabold uppercase block">
+      <div className="relative z-10 max-w-6xl mx-auto w-full space-y-10 sm:space-y-12">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="space-y-3"
+        >
+          <span className="font-mono text-xs tracking-[0.3em] text-red-500 font-extrabold uppercase block drop-shadow-md">
             SCENE 05 // THE WEB MAP
           </span>
-          <h2 className="font-display text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-white uppercase leading-[0.9]">
+          <h2 className="font-display text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-white uppercase leading-[0.9] drop-shadow-xl">
             THE WEB IS <br />
             <span className="text-red-600">BIGGER THAN YOU THINK.</span>
           </h2>
-          <p className="font-body text-base sm:text-lg text-slate-300 max-w-xl">
-            You are at the center. Each branch represents a different superpower. Click a node to transform the scene:
+          <p className="font-body text-base sm:text-lg text-slate-300 max-w-xl drop-shadow">
+            You are at the center. Select a domain below to activate its superpower:
           </p>
-        </div>
+        </motion.div>
 
-        {/* The Central Spider-Web Graph: YOU in center, branches around */}
-        <div className="p-8 sm:p-14 bg-black/80 backdrop-blur-md border-2 border-white/20 relative overflow-hidden shadow-2xl">
-          {/* Subtle connecting web lines */}
-          <div className="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(#E52521_1px,transparent_1px)] [background-size:24px_24px]" />
-
-          <div className="relative z-10 flex flex-col items-center justify-center space-y-8">
-            {/* Center "YOU" Node */}
-            <div className="flex flex-col items-center">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-red-600 border-4 border-white flex flex-col items-center justify-center shadow-2xl shadow-red-600/50">
-                <span className="font-mono text-[10px] font-black tracking-widest text-white/80">
-                  RECRUIT
-                </span>
-                <span className="font-display font-black text-xl sm:text-2xl text-white tracking-widest">
-                  YOU
-                </span>
-              </div>
-              <div className="w-0.5 h-6 bg-red-600/60" />
-            </div>
-
-            {/* Surrounding Domain Nodes Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 w-full">
-              {DOMAIN_NODES.map((node) => {
-                const isSelected = node.id === activeNode.id;
-                return (
-                  <button
-                    type="button"
-                    key={node.id}
-                    onClick={() => setSelectedNodeId(node.id)}
-                    className={`p-3.5 sm:p-4 text-center transition-all duration-200 border cursor-pointer ${
-                      isSelected
-                        ? "bg-red-600 border-white text-white font-black scale-105 shadow-xl"
-                        : "bg-black/90 border-white/20 text-slate-300 hover:border-red-500 hover:text-white"
+        {/* Floating Typographic Domain Selector (Rock-solid layout, zero flickering) */}
+        <div className="flex flex-wrap items-center gap-4 sm:gap-8 pt-4 border-b border-white/15 pb-4 sm:pb-6">
+          {DOMAIN_NODES.map((node) => {
+            const isSelected = node.id === activeNode.id;
+            return (
+              <button
+                type="button"
+                key={node.id}
+                onClick={() => setSelectedNodeId(node.id)}
+                className="group relative cursor-pointer text-left focus:outline-none py-2 px-1"
+              >
+                <div className="flex items-baseline gap-2">
+                  <span
+                    className={`font-mono text-xs font-bold transition-colors duration-200 ${
+                      isSelected ? "text-red-500" : "text-slate-500 group-hover:text-slate-300"
                     }`}
                   >
-                    <span className="font-mono text-[9px] block opacity-70 mb-1">
-                      PATH
-                    </span>
-                    <div className="font-display font-bold text-xs sm:text-sm tracking-wider uppercase">
-                      {node.shortTag}
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+                    {node.num}
+                  </span>
+                  <span
+                    className={`font-display font-black text-lg sm:text-2xl tracking-wider uppercase transition-colors duration-200 ${
+                      isSelected
+                        ? "text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.45)]"
+                        : "text-slate-400 group-hover:text-slate-200"
+                    }`}
+                  >
+                    {node.shortTag}
+                  </span>
+                </div>
+
+                {/* Animated Floating Underline */}
+                {isSelected && (
+                  <motion.div
+                    layoutId="activeDomainLine"
+                    className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-red-600 shadow-[0_0_12px_#E52521]"
+                    transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                  />
+                )}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Dynamic Detail Transformation Panel */}
-        <div
-          className="p-8 sm:p-14 bg-black/85 backdrop-blur-md border-l-8 transition-all duration-500 space-y-8 shadow-2xl border-t border-r border-b border-white/10"
-          style={{ borderColor: activeNode.themeColor }}
-        >
-          <div className="space-y-3">
-            <span
-              className="font-mono text-xs font-black tracking-widest uppercase block"
-              style={{ color: activeNode.themeColor }}
+        {/* Pure Floating Domain Showcase with Stable Height Container (Zero Jerk, Zero Collapse) */}
+        <div className="relative min-h-[520px] sm:min-h-[480px] md:min-h-[460px] pt-4">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={activeNode.id}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.18, ease: "easeInOut" }}
+              className="space-y-8 max-w-4xl"
             >
-              SELECTED PATH // MISSION 02
-            </span>
-            <h3 className="font-display text-4xl sm:text-6xl md:text-7xl font-black text-white uppercase tracking-tight leading-[0.9]">
-              {activeNode.name}
-            </h3>
-            <p className="font-display text-xl sm:text-3xl text-slate-200 font-bold max-w-2xl pt-2">
-              &ldquo;{activeNode.headline}&rdquo;
-            </p>
-          </div>
+              {/* Domain Number & Name */}
+              <div className="space-y-2">
+                <div className="font-mono text-xs sm:text-sm font-extrabold tracking-widest text-red-500 uppercase flex items-center gap-3">
+                  <span className="inline-block w-2 h-2 rounded-full bg-red-500 shadow-[0_0_8px_#E52521]" />
+                  <span>PATH {activeNode.num} // MISSION 02 DOMAIN</span>
+                </div>
+                <h3 className="font-display text-4xl sm:text-6xl md:text-7xl font-black text-white uppercase tracking-tight leading-[0.95] drop-shadow-2xl">
+                  {activeNode.name}
+                </h3>
+              </div>
 
-          <p className="font-body text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-            {activeNode.desc}
-          </p>
+              {/* Floating Quote Headline */}
+              <p className="font-display text-2xl sm:text-4xl text-slate-200 font-bold leading-tight drop-shadow-lg">
+                &ldquo;{activeNode.headline}&rdquo;
+              </p>
 
-          {/* 4-5 Technologies Only (Minimal & Impactful) */}
-          <div className="space-y-2 pt-4 border-t border-white/10">
-            <span className="font-mono text-xs text-slate-400 uppercase tracking-widest block">
-              CORE TECHNOLOGIES:
-            </span>
-            <div className="flex flex-wrap gap-2">
-              {activeNode.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-4 py-1.5 bg-black border border-white/20 font-mono text-xs sm:text-sm text-slate-200 uppercase font-semibold"
-                >
-                  {tech}
+              {/* Floating Story Paragraph */}
+              <p className="font-body text-base sm:text-xl text-slate-300 leading-relaxed max-w-3xl drop-shadow-md">
+                {activeNode.desc}
+              </p>
+
+              {/* Floating Technologies List */}
+              <div className="space-y-3 pt-4 border-t border-white/10">
+                <span className="font-mono text-xs text-slate-400 uppercase tracking-widest block">
+                  CORE TECHNOLOGIES &amp; SUPERPOWERS:
                 </span>
-              ))}
-            </div>
-          </div>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-sm sm:text-base text-slate-200 font-medium">
+                  {activeNode.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="flex items-center gap-2 hover:text-white transition-colors cursor-default"
+                    >
+                      <span className="text-red-500 text-xs">◆</span>
+                      <span>{tech}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-          {/* Action Link: START HERE → */}
-          <div className="pt-6">
-            <button
-              type="button"
-              onClick={handleStartHere}
-              className="group inline-flex items-center gap-4 font-display font-black text-lg sm:text-2xl text-white hover:text-red-500 uppercase tracking-wider cursor-pointer transition-colors"
-            >
-              <span>START HERE</span>
-              <span className="group-hover:translate-x-3 transition-transform text-red-600">
-                →
-              </span>
-            </button>
-          </div>
+              {/* Floating Call to Action */}
+              <div className="pt-4 sm:pt-6">
+                <motion.button
+                  type="button"
+                  onClick={handleStartHere}
+                  whileHover={{ x: 8 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group inline-flex items-center gap-4 font-display font-black text-xl sm:text-3xl text-white hover:text-red-500 uppercase tracking-wider cursor-pointer transition-colors"
+                >
+                  <span>CHOOSE THIS TRACK IN YOUR PASS</span>
+                  <span className="text-red-600 group-hover:translate-x-3 transition-transform text-2xl sm:text-4xl">
+                    ➔
+                  </span>
+                </motion.button>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>
