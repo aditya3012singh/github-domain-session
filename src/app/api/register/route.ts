@@ -6,6 +6,8 @@ import {
   saveRegistration,
 } from "@/lib/db";
 
+export const dynamic = "force-dynamic";
+
 // In-memory sliding rate limiter: max 15 attempts per IP per minute
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 
