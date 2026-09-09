@@ -121,7 +121,7 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
       {/* Animated Glowing Red Web Strand Cutting Horizontally */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <div
-          className="absolute top-[68%] sm:top-[54%] left-0 h-[1.5px] bg-gradient-to-r from-transparent via-red-600 to-transparent transition-all duration-1000 ease-out"
+          className="absolute top-[54%] left-0 h-[1.5px] bg-gradient-to-r from-transparent via-red-600 to-transparent transition-all duration-1000 ease-out"
           style={{
             width: isReady ? "100%" : "0%",
             opacity: isReady ? 0.75 : 0,
@@ -154,18 +154,16 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
         <img
           src="/assets/real_images/spiderman_2.jpg"
           alt="Spider-Man"
-          className={`w-full h-full object-cover object-center filter contrast-125 brightness-95 transition-all duration-1000 ease-out ${
+          className={`w-full h-full object-cover object-right md:object-center filter contrast-115 brightness-100 transition-all duration-1000 ease-out ${
             beat === 2
-              ? "scale-100 opacity-80 blur-0"
+              ? "scale-100 opacity-75 blur-0"
               : isReady
-              ? "scale-105 opacity-70 blur-0"
+              ? "scale-105 opacity-60 blur-0"
               : "scale-110 opacity-0 blur-sm"
           }`}
         />
-        {/* Radial ambient glow to prevent empty black voids on mobile */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(229,37,33,0.18)_0%,transparent_75%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/40 to-black/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
       </div>
 
       {/* Top Header: DevUp Logo & Skip Button */}
@@ -189,117 +187,95 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
         </button>
       </div>
 
-      {/* Center Stage: Vertically Centered Loading & Hero Sequence */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center my-auto py-6 sm:py-8 text-center px-4">
-        {/* BEAT 1: "EVERY HERO HAS A FIRST DAY." (Perfect Vertical Center on Mobile & Desktop) */}
+      {/* Center Stage: 2-Beat Trailer Cut Transition */}
+      <div className="relative z-10 flex-1 flex items-center justify-center my-auto py-8">
+        {/* BEAT 1: "EVERY HERO HAS A FIRST DAY." (Lifted Cleanly Above the Red Line) */}
         <div
-          className={`transition-all duration-700 ease-out flex flex-col items-center justify-center text-center max-w-xl mx-auto ${
+          className={`absolute inset-x-0 transition-all duration-700 ease-out flex flex-col items-center justify-center text-center px-4 ${
             beat === 1 && !isBeat1Exiting
-              ? "opacity-100 scale-100 translate-y-0"
-              : "opacity-0 scale-95 -translate-y-6 pointer-events-none hidden"
+              ? "opacity-100 scale-100 -translate-y-16 sm:-translate-y-20 md:-translate-y-24"
+              : "opacity-0 scale-95 -translate-y-28 pointer-events-none"
           }`}
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-red-600/15 border border-red-600/40 text-red-400 font-mono text-[11px] sm:text-xs tracking-[0.3em] font-bold uppercase mb-4 animate-pulse">
-            <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping" />
+          <div className="font-mono text-xs tracking-[0.35em] text-red-500 font-bold uppercase mb-4 animate-pulse">
             ORIGIN STORY // 2026
           </div>
 
-          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.92] text-white uppercase mb-4 drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
+          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-[0.9] text-white uppercase">
             EVERY HERO <br />
-            <span className="text-red-600 drop-shadow-[0_0_25px_rgba(229,37,33,0.6)]">
+            <span className="text-red-600">
               HAS A FIRST DAY.
             </span>
           </h1>
-
-          <div className="flex items-center gap-3 font-mono text-[11px] sm:text-xs text-slate-400 tracking-[0.2em] uppercase">
-            <span>KIET GROUP OF INSTITUTIONS</span>
-            <span>•</span>
-            <span className="text-red-400">DEVUP RECRUITMENT</span>
-          </div>
         </div>
 
-        {/* BEAT 2: "WHAT'S YOURS?" (Perfect Vertical Center on Mobile & Desktop) */}
+        {/* BEAT 2: "WHAT'S YOURS?" Slams In on Clean Screen (Shifted Upwards from the Red Line) */}
         <div
-          className={`transition-all duration-700 ease-out flex flex-col items-center justify-center text-center max-w-2xl mx-auto ${
+          className={`absolute inset-x-0 transition-all duration-700 ease-out flex flex-col items-center justify-center text-center px-4 ${
             beat === 2
-              ? "opacity-100 scale-100 translate-y-0"
-              : "opacity-0 scale-110 translate-y-8 pointer-events-none hidden"
+              ? "opacity-100 scale-100 -translate-y-12 sm:-translate-y-16 md:-translate-y-18"
+              : "opacity-0 scale-110 translate-y-10 pointer-events-none"
           }`}
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-red-600/15 border border-red-600/40 text-red-400 font-mono text-[11px] sm:text-xs tracking-[0.3em] font-bold uppercase mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
+          <div className="font-mono text-xs tracking-[0.35em] text-red-500 font-bold uppercase mb-3">
             YOUR TURN
           </div>
 
-          <h1 className="font-display text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black tracking-tighter leading-[0.88] text-white uppercase drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
+          <h1 className="font-display text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black tracking-tighter leading-[0.88] text-white uppercase">
             WHAT&apos;S{" "}
-            <span className="text-red-600 drop-shadow-[0_0_30px_rgba(229,37,33,0.7)]">
+            <span className="text-red-600">
               YOURS?
             </span>
           </h1>
 
-          {/* Subtitle & Date Badge for Beat 2 */}
+          {/* Subtitle & Date Badge for Beat 2 (Cleanly Beneath the Red Line) */}
           <div
-            className={`mt-6 sm:mt-10 space-y-1.5 sm:space-y-2 transition-all duration-700 delay-150 ${
+            className={`mt-8 sm:mt-12 md:mt-14 space-y-2 transition-all duration-700 delay-150 ${
               showBeat2Details ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="font-display text-xl sm:text-3xl md:text-4xl font-extrabold tracking-wider text-slate-100 uppercase">
+            <div className="font-display text-2xl sm:text-4xl font-extrabold tracking-wider text-slate-200 uppercase">
               SPIDER-MAN: YOUR FIRST WEB
             </div>
-            <div className="font-mono text-[11px] sm:text-xs tracking-[0.18em] sm:tracking-[0.25em] text-slate-400 uppercase">
-              15 SEPTEMBER 2026 // 05:00 PM – 07:00 PM // DEVUP ARENA
+            <div className="font-mono text-xs sm:text-sm tracking-[0.25em] text-slate-400 uppercase">
+              15 SEPTEMBER 2026 // 05:00 PM – 07:00 PM // DEVUP COMPUTING ARENA
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Atmosphere Bar: Balances Mobile Screen in Both Beat 1 and Beat 2 */}
-      <div className="relative z-10 border-t border-white/10 pt-4 sm:pt-6 transition-all duration-700 ease-out">
-        {beat === 1 ? (
-          <div className="flex items-center justify-between gap-4 font-mono text-[11px] text-slate-400 tracking-wider">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
-              <span>FRESHMAN INITIATIVE // 0 EXP REQUIRED</span>
-            </div>
-            <button
-              type="button"
-              onClick={() => handleEnter(true)}
-              className="text-red-500 hover:text-white uppercase tracking-widest flex items-center gap-1.5 cursor-pointer"
-            >
-              <span>SWIPE / TAP</span>
-              <span className="animate-bounce">↓</span>
-            </button>
+      {/* Bottom Bar: Enter Button & Animated Cue (Reveals on Beat 2) */}
+      <div
+        className={`relative z-10 flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-t border-white/10 pt-6 transition-all duration-700 ease-out ${
+          showBeat2Details ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+          <div className="font-mono text-xs text-slate-500 tracking-wider">
+            A 1-DAY FRESHMAN INITIATIVE // 0 EXP REQUIRED
           </div>
-        ) : (
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
-              <div className="font-mono text-xs text-slate-400 tracking-wider">
-                A 1-DAY FRESHMAN INITIATIVE // ALL 12 BRANCHES
-              </div>
-              <button
-                type="button"
-                onClick={() => handleEnter(true)}
-                className="inline-flex items-center gap-2 font-mono text-xs text-red-500 hover:text-red-400 tracking-widest uppercase transition-colors text-left cursor-pointer"
-              >
-                <span className="animate-bounce">↓</span>
-                <span>SCROLL DOWN OR CLICK TO ENTER</span>
-              </button>
-            </div>
 
-            <button
-              type="button"
-              onClick={() => handleEnter(true)}
-              disabled={isFadingOut}
-              className="group inline-flex items-center justify-between gap-6 px-8 py-4 sm:py-5 rounded-none bg-red-600 hover:bg-white text-white hover:text-black font-display font-extrabold text-base sm:text-lg tracking-widest uppercase transition-all duration-300 shadow-[0_0_30px_rgba(229,37,33,0.5)] cursor-pointer disabled:opacity-85"
-            >
-              <span>{isAscending ? "ASCENDING THE WEB..." : "ENTER THE WEB"}</span>
-              <span className="text-2xl group-hover:translate-x-2 transition-transform duration-200">
-                {isAscending ? "↑" : "→"}
-              </span>
-            </button>
-          </div>
-        )}
+          <button
+            type="button"
+            onClick={() => handleEnter(true)}
+            className="inline-flex items-center gap-2 font-mono text-xs text-red-500 hover:text-red-400 tracking-widest uppercase transition-colors text-left cursor-pointer"
+          >
+            <span className="animate-bounce">↓</span>
+            <span>SCROLL DOWN OR CLICK TO ENTER</span>
+          </button>
+        </div>
+
+        <button
+          type="button"
+          onClick={() => handleEnter(true)}
+          disabled={isFadingOut}
+          className="group inline-flex items-center justify-between gap-6 px-8 py-5 rounded-none bg-red-600 hover:bg-white text-white hover:text-black font-display font-extrabold text-base sm:text-lg tracking-widest uppercase transition-all duration-300 shadow-2xl cursor-pointer disabled:opacity-85"
+        >
+          <span>{isAscending ? "ASCENDING THE WEB..." : "ENTER THE WEB"}</span>
+          <span className="text-2xl group-hover:translate-x-2 transition-transform duration-200">
+            {isAscending ? "↑" : "→"}
+          </span>
+        </button>
       </div>
     </div>
   );
