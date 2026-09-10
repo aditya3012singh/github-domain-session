@@ -175,84 +175,117 @@ export default function ComicRegistration() {
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.3 }}
             onClick={() => setIsSuccess(false)}
-            className="fixed inset-0 z-50 flex flex-col justify-between p-8 sm:p-16 bg-black text-white overflow-y-auto cursor-pointer select-none"
+            className="fixed inset-0 z-50 bg-black text-white overflow-y-auto cursor-pointer select-none"
             title="Click anywhere to return to website"
           >
-            <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-xs tracking-[0.25em] text-slate-400 font-bold uppercase pointer-events-none">
-              <span>DEVUP RECRUIT CONFIRMATION // 15 SEPT 2026 // 05:00 PM – 07:00 PM</span>
-              <div className="flex items-center gap-3">
-                <span className="text-red-500 font-black">{confirmedTicket.id}</span>
-                <span className="text-[11px] text-slate-400 border border-white/20 px-2 py-0.5 tracking-wider bg-white/5">
-                  ✕ CLOSE [ESC]
+            <div className="min-h-[100dvh] w-full max-w-2xl mx-auto flex flex-col justify-between px-5 py-6 sm:px-10 sm:py-12 md:py-16">
+              {/* Top Header Strip */}
+              <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] sm:text-xs tracking-wider sm:tracking-[0.2em] text-slate-400 font-bold uppercase">
+                <span className="leading-snug">
+                  DEVUP RECRUIT CONFIRMATION <br className="sm:hidden" />
+                  <span className="text-zinc-600 hidden sm:inline">// </span>15–16 SEPT 2026 • 05:00 PM – 07:00 PM
+                </span>
+                <div className="flex items-center gap-2.5 sm:gap-3">
+                  <span className="text-red-500 font-mono font-black text-xs sm:text-sm">{confirmedTicket.id}</span>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsSuccess(false);
+                    }}
+                    className="text-[10px] sm:text-[11px] text-slate-300 hover:text-white border border-white/20 hover:border-white/50 px-2.5 py-1 tracking-wider bg-white/5 hover:bg-white/10 transition-colors cursor-pointer flex items-center gap-1"
+                  >
+                    <span>✕</span>
+                    <span>CLOSE</span>
+                    <span className="hidden sm:inline">[ESC]</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Main Ticket Card Content */}
+              <div className="my-auto py-6 sm:py-8 space-y-5 sm:space-y-7">
+                {/* Title & Pass ID */}
+                <div className="space-y-1.5 sm:space-y-2">
+                  <div className="text-3xl sm:text-4xl">🕸️</div>
+                  <h2 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase text-white leading-[0.88]">
+                    YOU&apos;RE IN.
+                  </h2>
+                  <div className="font-mono text-xs sm:text-sm text-red-500 font-bold tracking-wider sm:tracking-widest pt-1 flex items-center gap-2">
+                    <span className="inline-block w-2 h-2 bg-red-600 rounded-full animate-ping" />
+                    <span>OFFICIAL ADMISSION TICKET: {confirmedTicket.id}</span>
+                  </div>
+                </div>
+
+                {/* Recruit Detail Key-Value Rows */}
+                <div className="border-t border-b border-white/20 py-4 sm:py-6 space-y-2.5 sm:space-y-3.5 font-mono text-xs sm:text-sm md:text-base">
+                  <div className="flex items-center justify-between gap-3 text-slate-300">
+                    <span className="text-slate-400 shrink-0">RECRUIT NAME:</span>
+                    <span className="text-white font-bold text-right truncate">{confirmedTicket.fullName}</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-3 text-slate-300">
+                    <span className="text-slate-400 shrink-0">KIET EMAIL:</span>
+                    <span className="text-white font-bold text-right truncate text-xs sm:text-sm">{confirmedTicket.email}</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-3 text-slate-300">
+                    <span className="text-slate-400 shrink-0">PHONE NUMBER:</span>
+                    <span className="text-white font-bold text-right">+91 {confirmedTicket.phone}</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-3 text-slate-300">
+                    <span className="text-slate-400 shrink-0">BRANCH / YEAR:</span>
+                    <span className="text-white font-bold text-right">
+                      {confirmedTicket.branch} ({confirmedTicket.year})
+                    </span>
+                  </div>
+                  {confirmedTicket.github && (
+                    <div className="flex items-center justify-between gap-3 text-slate-300">
+                      <span className="text-slate-400 shrink-0">GITHUB:</span>
+                      <span className="text-white font-bold text-right truncate">github.com/{confirmedTicket.github}</span>
+                    </div>
+                  )}
+                  <div className="flex items-start justify-between gap-3 text-slate-300">
+                    <span className="text-slate-400 shrink-0 pt-0.5">CHOSEN TRACKS:</span>
+                    <span className="text-white font-bold text-right max-w-[65%] leading-snug">
+                      {confirmedTicket.domains.join(", ")}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between gap-3 text-slate-300 pt-2.5 border-t border-white/10">
+                    <span className="text-slate-400 shrink-0">STATUS:</span>
+                    <span className="text-emerald-400 font-bold flex items-center gap-1.5">
+                      <span>✓</span>
+                      <span>CONFIRMED &amp; ADMITTED</span>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Event Venue & Reminder */}
+                <div className="space-y-1 sm:space-y-1.5">
+                  <div className="font-display font-black text-xl sm:text-2xl md:text-3xl tracking-wide text-white uppercase leading-tight">
+                    SEE YOU ON SEPT 15–16 // 05:00 PM.
+                  </div>
+                  <div className="font-mono text-xs text-slate-400 leading-relaxed">
+                    H Block 106 • Please carry your college ID card or show this digital pass.
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Action / Return Bar */}
+              <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 font-mono text-xs text-slate-400">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsSuccess(false);
+                  }}
+                  className="w-full sm:w-auto py-3 px-5 bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 uppercase tracking-widest text-center transition-all cursor-pointer font-bold text-xs flex items-center justify-center gap-2"
+                >
+                  <span>←</span>
+                  <span>RETURN TO HOMEPAGE</span>
+                </button>
+
+                <span className="text-zinc-500 text-[11px] text-center sm:text-right uppercase tracking-wider">
+                  TAP ANYWHERE ON SCREEN OR PRESS ESC
                 </span>
               </div>
-            </div>
-
-            <div className="max-w-2xl my-auto space-y-8 py-8 pointer-events-none">
-              <div className="space-y-2">
-                <span className="text-4xl">🕸️</span>
-                <h2 className="font-display text-6xl sm:text-8xl md:text-9xl font-black tracking-tighter uppercase text-white leading-none">
-                  YOU&apos;RE IN.
-                </h2>
-                <div className="font-mono text-sm text-red-500 font-bold tracking-widest pt-1">
-                  OFFICIAL ADMISSION TICKET: {confirmedTicket.id}
-                </div>
-              </div>
-
-              <div className="border-t border-b border-white/20 py-6 space-y-3.5 font-mono text-sm sm:text-base">
-                <div className="flex justify-between text-slate-300">
-                  <span>RECRUIT NAME:</span>
-                  <span className="text-white font-bold">{confirmedTicket.fullName}</span>
-                </div>
-                <div className="flex justify-between text-slate-300">
-                  <span>KIET EMAIL:</span>
-                  <span className="text-white font-bold">{confirmedTicket.email}</span>
-                </div>
-                <div className="flex justify-between text-slate-300">
-                  <span>PHONE NUMBER:</span>
-                  <span className="text-white font-bold">+91 {confirmedTicket.phone}</span>
-                </div>
-                <div className="flex justify-between text-slate-300">
-                  <span>BRANCH / YEAR:</span>
-                  <span className="text-white font-bold">
-                    {confirmedTicket.branch} ({confirmedTicket.year})
-                  </span>
-                </div>
-                {confirmedTicket.github && (
-                  <div className="flex justify-between text-slate-300">
-                    <span>GITHUB:</span>
-                    <span className="text-white font-bold">github.com/{confirmedTicket.github}</span>
-                  </div>
-                )}
-                <div className="flex justify-between text-slate-300">
-                  <span>CHOSEN TRACKS:</span>
-                  <span className="text-white font-bold text-right">
-                    {confirmedTicket.domains.join(", ")}
-                  </span>
-                </div>
-                <div className="flex justify-between text-slate-300 pt-2 border-t border-white/10">
-                  <span>STATUS:</span>
-                  <span className="text-emerald-400 font-bold">✓ CONFIRMED &amp; ADMITTED</span>
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <div className="font-display font-black text-2xl sm:text-3xl tracking-wider text-white uppercase">
-                  SEE YOU ON TUESDAY, SEPT 15 // 05:00 PM.
-                </div>
-                <div className="font-mono text-xs text-slate-400">
-                  DevUp Computing Arena • Please carry your college ID card or show this digital pass.
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10 font-mono text-xs text-slate-400 pointer-events-none">
-              <span className="text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                ← CLICK ANYWHERE TO RETURN TO SITE
-              </span>
-              <span className="text-zinc-500 text-[11px] hidden sm:inline uppercase tracking-widest">
-                TAP ANYWHERE ON SCREEN OR PRESS ESC
-              </span>
             </div>
           </motion.div>
         )}
@@ -268,7 +301,7 @@ export default function ComicRegistration() {
           className="text-center space-y-3"
         >
           <span className="font-mono text-xs tracking-[0.25em] text-slate-400 uppercase font-semibold block">
-            REGISTRATION • 15 SEPTEMBER 2026
+            REGISTRATION • 15–16 SEPTEMBER 2026
           </span>
           <h2 className="font-display text-5xl sm:text-7xl md:text-8xl font-black tracking-tight text-white uppercase leading-[0.9]">
             GET YOUR PASS.
@@ -289,7 +322,7 @@ export default function ComicRegistration() {
           {/* Metadata Strip */}
           <div className="flex items-center justify-between border-b border-white/15 pb-4 font-mono text-xs text-slate-400">
             <span className="text-white font-bold tracking-wider uppercase">1ST YEAR FRESHMAN PASS</span>
-            <span>TUE, 15 SEPT • 05:00 PM – 07:00 PM</span>
+            <span>15–16 SEPT • 05:00 PM – 07:00 PM</span>
           </div>
 
           {/* Inline Error Alert */}

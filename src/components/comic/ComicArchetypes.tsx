@@ -99,7 +99,7 @@ export default function ComicArchetypes() {
           className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
         >
           <div className="font-mono text-xs text-slate-400 uppercase tracking-wider">
-            YOU CAN EXPLORE ALL OF THESE TRACKS ON SEPTEMBER 15 (05:00 PM – 07:00 PM)
+            YOU CAN EXPLORE ALL OF THESE TRACKS ON SEPTEMBER 15–16 (05:00 PM – 07:00 PM)
           </div>
           <motion.button
             type="button"

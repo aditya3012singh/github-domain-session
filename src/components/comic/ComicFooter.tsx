@@ -18,6 +18,7 @@ export default function ComicFooter() {
   };
 
   const socialLinks = [
+    { label: "EVENT POSTER", href: "/poster" },
     { label: "GITHUB", href: "https://github.com" },
     { label: "INSTAGRAM", href: "https://instagram.com" },
     { label: "LINKEDIN", href: "https://linkedin.com" },

@@ -62,7 +62,7 @@ export default function ComicTimeline() {
             YOUR <span className="text-red-600">DAY.</span>
           </h2>
           <p className="font-mono text-xs tracking-widest text-slate-400 uppercase">
-            TUESDAY, 15 SEPTEMBER 2026 // 05:00 PM – 07:00 PM // DEVUP ARENA LABS
+            15–16 SEPTEMBER 2026 // 05:00 PM – 07:00 PM // H BLOCK 106
           </p>
         </motion.div>
 

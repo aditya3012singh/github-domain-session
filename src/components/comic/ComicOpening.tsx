@@ -4,13 +4,12 @@ import React, { useState, useEffect, useCallback } from "react";
 import Logo from "@/components/ui/Logo";
 
 interface ComicOpeningProps {
-  onEnter: (options?: { fromBottom?: boolean }) => void;
+  onEnter: (targetId?: string) => void;
   isEntered: boolean;
 }
 
 export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) {
   const [isFadingOut, setIsFadingOut] = useState(false);
-  const [isAscending, setIsAscending] = useState(false);
   const [beat, setBeat] = useState<number>(1);
   const [isBeat1Exiting, setIsBeat1Exiting] = useState(false);
   const [showBeat2Details, setShowBeat2Details] = useState(false);
@@ -45,27 +44,13 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
   }, []);
 
   const handleEnter = useCallback(
-    (fromBottom = true) => {
+    (targetId?: string) => {
       if (isFadingOut || isEntered) return;
       setIsFadingOut(true);
-      if (fromBottom) {
-        setIsAscending(true);
-        try {
-          const bottomY =
-            Math.max(
-              document.body.scrollHeight,
-              document.documentElement.scrollHeight
-            ) - window.innerHeight;
-          window.scrollTo(0, bottomY);
-          const lenis = (window as any).__lenis;
-          if (lenis && typeof lenis.scrollTo === "function") {
-            lenis.scrollTo(bottomY, { immediate: true });
-          }
-        } catch {}
-      }
+
       setTimeout(() => {
-        onEnter({ fromBottom });
-      }, 500);
+        onEnter(targetId);
+      }, 400);
     },
     [isFadingOut, isEntered, onEnter]
   );
@@ -167,7 +152,7 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
       </div>
 
       {/* Top Header: DevUp Logo & Skip Button */}
-      <div className="relative z-10 flex items-center justify-between gap-3">
+      <div className="relative z-10 flex items-center justify-between gap-3 w-full">
         <div
           className={`transition-all duration-700 ease-out ${
             isReady ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
@@ -178,7 +163,7 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
 
         <button
           type="button"
-          onClick={() => handleEnter(false)}
+          onClick={() => handleEnter()}
           className={`font-mono text-xs tracking-widest text-slate-300 hover:text-white uppercase transition-all duration-700 px-3 py-1.5 border border-white/20 hover:border-white/50 bg-black/40 backdrop-blur-sm cursor-pointer ${
             isReady ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
           }`}
@@ -238,7 +223,7 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
               SPIDER-MAN: YOUR FIRST WEB
             </div>
             <div className="font-mono text-xs sm:text-sm tracking-[0.25em] text-slate-400 uppercase">
-              15 SEPTEMBER 2026 // 05:00 PM – 07:00 PM // DEVUP COMPUTING ARENA
+              15–16 SEPTEMBER 2026 // 05:00 PM – 07:00 PM // H BLOCK 106
             </div>
           </div>
         </div>
@@ -252,12 +237,12 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
       >
         <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
           <div className="font-mono text-xs text-slate-500 tracking-wider">
-            A 1-DAY FRESHMAN INITIATIVE // 0 EXP REQUIRED
+            A 2-DAY FRESHMAN INITIATIVE // 0 EXP REQUIRED
           </div>
 
           <button
             type="button"
-            onClick={() => handleEnter(true)}
+            onClick={handleEnter}
             className="inline-flex items-center gap-2 font-mono text-xs text-red-500 hover:text-red-400 tracking-widest uppercase transition-colors text-left cursor-pointer"
           >
             <span className="animate-bounce">↓</span>
@@ -267,13 +252,13 @@ export default function ComicOpening({ onEnter, isEntered }: ComicOpeningProps) 
 
         <button
           type="button"
-          onClick={() => handleEnter(true)}
+          onClick={handleEnter}
           disabled={isFadingOut}
-          className="group inline-flex items-center justify-between gap-6 px-8 py-5 rounded-none bg-red-600 hover:bg-white text-white hover:text-black font-display font-extrabold text-base sm:text-lg tracking-widest uppercase transition-all duration-300 shadow-2xl cursor-pointer disabled:opacity-85"
+          className="group inline-flex items-center justify-between gap-6 px-8 py-5 rounded-none bg-red-600 hover:bg-white text-white hover:text-black font-display font-extrabold text-base sm:text-lg tracking-widest uppercase transition-all duration-300 shadow-2xl cursor-pointer"
         >
-          <span>{isAscending ? "ASCENDING THE WEB..." : "ENTER THE WEB"}</span>
+          <span>ENTER THE WEB</span>
           <span className="text-2xl group-hover:translate-x-2 transition-transform duration-200">
-            {isAscending ? "↑" : "→"}
+            →
           </span>
         </button>
       </div>
