@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "qr": "node scripts/generate-qr.mjs",
+    "poster": "node scripts/generate-poster.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

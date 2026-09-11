@@ -27,7 +27,7 @@ Whether you've never written a single line of code or have already started build
 🎟️ Eligibility: Exclusively for 1st Year KIET Students (Free Admission)
 
 Limited seats available. Confirm your digital pass now:
-👉 https://devupweb.in
+👉 https://your-first-web.netlify.app/
 
 #DevUp #KIET #Engineering #Freshmen2026 #GitHub #WebDevelopment #ArtificialIntelligence #DSA #TechCommunity #Coding`;
 
@@ -53,7 +53,7 @@ You don't need any prior coding experience — just curiosity and your laptop.
 📍 H Block 106 (KIET Campus)
 🎟️ FREE ADMISSION • Digital Pass Required
 
-🔗 Link in bio to claim your freshman pass, or visit: devupweb.in
+🔗 Link in bio to claim your freshman pass, or visit: https://your-first-web.netlify.app/
 
 Tag your classmates below & get ready to swing into tech! 🚀
 
@@ -73,7 +73,7 @@ _A 2-Day Developer Induction Exclusively for KIET 1st Years!_
 ✅ Connect with DevUp mentors & community leads
 
 🎟️ *Entry is 100% FREE*, but registration is mandatory to generate your official admission pass:
-👉 *Register Now:* https://devupweb.in
+👉 *Register Now:* https://your-first-web.netlify.app/
 
 _Bring your laptop & college ID. See you there!_`;
 
@@ -92,92 +92,150 @@ _Bring your laptop & college ID. See you there!_`;
             <Logo />
           </Link>
           <span className="font-mono text-xs text-red-500 uppercase tracking-widest hidden sm:inline">
-            // OFFICIAL PROMO ASSETS
+            // OFFICIAL PROMO &amp; QR ASSETS
           </span>
         </div>
 
         <Link
           href="/"
-          className="font-mono text-xs text-slate-300 hover:text-white uppercase tracking-widest border border-white/20 hover:border-red-600 px-4 py-2 transition-colors"
+          className="font-mono text-xs tracking-wider uppercase px-4 py-2 border border-white/20 hover:border-white/50 text-slate-300 hover:text-white transition-colors"
         >
-          ← BACK TO WEBSITE
+          ← Return to Website
         </Link>
       </div>
 
-      {/* Hero Section */}
-      <div className="max-w-6xl mx-auto py-10 space-y-4">
-        <span className="font-mono text-xs tracking-[0.3em] text-red-500 uppercase font-bold">
-          SOCIAL MEDIA MARKETING SUITE
+      <div className="max-w-6xl mx-auto my-10 space-y-3">
+        <span className="font-mono text-xs tracking-[0.3em] text-red-500 font-extrabold uppercase">
+          MARKETING &amp; REGISTRATION ASSETS
         </span>
-        <h1 className="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight">
-          DEVUP EVENT POSTERS &amp; CAPTIONS
+        <h1 className="font-display text-4xl sm:text-6xl font-black tracking-tight text-white uppercase leading-none">
+          OFFICIAL PROMO &amp; QR SUITE
         </h1>
         <p className="font-body text-slate-400 text-sm sm:text-base max-w-2xl">
-          Cinema-grade promotional posters generated directly according to the website theme. Download high-res PNGs and copy ready-to-post captions for LinkedIn, Instagram, and WhatsApp.
+          High-resolution 4K posters and direct offline QR codes pointing to{" "}
+          <code className="text-red-400 bg-red-950/40 px-2 py-0.5 border border-red-900/50">https://your-first-web.netlify.app/</code>.
+          Zero third-party redirects, 100% locally generated.
         </p>
       </div>
 
-      {/* Main Grid: Poster Preview & Captions */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
-        {/* Left Column: Poster Display & Download Controls */}
+      {/* Asset Grid */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        {/* Left Column: Visual Preview & Downloads */}
         <div className="lg:col-span-6 space-y-6">
-          {/* Format Tabs */}
+          {/* Format Selector Tabs */}
           <div className="flex items-center gap-2 p-1 bg-zinc-950 border border-white/15">
             <button
               type="button"
               onClick={() => setSelectedTab("instagram")}
-              className={`flex-1 py-2.5 px-4 font-mono text-xs uppercase tracking-wider transition-all cursor-pointer ${
+              className={`flex-1 py-2.5 px-3 font-mono text-xs uppercase tracking-wider transition-all cursor-pointer ${
                 selectedTab === "instagram"
                   ? "bg-red-600 text-white font-bold shadow-[0_0_15px_rgba(229,37,33,0.5)]"
                   : "text-slate-400 hover:text-white"
               }`}
             >
-              Instagram Portrait (4:5)
+              Instagram (4:5)
             </button>
             <button
               type="button"
               onClick={() => setSelectedTab("linkedin")}
-              className={`flex-1 py-2.5 px-4 font-mono text-xs uppercase tracking-wider transition-all cursor-pointer ${
+              className={`flex-1 py-2.5 px-3 font-mono text-xs uppercase tracking-wider transition-all cursor-pointer ${
                 selectedTab === "linkedin"
                   ? "bg-red-600 text-white font-bold shadow-[0_0_15px_rgba(229,37,33,0.5)]"
                   : "text-slate-400 hover:text-white"
               }`}
             >
-              LinkedIn Square (1:1)
+              LinkedIn (1:1)
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelectedTab("qr" as any)}
+              className={`flex-1 py-2.5 px-3 font-mono text-xs uppercase tracking-wider transition-all cursor-pointer ${
+                (selectedTab as string) === "qr"
+                  ? "bg-red-600 text-white font-bold shadow-[0_0_15px_rgba(229,37,33,0.5)]"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              Direct QR Code
             </button>
           </div>
 
-          {/* Poster Image Preview */}
-          <div className="relative group border border-white/20 bg-zinc-950 overflow-hidden shadow-2xl">
+          {/* Poster / QR Image Preview */}
+          <div className="relative group border border-white/20 bg-zinc-950 overflow-hidden shadow-2xl flex items-center justify-center p-4 min-h-[400px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={
-                selectedTab === "instagram"
+                (selectedTab as string) === "qr"
+                  ? "/qr-code.png"
+                  : selectedTab === "instagram"
                   ? "/devup_instagram_poster.png"
                   : "/devup_linkedin_poster.png"
               }
-              alt="DevUp Event Poster"
-              className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.01]"
+              alt="DevUp Asset"
+              className={`object-contain transition-transform duration-500 ${
+                (selectedTab as string) === "qr"
+                  ? "w-72 h-72 rounded-lg bg-white p-3 shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                  : "w-full h-auto group-hover:scale-[1.01]"
+              }`}
             />
           </div>
 
           {/* Download Buttons */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a
-              href="/devup_instagram_poster.png"
-              download="devup_instagram_poster.png"
-              className="py-4 px-5 bg-red-600 hover:bg-white text-white hover:text-black font-display font-extrabold text-sm tracking-wider uppercase text-center transition-all duration-200 shadow-[0_0_20px_rgba(229,37,33,0.4)]"
-            >
-              DOWNLOAD 4:5 (IG POSTER) ↓
-            </a>
-            <a
-              href="/devup_linkedin_poster.png"
-              download="devup_linkedin_poster.png"
-              className="py-4 px-5 bg-zinc-900 hover:bg-white text-white hover:text-black border border-white/20 font-display font-extrabold text-sm tracking-wider uppercase text-center transition-all duration-200"
-            >
-              DOWNLOAD 1:1 (LINKEDIN) ↓
-            </a>
-          </div>
+          {(selectedTab as string) === "qr" ? (
+            <div className="space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <a
+                  href="/qr-code-devup.png"
+                  download="devup_qr_code_branded.png"
+                  className="py-3.5 px-4 bg-red-600 hover:bg-white text-white hover:text-black font-display font-extrabold text-xs tracking-wider uppercase text-center transition-all duration-200 shadow-[0_0_20px_rgba(229,37,33,0.4)]"
+                >
+                  DEVUP BADGE (PNG 1024) ↓
+                </a>
+                <a
+                  href="/qr-code-devup-circle.png"
+                  download="devup_qr_code_circle.png"
+                  className="py-3.5 px-4 bg-zinc-900 hover:bg-white text-white hover:text-black border border-white/20 font-display font-extrabold text-xs tracking-wider uppercase text-center transition-all duration-200"
+                >
+                  CIRCULAR BADGE (PNG) ↓
+                </a>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <a
+                  href="/qr-code-devup.svg"
+                  download="devup_qr_code.svg"
+                  className="py-3 px-4 bg-zinc-900 hover:bg-white text-white hover:text-black border border-white/20 font-mono text-[11px] tracking-wider uppercase text-center transition-all duration-200"
+                >
+                  VECTOR SVG (PRINT) ↓
+                </a>
+                <a
+                  href="/qr-code-crimson.png"
+                  download="devup_qr_code_crimson.png"
+                  className="py-3 px-4 bg-zinc-900 hover:bg-white text-white hover:text-black border border-white/20 font-mono text-[11px] tracking-wider uppercase text-center transition-all duration-200"
+                >
+                  CRIMSON SPIDER (PNG) ↓
+                </a>
+              </div>
+              <div className="text-[11px] font-mono text-slate-400 text-center pt-1">
+                Level H Error Correction (30% Redundancy) • Tested &amp; Scannable on all iOS/Android Cameras
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <a
+                href="/devup_instagram_poster.png"
+                download="devup_instagram_poster.png"
+                className="py-4 px-5 bg-red-600 hover:bg-white text-white hover:text-black font-display font-extrabold text-sm tracking-wider uppercase text-center transition-all duration-200 shadow-[0_0_20px_rgba(229,37,33,0.4)]"
+              >
+                DOWNLOAD 4:5 (IG POSTER) ↓
+              </a>
+              <a
+                href="/devup_linkedin_poster.png"
+                download="devup_linkedin_poster.png"
+                className="py-4 px-5 bg-zinc-900 hover:bg-white text-white hover:text-black border border-white/20 font-display font-extrabold text-sm tracking-wider uppercase text-center transition-all duration-200"
+              >
+                DOWNLOAD 1:1 (LINKEDIN) ↓
+              </a>
+            </div>
+          )}
         </div>
 
         {/* Right Column: Pre-written Captions */}

@@ -117,9 +117,9 @@ async function generateInstagramPortrait() {
 
       <g transform="translate(-410, 32)">
         <text x="0" y="0" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="12" letter-spacing="2">DATE</text>
-        <text x="0" y="34" fill="#FFFFFF" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="28">TUESDAY</text>
-        <text x="0" y="60" fill="#E52521" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="17">15 SEPT 2026</text>
-        <text x="0" y="80" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="11">Mark Calendar</text>
+        <text x="0" y="34" fill="#FFFFFF" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="26">15–16 SEPT</text>
+        <text x="0" y="60" fill="#E52521" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="16">2026</text>
+        <text x="0" y="80" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="11">2-Day Initiative</text>
       </g>
 
       <line x1="-220" y1="25" x2="-220" y2="135" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1"/>
@@ -128,16 +128,16 @@ async function generateInstagramPortrait() {
         <text x="0" y="0" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="12" letter-spacing="2">TIME</text>
         <text x="0" y="34" fill="#FFFFFF" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="28">05:00 PM</text>
         <text x="0" y="60" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="17">TO 07:00 PM</text>
-        <text x="0" y="80" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="11">2 Hours Intensive</text>
+        <text x="0" y="80" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="11">Both Days</text>
       </g>
 
       <line x1="20" y1="25" x2="20" y2="135" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1"/>
 
       <g transform="translate(60, 32)">
         <text x="0" y="0" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="12" letter-spacing="2">VENUE</text>
-        <text x="0" y="30" fill="#FFFFFF" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="24">DEVUP ARENA</text>
-        <text x="0" y="56" fill="#E52521" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="15">COMPUTING BLOCK</text>
-        <text x="0" y="78" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="11">KIET Campus</text>
+        <text x="0" y="30" fill="#FFFFFF" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="24">H BLOCK 106</text>
+        <text x="0" y="56" fill="#E52521" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="15">KIET CAMPUS</text>
+        <text x="0" y="78" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="11">Delhi-NCR</text>
       </g>
 
       <line x1="240" y1="25" x2="240" y2="135" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1"/>
@@ -155,28 +155,40 @@ async function generateInstagramPortrait() {
       </text>
     </g>
 
-    <g transform="translate(540, 1145)">
-      <rect x="-380" y="0" width="760" height="74" fill="#E52521" rx="6"/>
-      <text x="0" y="46" text-anchor="middle" fill="#FFFFFF" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="28" letter-spacing="3">
-        CONFIRM YOUR PASS AT: DEVUPWEB.IN
+    <g transform="translate(450, 1145)">
+      <rect x="-370" y="0" width="680" height="74" fill="#E52521" rx="6"/>
+      <text x="-30" y="46" text-anchor="middle" fill="#FFFFFF" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="25" letter-spacing="2">
+        YOUR-FIRST-WEB.NETLIFY.APP
       </text>
     </g>
 
-    <text x="540" y="1260" text-anchor="middle" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="13" letter-spacing="3">
+    <g transform="translate(905, 1130)">
+      <rect x="-6" y="-6" width="116" height="116" fill="#FFFFFF" rx="6"/>
+      <text x="52" y="125" text-anchor="middle" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="10" letter-spacing="1">SCAN TO ENTER</text>
+    </g>
+
+    <text x="540" y="1275" text-anchor="middle" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="13" letter-spacing="3">
       INSTAGRAM: @DEVUP.KIET  •  LINKEDIN: DEVUP KIET  •  GITHUB: DEVUP-COMMUNITY
     </text>
-    <text x="540" y="1285" text-anchor="middle" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-weight="500" font-size="11" letter-spacing="1">
+    <text x="540" y="1298" text-anchor="middle" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-weight="500" font-size="11" letter-spacing="1">
       KIET Group of Institutions, Delhi-NCR, Ghaziabad • DevUp Upskill Collab 2026
     </text>
   </svg>
   `;
 
+  const qrOverlay = await sharp("public/qr-code.png")
+    .resize(104, 104)
+    .toBuffer();
+
   await sharp(bg)
-    .composite([{ input: Buffer.from(svgOverlay), top: 0, left: 0 }])
+    .composite([
+      { input: Buffer.from(svgOverlay), top: 0, left: 0 },
+      { input: qrOverlay, top: 1130, left: 905 }
+    ])
     .png({ quality: 95 })
     .toFile("public/devup_instagram_poster.png");
 
-  console.log("✓ devup_instagram_poster.png generated");
+  console.log("✓ devup_instagram_poster.png generated with embedded offline QR code");
 }
 
 async function generateSquarePoster() {
@@ -248,7 +260,7 @@ async function generateSquarePoster() {
 
       <g transform="translate(-420, 40)">
         <text x="0" y="0" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="13" letter-spacing="2">DATE</text>
-        <text x="0" y="36" fill="#FFFFFF" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="28">TUESDAY, 15 SEPT 2026</text>
+        <text x="0" y="36" fill="#FFFFFF" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="28">15–16 SEPT 2026</text>
       </g>
 
       <g transform="translate(-50, 40)">
@@ -258,7 +270,7 @@ async function generateSquarePoster() {
 
       <g transform="translate(300, 40)">
         <text x="0" y="0" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="13" letter-spacing="2">VENUE</text>
-        <text x="0" y="36" fill="#E52521" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="28">DEVUP ARENA (KIET)</text>
+        <text x="0" y="36" fill="#E52521" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="28">H BLOCK 106 (KIET)</text>
       </g>
 
       <line x1="-510" y1="110" x2="510" y2="110" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
@@ -267,26 +279,38 @@ async function generateSquarePoster() {
       </text>
     </g>
 
-    <!-- CTA -->
-    <g transform="translate(600, 1010)">
-      <rect x="-420" y="0" width="840" height="74" fill="#E52521" rx="6"/>
-      <text x="0" y="46" text-anchor="middle" fill="#FFFFFF" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="30" letter-spacing="3">
-        GET YOUR PASS NOW: DEVUPWEB.IN
+    <!-- CTA & QR Box -->
+    <g transform="translate(510, 1000)">
+      <rect x="-420" y="0" width="780" height="74" fill="#E52521" rx="6"/>
+      <text x="-30" y="46" text-anchor="middle" fill="#FFFFFF" font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="27" letter-spacing="2">
+        REGISTER: YOUR-FIRST-WEB.NETLIFY.APP
       </text>
     </g>
 
-    <text x="600" y="1135" text-anchor="middle" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="14" letter-spacing="3">
+    <g transform="translate(1015, 985)">
+      <rect x="-6" y="-6" width="116" height="116" fill="#FFFFFF" rx="6"/>
+      <text x="52" y="125" text-anchor="middle" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="10" letter-spacing="1">SCAN TO ENTER</text>
+    </g>
+
+    <text x="600" y="1145" text-anchor="middle" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="14" letter-spacing="3">
       DEVUP UPSKILL COLLAB  •  KIET GROUP OF INSTITUTIONS
     </text>
   </svg>
   `;
 
+  const qrSqOverlay = await sharp("public/qr-code.png")
+    .resize(104, 104)
+    .toBuffer();
+
   await sharp(bg)
-    .composite([{ input: Buffer.from(svgOverlay), top: 0, left: 0 }])
+    .composite([
+      { input: Buffer.from(svgOverlay), top: 0, left: 0 },
+      { input: qrSqOverlay, top: 985, left: 1015 }
+    ])
     .png({ quality: 95 })
     .toFile("public/devup_linkedin_poster.png");
 
-  console.log("✓ devup_linkedin_poster.png generated");
+  console.log("✓ devup_linkedin_poster.png generated with embedded offline QR code");
 }
 
 async function main() {
